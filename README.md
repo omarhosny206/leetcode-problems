@@ -123,3 +123,9 @@
 |1305|[All Elements in Two Binary Search Trees](https://leetcode.com/problems/all-elements-in-two-binary-search-trees/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Meduim/1305.%20All%20Elements%20in%20Two%20Binary%20Search%20Trees.cpp) |Medium|
 |1315|[Sum of Nodes with Even-Valued Grandparent](https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Meduim/1315.%20Sum%20of%20Nodes%20with%20Even-Valued%20Grandparent.cpp) |Medium|
 |1395|[Count Number of Teams](https://leetcode.com/problems/count-number-of-teams/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Meduim/1395.%20Count%20Number%20of%20Teams.cpp) |Medium|
+
+
+
+| # | Title | Solution | Difficulty |
+|---| ----- | -------- | ---------- |
+|72|[Edit Distance](https://leetcode.com/problems/edit-distance/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/72.%20Edit%20Distance.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/72.%20Edit%20Distance%202.cpp)  |Hard|
