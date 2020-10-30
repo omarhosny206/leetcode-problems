@@ -102,7 +102,7 @@
 |709|[To Lower Case](https://leetcode.com/problems/to-lower-case/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/709.%20To%20Lower%20Case.cpp) |Easy|
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/771.%20Jewels%20and%20Stones.cpp) |Easy|
 |817|[Linked List Components](https://leetcode.com/problems/linked-list-components/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/817.%20Linked%20List%20Components.cpp) |Medium|
-|832|[Flipping an Image](https://leetcode.com/problems/flipping-an-image/) | [C++](https://github.com/omarLaubwerk Plants for SketchUp full
+|832|[Flipping an Image](https://leetcode.com/problems/flipping-an-image/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/832.%20Flipping%20an%20Image.cpp) |Easy|
 |933|[Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/933.%20Number%20of%20Recent%20Calls.cpp) |Easy|
 |938|[Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/938.%20Range%20Sum%20of%20BST.cpp) |Easy|
 |973|[K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/973.%20K%20Closest%20Points%20to%20Origin.cpp) |Medium|
