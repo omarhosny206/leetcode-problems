@@ -82,6 +82,7 @@
 |242|[Valid Anagram](https://leetcode.com/problems/valid-anagram/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/242.%20Valid%20Anagram.cpp) |Easy|
 |257|[Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/257.%20Binary%20Tree%20Paths.cpp) |Easy|
 |268|[Missing Number](https://leetcode.com/problems/missing-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/268.%20Missing%20Number.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/268.%20Missing%20Number%202.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/268.%20Missing%20Number%203.cpp) |Easy|
+|292|[Nim Game](https://leetcode.com/problems/nim-game/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/292.%20Nim%20Game.cpp) |Easy|
 |328|[Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/328.%20Odd%20Even%20Linked%20List.cpp) |Medium|
 |338|[Counting Bits](https://leetcode.com/problems/counting-bits/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/338.%20Counting%20Bits.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/338.%20Counting%20Bits%202.cpp) |Medium|
 |367|[Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/367.%20Valid%20Perfect%20Square.cpp) |Easy|
@@ -108,6 +109,9 @@
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/771.%20Jewels%20and%20Stones.cpp) |Easy|
 |817|[Linked List Components](https://leetcode.com/problems/linked-list-components/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/817.%20Linked%20List%20Components.cpp) |Medium|
 |832|[Flipping an Image](https://leetcode.com/problems/flipping-an-image/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/832.%20Flipping%20an%20Image.cpp) |Easy|
+|870|[Advantage Shuffle](https://leetcode.com/problems/advantage-shuffle/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/870.%20Advantage%20Shuffle.cpp) |Medium|
+|876|[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/876.%20Middle%20of%20the%20Linked%20List.cpp) |Easy|
+|929|[Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/929.%20Unique%20Email%20Addresses.cpp) |Easy|
 |933|[Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/933.%20Number%20of%20Recent%20Calls.cpp) |Easy|
 |938|[Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/938.%20Range%20Sum%20of%20BST.cpp) |Easy|
 |965|[Univalued Binary Tree](https://leetcode.com/problems/univalued-binary-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/965.%20Univalued%20Binary%20Tree.cpp) |Easy|
