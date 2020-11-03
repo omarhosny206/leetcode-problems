@@ -1,4 +1,6 @@
-# LeetCode-Problems
+# LeetCode Problems in [![Travis](https://img.shields.io/badge/language-C++-green.svg)]()
+
+![leetcode.jpeg](https://tva1.sinaimg.cn/large/007S8ZIlly1ghluelm27rj30dw0780sm.jpg)
 
 
 
