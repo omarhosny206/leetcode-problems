@@ -149,4 +149,4 @@
 |1603|[Design Parking System](https://leetcode.com/problems/design-parking-system/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1603.%20Design%20Parking%20System.cpp) |Easy|
 
 
-## <p style='color:green'>Stay Tuned For New Problems and Updates!</p>
+## <font color="green"> Stay Tuned For New Problems and Updates! </font>
