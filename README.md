@@ -147,9 +147,3 @@
 |1528|[Shuffle String](https://leetcode.com/problems/shuffle-string/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1528.%20Shuffle%20String.cpp) |Easy|
 |1588|[Sum of All Odd Length Subarrays](https://leetcode.com/problems/sum-of-all-odd-length-subarrays/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1588.%20Sum%20of%20All%20Odd%20Length%20Subarrays.cpp) |Easy|
 |1603|[Design Parking System](https://leetcode.com/problems/design-parking-system/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1603.%20Design%20Parking%20System.cpp) |Easy|
-
-
-<span style="color: green"> Stay Tuned For New Problems and Updates! </span>
-<div class="text-white bg-blue mb-2">
-  .text-white on .bg-blue
-</div>
