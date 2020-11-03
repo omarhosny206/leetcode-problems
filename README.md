@@ -150,3 +150,6 @@
 
 
 <span style="color: green"> Stay Tuned For New Problems and Updates! </span>
+<div class="text-white bg-blue mb-2">
+  .text-white on .bg-blue
+</div>
