@@ -27,8 +27,9 @@ public:
             return 0;
         int left = maxPathSum_Helper(root->left, max_val);
         int right = maxPathSum_Helper(root->right, max_val);
+        int whole_path = root->val + left + right;
         int result = max(max(left, right) + root->val, root->val);
-        max_val = max(max_val, max(left + right + root->val, result));
+        max_val = max(max_val, max(whole_path, result));
         return result;
     }
 };
