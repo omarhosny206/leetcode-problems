@@ -68,10 +68,12 @@
 |145|[Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/145.%20Binary%20Tree%20Postorder%20Traversal.cpp) |Medium|
 |147|[Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/147.%20Insertion%20Sort%20List.cpp) |Medium|
 |148|[Sort List](https://leetcode.com/problems/sort-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/148.%20Sort%20List.cpp) |Medium|
+|155|[Min Stack](https://leetcode.com/problems/min-stack/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/155.%20Min%20Stack.cpp) |Easy|
 |160|[Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/160.%20Intersection%20of%20Two%20Linked%20Lists.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/160.%20Intersection%20of%20Two%20Linked%20Lists%202.cpp) |Easy|
 |162|[Find Peak Element](https://leetcode.com/problems/find-peak-element/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/162.%20Find%20Peak%20Element.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/162.%20Find%20Peak%20Element%202.cpp) |Medium|
 |167|[Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii---input-array-is-sorted/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/167.%20Two%20Sum%20II%20-%20Input%20array%20is%20sorted.cpp) |Easy|
 |169|[Majority Element](https://leetcode.com/problems/majority-element/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/169.%20Majority%20Element.cpp) |Easy|
+|179|[Largest Number](https://leetcode.com/problems/largest-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/179.%20Largest%20Number.cpp) |Medium|
 |198|[House Robber](https://leetcode.com/problems/house-robber/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/198.%20House%20Robber.cpp) |Easy|
 |199|[Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/199.%20Binary%20Tree%20Right%20Side%20View.cpp) |Medium|
 |202|[Happy Number](https://leetcode.com/problems/happy-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/202.%20Happy%20Number.cpp) |Easy|
@@ -100,6 +102,7 @@
 |278|[First Bad Version](https://leetcode.com/problems/first-bad-version/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/278.%20First%20Bad%20Version.cpp) |Easy|
 |283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/283.%20Move%20Zeroes.cpp) |Easy|
 |292|[Nim Game](https://leetcode.com/problems/nim-game/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/292.%20Nim%20Game.cpp) |Easy|
+|322|[Coin Change](https://leetcode.com/problems/coin-change/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/322.%20Coin%20Change.cpp) |Medium|
 |328|[Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/328.%20Odd%20Even%20Linked%20List.cpp) |Medium|
 |338|[Counting Bits](https://leetcode.com/problems/counting-bits/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/338.%20Counting%20Bits.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/338.%20Counting%20Bits%202.cpp) |Medium|
 |342|[Power of Four](https://leetcode.com/problems/power-of-four/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/342.%20Power%20of%20Four.cpp) |Easy|
@@ -146,6 +149,7 @@
 |965|[Univalued Binary Tree](https://leetcode.com/problems/univalued-binary-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/965.%20Univalued%20Binary%20Tree.cpp) |Easy|
 |973|[K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/973.%20K%20Closest%20Points%20to%20Origin.cpp) |Medium|
 |976|[Largest Perimeter Triangle](https://leetcode.com/problems/largest-perimeter-triangle/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/976.%20Largest%20Perimeter%20Triangle.cpp) |Easy|
+|1008|[Construct Binary Search Tree from Preorder Traversal](https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/1008.%20Construct%20Binary%20Search%20Tree%20from%20Preorder%20Traversal.cpp) |Medium|
 |1022|[Sum of Root To Leaf Binary Numbers](https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1022.%20Sum%20of%20Root%20To%20Leaf%20Binary%20Numbers.cpp) |Easy|
 |1038|[Binary Search Tree to Greater Sum Tree](https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/1038.%20Binary%20Search%20Tree%20to%20Greater%20Sum%20Tree.cpp) |Medium|
 |1046|[Last Stone Weight](https://leetcode.com/problems/last-stone-weight/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1046.%20Last%20Stone%20Weight.cpp) |Easy|
