@@ -21,6 +21,7 @@
 |24|[Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/24.%20Swap%20Nodes%20in%20Pairs.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/24.%20Swap%20Nodes%20in%20Pairs%202.cpp) |Medium|
 |26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/26.%20Remove%20Duplicates%20from%20Sorted%20Array.cpp) |Easy|
 |27|[Remove Element](https://leetcode.com/problems/remove-element/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/27.%20Remove%20Element.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/27.%20Remove%20Element%202.cpp) |Easy|
+|35|[Search Insert Position](https://leetcode.com/problems/search-insert-position/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/35.%20Search%20Insert%20Position.cpp) |Easy|
 |39|[Combination Sum](https://leetcode.com/problems/combination-sum/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/39.%20Combination%20Sum.cpp) |Medium|
 |43|[Multiply Strings](https://leetcode.com/problems/multiply-strings/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/43.%20Multiply%20Strings.cpp) |Medium|
 |49|[Group Anagrams](https://leetcode.com/problems/group-anagrams/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/49.%20Group%20Anagrams.cpp) |Medium|
@@ -103,6 +104,7 @@
 |283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/283.%20Move%20Zeroes.cpp) |Easy|
 |292|[Nim Game](https://leetcode.com/problems/nim-game/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/292.%20Nim%20Game.cpp) |Easy|
 |322|[Coin Change](https://leetcode.com/problems/coin-change/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/322.%20Coin%20Change.cpp) |Medium|
+|326|[Power of Three](https://leetcode.com/problems/power-of-three/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/326.%20Power%20of%20Three.cpp) |Easy|
 |328|[Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/328.%20Odd%20Even%20Linked%20List.cpp) |Medium|
 |338|[Counting Bits](https://leetcode.com/problems/counting-bits/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/338.%20Counting%20Bits.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/338.%20Counting%20Bits%202.cpp) |Medium|
 |342|[Power of Four](https://leetcode.com/problems/power-of-four/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/342.%20Power%20of%20Four.cpp) |Easy|
@@ -123,12 +125,14 @@
 |500|[Keyboard Row](https://leetcode.com/problems/keyboard-row/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/500.%20Keyboard%20Row.cpp) |Easy|
 |509|[Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/509.%20Fibonacci%20Number.cpp) |Easy|
 |538|[Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/538.%20Convert%20BST%20to%20Greater%20Tree.cpp) |Medium|
+|599|[Minimum Index Sum of Two Lists](https://leetcode.com/problems/minimum-index-sum-of-two-lists/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/599.%20Minimum%20Index%20Sum%20of%20Two%20Lists.cpp) |Easy|
 |617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/617.%20Merge%20Two%20Binary%20Trees.cpp) |Easy|
 |621|[Task Scheduler](https://leetcode.com/problems/task-scheduler/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/621.%20Task%20Scheduler.cpp) |Medium|
 |623|[Add One Row to Tree](https://leetcode.com/problems/add-one-row-to-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/623.%20Add%20One%20Row%20to%20Tree.cpp) |Medium|
 |654|[Maximum Binary Tree](https://leetcode.com/problems/maximum-binary-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/654.%20Maximum%20Binary%20Tree.cpp) |Medium|
 |657|[Robot Return to Origin](https://leetcode.com/problems/robot-return-to-origin/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/657.%20Robot%20Return%20to%20Origin.cpp) |Easy|
 |687|[Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/687.%20Longest%20Univalue%20Path.cpp) |Medium|
+|700|[Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/700.%20Search%20in%20a%20Binary%20Search%20Tree.cpp) |Easy|
 |703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/703.%20Kth%20Largest%20Element%20in%20a%20Stream.cpp) |Easy|
 |704|[Binary Search](https://leetcode.com/problems/binary-search/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/704.%20Binary%20Search.cpp) |Easy|
 |705|[Design HashSet](https://leetcode.com/problems/design-hashset/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/705.%20Design%20HashSet.cpp) |Easy|
