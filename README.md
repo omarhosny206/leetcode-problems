@@ -135,7 +135,7 @@
 |654|[Maximum Binary Tree](https://leetcode.com/problems/maximum-binary-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/654.%20Maximum%20Binary%20Tree.cpp) |Medium|
 |657|[Robot Return to Origin](https://leetcode.com/problems/robot-return-to-origin/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/657.%20Robot%20Return%20to%20Origin.cpp) |Easy|
 |687|[Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/687.%20Longest%20Univalue%20Path.cpp) |Medium|
-|690|[Employee Importance](https://leetcode.com/problems/employee-importance/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/690.%20Employee%20Importance.cpp) |Easy|
+|690|[Employee Importance](https://leetcode.com/problems/employee-importance/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/690.%20Employee%20Importance.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/690.%20Employee%20Importance%202.cpp) |Easy|
 |700|[Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/700.%20Search%20in%20a%20Binary%20Search%20Tree.cpp) |Easy|
 |703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/703.%20Kth%20Largest%20Element%20in%20a%20Stream.cpp) |Easy|
 |704|[Binary Search](https://leetcode.com/problems/binary-search/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/704.%20Binary%20Search.cpp) |Easy|
