@@ -27,6 +27,7 @@
 |49|[Group Anagrams](https://leetcode.com/problems/group-anagrams/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/49.%20Group%20Anagrams.cpp) |Medium|
 |50|[Pow(x, n)](https://leetcode.com/problems/powx-n/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/50.%20Pow(x%2C%20n).cpp) |Medium|
 |53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/53.%20Maximum%20Subarray.cpp) |Easy|
+|58|[Length of Last Word](https://leetcode.com/problems/length-of-last-word/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/58.%20Length%20of%20Last%20Word.cpp) |Easy|
 |61|[Rotate List](https://leetcode.com/problems/rotate-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/61.%20Rotate%20List.cpp) |Medium|
 |62|[Unique Paths](https://leetcode.com/problems/unique-paths/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/62.%20Unique%20Paths.cpp) |Medium|
 |64|[Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/64.%20Minimum%20Path%20Sum.cpp) |Medium|
@@ -123,7 +124,9 @@
 |476|[Number Complement](https://leetcode.com/problems/number-complement/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/476.%20Number%20Complement.cpp) |Easy|
 |496|[Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/496.%20Next%20Greater%20Element%20I.cpp) |Easy|
 |500|[Keyboard Row](https://leetcode.com/problems/keyboard-row/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/500.%20Keyboard%20Row.cpp) |Easy|
+|507|[Perfect Number](https://leetcode.com/problems/perfect-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/507.%20Perfect%20Number.cpp) |Easy|
 |509|[Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/509.%20Fibonacci%20Number.cpp) |Easy|
+|530|[Minimum Absolute Difference in BST](https://leetcode.com/problems/minimum-absolute-difference-in-bst/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/530.%20Minimum%20Absolute%20Difference%20in%20BST.cpp) |Easy|
 |538|[Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/538.%20Convert%20BST%20to%20Greater%20Tree.cpp) |Medium|
 |599|[Minimum Index Sum of Two Lists](https://leetcode.com/problems/minimum-index-sum-of-two-lists/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/599.%20Minimum%20Index%20Sum%20of%20Two%20Lists.cpp) |Easy|
 |617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/617.%20Merge%20Two%20Binary%20Trees.cpp) |Easy|
@@ -132,6 +135,7 @@
 |654|[Maximum Binary Tree](https://leetcode.com/problems/maximum-binary-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/654.%20Maximum%20Binary%20Tree.cpp) |Medium|
 |657|[Robot Return to Origin](https://leetcode.com/problems/robot-return-to-origin/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/657.%20Robot%20Return%20to%20Origin.cpp) |Easy|
 |687|[Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/687.%20Longest%20Univalue%20Path.cpp) |Medium|
+|690|[Employee Importance](https://leetcode.com/problems/employee-importance/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/690.%20Employee%20Importance.cpp) |Easy|
 |700|[Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/700.%20Search%20in%20a%20Binary%20Search%20Tree.cpp) |Easy|
 |703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/703.%20Kth%20Largest%20Element%20in%20a%20Stream.cpp) |Easy|
 |704|[Binary Search](https://leetcode.com/problems/binary-search/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/704.%20Binary%20Search.cpp) |Easy|
@@ -140,10 +144,13 @@
 |709|[To Lower Case](https://leetcode.com/problems/to-lower-case/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/709.%20To%20Lower%20Case.cpp) |Easy|
 |748|[Shortest Completing Word](https://leetcode.com/problems/shortest-completing-word/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/748.%20Shortest%20Completing%20Word.cpp) |Easy|
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/771.%20Jewels%20and%20Stones.cpp) |Easy|
+|783|[Minimum Distance Between BST Nodes](https://leetcode.com/problems/minimum-distance-between-bst-nodes/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/783.%20Minimum%20Distance%20Between%20BST%20Nodes.cpp) |Easy|
 |817|[Linked List Components](https://leetcode.com/problems/linked-list-components/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/817.%20Linked%20List%20Components.cpp) |Medium|
+|819|[Most Common Word](https://leetcode.com/problems/most-common-word/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/819.%20Most%20Common%20Word.cpp) |Easy|
 |832|[Flipping an Image](https://leetcode.com/problems/flipping-an-image/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/832.%20Flipping%20an%20Image.cpp) |Easy|
 |844|[Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/844.%20Backspace%20String%20Compare.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/844.%20Backspace%20String%20Compare%202.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/844.%20Backspace%20String%20Compare%203.cpp) |Easy|
 |870|[Advantage Shuffle](https://leetcode.com/problems/advantage-shuffle/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/870.%20Advantage%20Shuffle.cpp) |Medium|
+|872|[Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/872.%20Leaf-Similar%20Trees.cpp) |Easy|
 |876|[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/876.%20Middle%20of%20the%20Linked%20List.cpp) |Easy|
 |917|[Reverse Only Letters](https://leetcode.com/problems/reverse-only-letters/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/917.%20Reverse%20Only%20Letters.cpp) |Easy|
 |929|[Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/929.%20Unique%20Email%20Addresses.cpp) |Easy|
