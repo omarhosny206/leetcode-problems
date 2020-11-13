@@ -23,10 +23,10 @@ public:
         if (index > n)
             return;
 
-        for (int j = index; j <= n; j++)
+        for (int i = index; i <= n; i++)
         {
-            comb.push_back(j);
-            findCombinations(combinations, n, k, j + 1);
+            comb.push_back(i);
+            findCombinations(combinations, n, k, i + 1);
             comb.pop_back();
         }
     }
