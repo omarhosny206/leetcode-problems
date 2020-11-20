@@ -36,7 +36,6 @@ public:
         }
 
         TreeNode *root = new TreeNode(max);
-        cout << root->val << endl;
         root->left = constructMaximumBinaryTreeRecursive(nums, start, index - 1);
         root->right = constructMaximumBinaryTreeRecursive(nums, index + 1, end);
 

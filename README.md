@@ -133,11 +133,13 @@
 |485|[Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/485.%20Max%20Consecutive%20Ones.cpp) |Easy|
 |496|[Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/496.%20Next%20Greater%20Element%20I.cpp) |Easy|
 |500|[Keyboard Row](https://leetcode.com/problems/keyboard-row/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/500.%20Keyboard%20Row.cpp) |Easy|
+|506|[Relative Ranks](https://leetcode.com/problems/relative-ranks/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/506.%20Relative%20Ranks.cpp) |Easy|
 |507|[Perfect Number](https://leetcode.com/problems/perfect-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/507.%20Perfect%20Number.cpp) |Easy|
 |509|[Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/509.%20Fibonacci%20Number.cpp) |Easy|
 |520|[Detect Capital](https://leetcode.com/problems/detect-capital/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/520.%20Detect%20Capital.cpp) |Easy|
 |530|[Minimum Absolute Difference in BST](https://leetcode.com/problems/minimum-absolute-difference-in-bst/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/530.%20Minimum%20Absolute%20Difference%20in%20BST.cpp) |Easy|
 |538|[Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/538.%20Convert%20BST%20to%20Greater%20Tree.cpp) |Medium|
+|543|[Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/543.%20Diameter%20of%20Binary%20Tree.cpp) |Easy|
 |563|[Binary Tree Tilt](https://leetcode.com/problems/binary-tree-tilt/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/563.%20Binary%20Tree%20Tilt.cpp) |Easy|
 |575|[Distribute Candies](https://leetcode.com/problems/distribute-candies/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/575.%20Distribute%20Candies.cpp) |Easy|
 |599|[Minimum Index Sum of Two Lists](https://leetcode.com/problems/minimum-index-sum-of-two-lists/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/599.%20Minimum%20Index%20Sum%20of%20Two%20Lists.cpp) |Easy|
@@ -161,6 +163,7 @@
 |705|[Design HashSet](https://leetcode.com/problems/design-hashset/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/705.%20Design%20HashSet.cpp) |Easy|
 |706|[Design HashMap](https://leetcode.com/problems/design-hashmap/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/706.%20Design%20HashMap.cpp) |Easy|
 |709|[To Lower Case](https://leetcode.com/problems/to-lower-case/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/709.%20To%20Lower%20Case.cpp) |Easy|
+|733|[Flood Fill](https://leetcode.com/problems/flood-fill/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/733.%20Flood%20Fill.cpp) |Easy|
 |744|[Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/744.%20Find%20Smallest%20Letter%20Greater%20Than%20Target.cpp) |Easy|
 |748|[Shortest Completing Word](https://leetcode.com/problems/shortest-completing-word/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/748.%20Shortest%20Completing%20Word.cpp) |Easy|
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/771.%20Jewels%20and%20Stones.cpp) |Easy|
@@ -191,6 +194,7 @@
 |1022|[Sum of Root To Leaf Binary Numbers](https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1022.%20Sum%20of%20Root%20To%20Leaf%20Binary%20Numbers.cpp) |Easy|
 |1038|[Binary Search Tree to Greater Sum Tree](https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/1038.%20Binary%20Search%20Tree%20to%20Greater%20Sum%20Tree.cpp) |Medium|
 |1046|[Last Stone Weight](https://leetcode.com/problems/last-stone-weight/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1046.%20Last%20Stone%20Weight.cpp) |Easy|
+|1103|[Distribute Candies to People](https://leetcode.com/problems/distribute-candies-to-people/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1103.%20Distribute%20Candies%20to%20People.cpp) |Easy|
 |1128|[Number of Equivalent Domino Pairs](https://leetcode.com/problems/number-of-equivalent-domino-pairs/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1128.%20Number%20of%20Equivalent%20Domino%20Pairs.cpp) |Easy|
 |1137|[N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1137.%20N-th%20Tribonacci%20Number.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1137.%20N-th%20Tribonacci%20Number%202.cpp) |Easy|
 |1160|[Find Words That Can Be Formed by Characters](https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1160.%20Find%20Words%20That%20Can%20Be%20Formed%20by%20Characters.cpp) |Easy|
