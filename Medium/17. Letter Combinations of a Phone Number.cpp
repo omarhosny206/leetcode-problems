@@ -43,27 +43,3 @@ public:
         }
     }
 };
-
-/*
-    l = abc
-    c = a
-    l = def
-    c = ad
-    r = [ad]
-    c = ae
-    r = [ad, ae]
-    c = af
-    r = [ad, ae, af]
-    c = bd
-    r = [ad, ae, af, bd]
-    c = be
-    r = [ad, ae, af, bd, be]
-    c = bf
-    r = [ad, ae, af, bd, be, bf]
-    c = cd
-    r = [ad, ae, af, bd, be, bf, cd]
-    c = ce 
-    r = [ad, ae, af, bd, be, bf, cd, ce]
-    c = cf
-    r = [ad, ae, af, bd, be, bf, cd, ce, cf]
-*/

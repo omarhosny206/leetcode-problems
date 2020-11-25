@@ -39,16 +39,3 @@ public:
         return result;
     }
 };
-
-/*
-    digits = "23"
-    r = ""
-    p = ""
-    r = [a, b, c]
-    p = a
-    r = [b, c, ad, ae, af]
-    p = b
-    r = [c, ad, ae, af, bd, be, bf]
-    p = c
-    r = [ad, ae, af, bd, be, bf, cd, ce, cf]
-*/
