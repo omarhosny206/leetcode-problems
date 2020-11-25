@@ -3,35 +3,6 @@
 class Solution
 {
 public:
-    void computeLongestPrefixSum(string pattern, int patternLength, vector<int> &longestPrefixSum)
-    {
-        int i = 1;
-        int length = 0;
-        longestPrefixSum[0] = 0;
-
-        while (i < patternLength)
-        {
-            if (pattern[i] == pattern[length])
-            {
-                length++;
-                longestPrefixSum[i] = length;
-                i++;
-            }
-
-            else
-            {
-                if (length != 0)
-                    length = longestPrefixSum[length - 1];
-
-                else
-                {
-                    longestPrefixSum[i] = 0;
-                    i++;
-                }
-            }
-        }
-    }
-
     int strStr(string word, string pattern)
     {
         int wordLength = word.length();
@@ -68,5 +39,34 @@ public:
             }
         }
         return -1;
+    }
+
+    void computeLongestPrefixSum(string pattern, int patternLength, vector<int> &longestPrefixSum)
+    {
+        int i = 1;
+        int length = 0;
+        longestPrefixSum[0] = 0;
+
+        while (i < patternLength)
+        {
+            if (pattern[i] == pattern[length])
+            {
+                length++;
+                longestPrefixSum[i] = length;
+                i++;
+            }
+
+            else
+            {
+                if (length != 0)
+                    length = longestPrefixSum[length - 1];
+
+                else
+                {
+                    longestPrefixSum[i] = 0;
+                    i++;
+                }
+            }
+        }
     }
 };
