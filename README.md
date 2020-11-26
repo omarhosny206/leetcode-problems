@@ -11,6 +11,7 @@
 |7|[Reverse Integer](https://leetcode.com/problems/reverse-integer/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/7.%20Reverse%20Integer.cpp) |Easy|
 |8|[String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/8.%20String%20to%20Integer%20(atoi).cpp) |Medium|
 |9|[Palindrome Number](https://leetcode.com/problems/palindrome-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/9.%20Palindrome%20Number.cpp) |Easy|
+|14|[Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/14.%20Longest%20Common%20Prefix.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/14.%20Longest%20Common%20Prefix%202.cpp) |Easy|
 |15|[3Sum](https://leetcode.com/problems/3sum/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/15.%203Sum.cpp) |Medium|
 |16|[3Sum Closest](https://leetcode.com/problems/3sum-closest/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/16.%203Sum%20Closest.cpp) |Medium|
 |17|[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/17.%20Letter%20Combinations%20of%20a%20Phone%20Number.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/17.%20Letter%20Combinations%20of%20a%20Phone%20Number%202.cpp) |Medium|
@@ -30,6 +31,7 @@
 |49|[Group Anagrams](https://leetcode.com/problems/group-anagrams/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/49.%20Group%20Anagrams.cpp) |Medium|
 |50|[Pow(x, n)](https://leetcode.com/problems/powx-n/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/50.%20Pow(x%2C%20n).cpp) |Medium|
 |53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/53.%20Maximum%20Subarray.cpp) |Easy|
+|55|[Jump Game](https://leetcode.com/problems/jump-game/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/55.%20Jump%20Game.cpp) |Medium|
 |58|[Length of Last Word](https://leetcode.com/problems/length-of-last-word/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/58.%20Length%20of%20Last%20Word.cpp) |Easy|
 |61|[Rotate List](https://leetcode.com/problems/rotate-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/61.%20Rotate%20List.cpp) |Medium|
 |62|[Unique Paths](https://leetcode.com/problems/unique-paths/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/62.%20Unique%20Paths.cpp) |Medium|
@@ -42,6 +44,7 @@
 |75|[Sort Colors](https://leetcode.com/problems/sort-colors/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/75.%20Sort%20Colors.cpp) |Medium|
 |77|[Combinations](https://leetcode.com/problems/combinations/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/77.%20Combinations.cpp) |Medium|
 |78|[Subsets](https://leetcode.com/problems/subsets/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/78.%20Subsets.cpp) |Medium|
+|79|[Word Search](https://leetcode.com/problems/word-search/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/79.%20Word%20Search.cpp) |Medium|
 |81|[Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/81.%20Search%20in%20Rotated%20Sorted%20Array%20II.cpp) |Medium|
 |83|[Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/83.%20Remove%20Duplicates%20from%20Sorted%20List.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/83.%20Remove%20Duplicates%20from%20Sorted%20List%202.cpp) |Easy|
 |86|[Partition List](https://leetcode.com/problems/partition-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/86.%20Partition%20List.cpp) |Medium|
@@ -70,6 +73,7 @@
 |129|[Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/129.%20Sum%20Root%20to%20Leaf%20Numbers.cpp) |Medium|
 |136|[Single Number](https://leetcode.com/problems/single-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/136.%20Single%20Number.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/136.%20Single%20Number%202.cpp) |Easy|
 |137|[Single Number II](https://leetcode.com/problems/single-number-ii/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/137.%20Single%20Number%20II.cpp) |Medium|
+|139|[Word Break](https://leetcode.com/problems/word-break/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/139.%20Word%20Break.cpp) |Medium|
 |141|[Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/141.%20Linked%20List%20Cycle.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/141.%20Linked%20List%20Cycle%202.cpp) |Easy|
 |143|[Reorder List](https://leetcode.com/problems/reorder-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/143.%20Reorder%20List.cpp) |Medium|
 |144|[Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/144.%20Binary%20Tree%20Preorder%20Traversal.cpp) |Medium|
@@ -83,6 +87,7 @@
 |169|[Majority Element](https://leetcode.com/problems/majority-element/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/169.%20Majority%20Element.cpp) |Easy|
 |173|[Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/173.%20Binary%20Search%20Tree%20Iterator.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/173.%20Binary%20Search%20Tree%20Iterator%202.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/173.%20Binary%20Search%20Tree%20Iterator%203.cpp) |Medium|
 |179|[Largest Number](https://leetcode.com/problems/largest-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/179.%20Largest%20Number.cpp) |Medium|
+|189|[Rotate Array](https://leetcode.com/problems/rotate-array/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/189.%20Rotate%20Array.cpp) |Medium|
 |198|[House Robber](https://leetcode.com/problems/house-robber/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/198.%20House%20Robber.cpp) |Easy|
 |199|[Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/199.%20Binary%20Tree%20Right%20Side%20View.cpp) |Medium|
 |200|[Number of Islands](https://leetcode.com/problems/number-of-islands/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/200.%20Number%20of%20Islands.cpp) |Medium|
