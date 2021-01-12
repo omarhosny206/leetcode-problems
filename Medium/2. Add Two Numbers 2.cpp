@@ -20,6 +20,7 @@ public:
         ListNode *current = answer;
         int sum = 0;
         int carry = 0;
+        list<int> final_result;
 
         while (l1 != nullptr || l2 != nullptr)
         {
@@ -38,13 +39,18 @@ public:
             }
 
             carry = sum / 10;
-
-            current->next = new ListNode(sum % 10);
-            current = current->next;
+            final_result.push_back(sum % 10);
         }
 
         if (carry != 0)
-            current->next = new ListNode(carry);
+            final_result.push_back(carry);
+
+        while (!final_result.empty())
+        {
+            current->next = new ListNode(final_result.front());
+            current = current->next;
+            final_result.pop_front();
+        }
 
         return answer->next;
     }
