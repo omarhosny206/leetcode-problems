@@ -13,8 +13,6 @@
  */
 class Solution
 {
-    TreeNode *s_startNode = nullptr;
-
 public:
     bool isSubtree(TreeNode *s, TreeNode *t)
     {
