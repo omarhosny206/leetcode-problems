@@ -12,21 +12,21 @@
  */
 class Solution
 {
+
 public:
     ListNode *reverseList(ListNode *head)
     {
-        ListNode *prev = nullptr;
-        ListNode *curr = head;
-        ListNode *next = nullptr;
+        return reverseListRecursively(head);
+    }
 
-        while (curr != nullptr)
-        {
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-        }
-        head = prev;
-        return head;
+    ListNode *reverseListRecursively(ListNode *head)
+    {
+        if (head == nullptr || head->next == nullptr)
+            return head;
+
+        ListNode *current = reverseListRecursively(head->next);
+        head->next->next = head;
+        head->next = nullptr;
+        return current;
     }
 };

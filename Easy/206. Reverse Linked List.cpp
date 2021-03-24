@@ -12,27 +12,21 @@
  */
 class Solution
 {
-
 public:
     ListNode *reverseList(ListNode *head)
     {
-        stack<ListNode *> nodes;
+        ListNode *prev = nullptr;
+        ListNode *curr = head;
+        ListNode *next = nullptr;
 
-        while (head != nullptr)
+        while (curr != nullptr)
         {
-            nodes.push(head);
-            head = head->next;
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
         }
-
-        ListNode *result = new ListNode();
-        head = result;
-        while (!nodes.empty())
-        {
-            ListNode *current = nodes.top();
-            nodes.pop();
-            head->next = new ListNode(current->val);
-            head = head->next;
-        }
-        return result->next;
+        head = prev;
+        return head;
     }
 };
