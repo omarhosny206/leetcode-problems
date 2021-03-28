@@ -11,14 +11,10 @@ public:
         for (int i = 0; i < s.length(); ++i)
         {
             if ((i % 2 == 0 && s[i] == '1') || (i % 2 != 0 && s[i] == '0'))
-            {
                 even++;
-            }
 
             if ((i % 2 == 0 && s[i] == '0') || (i % 2 != 0 && s[i] == '1'))
-            {
                 odd++;
-            }
         }
 
         return min(odd, even);
