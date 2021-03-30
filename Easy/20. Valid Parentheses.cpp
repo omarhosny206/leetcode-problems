@@ -5,29 +5,37 @@ class Solution
 public:
     bool isValid(string s)
     {
-
-        map<char, int> mapping{
-            {'(', 1},
-            {')', 2},
-            {'{', 3},
-            {'}', 4},
-            {'[', 5},
-            {']', 6}};
-
-        stack<char> parentheses_stack;
-        for (char c : s)
+        stack<char> parentheses;
+        for (int i = 0; i < s.length(); ++i)
         {
-            if (mapping[c] % 2 != 0)
-                parentheses_stack.push(c);
+            if (isOpenParenthese(s[i]))
+                parentheses.push(s[i]);
 
             else
             {
-                if (parentheses_stack.empty() || mapping[c] != mapping[parentheses_stack.top()] + 1)
+                if (parentheses.empty() || s[i] != getPair(parentheses.top()))
                     return false;
-                parentheses_stack.pop();
+
+                parentheses.pop();
             }
         }
 
-        return parentheses_stack.size() == 0;
+        return parentheses.empty();
+    }
+
+    bool isOpenParenthese(char c)
+    {
+        return c == '(' || c == '{' || c == '[';
+    }
+
+    char getPair(char c)
+    {
+        if (c == '(')
+            return ')';
+
+        else if (c == '{')
+            return '}';
+
+        return ']';
     }
 };
