@@ -51,7 +51,7 @@
 |72|[Edit Distance](https://leetcode.com/problems/edit-distance/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/72.%20Edit%20Distance.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/72.%20Edit%20Distance%202.cpp)  |Hard|
 |74|[Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/74.%20Search%20a%202D%20Matrix.cpp) |Medium|
 |75|[Sort Colors](https://leetcode.com/problems/sort-colors/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/75.%20Sort%20Colors.cpp) |Medium|
-|76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/76.%20Minimum%20Window%20Substring.cpp) |Hard|
+|76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/76.%20Minimum%20Window%20Substring.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/76.%20Minimum%20Window%20Substring%202.cpp) |Hard|
 |77|[Combinations](https://leetcode.com/problems/combinations/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/77.%20Combinations.cpp) |Medium|
 |78|[Subsets](https://leetcode.com/problems/subsets/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/78.%20Subsets.cpp) |Medium|
 |79|[Word Search](https://leetcode.com/problems/word-search/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/79.%20Word%20Search.cpp) |Medium|
