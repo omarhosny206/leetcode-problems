@@ -5,14 +5,17 @@ class Solution
 public:
     int maxSubArray(vector<int> &nums)
     {
+        int maxScore = INT_MIN;
+        int box = 0;
 
-        int MAX = nums[0];
-        for (int i = 1; i < nums.size(); ++i)
+        for (int num : nums)
         {
-            nums[i] = max(nums[i - 1] + nums[i], nums[i]);
-            MAX = max(MAX, nums[i]);
+            box += num;
+            maxScore = max(maxScore, box);
+            if (box < 0)
+                box = 0;
         }
 
-        return MAX;
+        return maxScore;
     }
 };
