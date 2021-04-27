@@ -22,7 +22,7 @@ public:
         rightNode = head;
         int position = k;
 
-        getNode(head, k, position);
+        getNodes(head, k, position);
 
         int temp = leftNode->val;
         leftNode->val = rightNode->val;
@@ -31,7 +31,7 @@ public:
         return head;
     }
 
-    void getNode(ListNode *head, int &left, int &right)
+    void getNodes(ListNode *head, int &left, int &right)
     {
         if (head == nullptr)
             return;
@@ -39,7 +39,7 @@ public:
         if (--left == 0)
             leftNode = head;
 
-        getNode(head->next, left, right);
+        getNodes(head->next, left, right);
 
         if (--right == 0)
             rightNode = head;
