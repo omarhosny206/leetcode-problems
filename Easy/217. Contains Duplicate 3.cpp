@@ -5,14 +5,14 @@ class Solution
 public:
     bool containsDuplicate(vector<int> &nums)
     {
-        unordered_set<int> numbers;
+        map<int, int> numbers;
 
         for (int n : nums)
         {
-            if (numbers.find(n) != numbers.end())
-                return true;
+            numbers[n]++;
 
-            numbers.insert(n);
+            if (numbers[n] == 2)
+                return true;
         }
 
         return false;
