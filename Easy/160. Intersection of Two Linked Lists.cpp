@@ -14,6 +14,7 @@ public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
     {
         unordered_set<ListNode *> nodes;
+
         while (headA != nullptr)
         {
             nodes.insert(headA);
@@ -24,8 +25,10 @@ public:
         {
             if (nodes.find(headB) != nodes.end())
                 return headB;
+
             headB = headB->next;
         }
+
         return nullptr;
     }
 };

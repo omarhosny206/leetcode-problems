@@ -22,11 +22,13 @@ public:
 
             if (pointerA == nullptr)
                 pointerA = headB;
+
             else
                 pointerA = pointerA->next;
 
             if (pointerB == nullptr)
                 pointerB = headA;
+
             else
                 pointerB = pointerB->next;
         }

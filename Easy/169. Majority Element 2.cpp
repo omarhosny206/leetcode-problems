@@ -9,12 +9,11 @@ public:
         int size = nums.size() / 2;
 
         for (int num : nums)
-        {
             freq[num]++;
 
+        for (int num : nums)
             if (freq[num] > size)
                 return num;
-        }
 
         return 0;
     }
