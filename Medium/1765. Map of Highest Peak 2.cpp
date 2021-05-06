@@ -36,33 +36,28 @@ public:
 
             if (checkBoundaries(result, i + 1, j))
             {
-                insertHeight(result, result[i][j], i + 1, j);
+                result[i + 1][j] = result[i][j] + 1;
                 cells.push({i + 1, j});
             }
 
             if (checkBoundaries(result, i - 1, j))
             {
-                insertHeight(result, result[i][j], i - 1, j);
+                result[i - 1][j] = result[i][j] + 1;
                 cells.push({i - 1, j});
             }
 
             if (checkBoundaries(result, i, j + 1))
             {
-                insertHeight(result, result[i][j], i, j + 1);
+                result[i][j + 1] = result[i][j] + 1;
                 cells.push({i, j + 1});
             }
 
             if (checkBoundaries(result, i, j - 1))
             {
-                insertHeight(result, result[i][j], i, j - 1);
+                result[i][j - 1] = result[i][j] + 1;
                 cells.push({i, j - 1});
             }
         }
-    }
-
-    void insertHeight(vector<vector<int>> &result, int value, int i, int j)
-    {
-        result[i][j] = value + 1;
     }
 
     bool checkBoundaries(vector<vector<int>> &result, int i, int j)
