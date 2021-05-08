@@ -21,10 +21,10 @@ public:
                 return middle;
 
             else if (nums[middle] > target)
-                right = middle - 1;
+                return binarySearch(nums, target, left, middle - 1);
 
             else
-                left = middle + 1;
+                return binarySearch(nums, target, middle + 1, right);
         }
 
         return -1;
