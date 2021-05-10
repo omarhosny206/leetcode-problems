@@ -11,8 +11,8 @@
  */
 class Solution
 {
-    unordered_map<TreeNode *, TreeNode *> parent;
     vector<int> result;
+    unordered_map<TreeNode *, TreeNode *> parent;
 
 public:
     vector<int> distanceK(TreeNode *root, TreeNode *target, int K)

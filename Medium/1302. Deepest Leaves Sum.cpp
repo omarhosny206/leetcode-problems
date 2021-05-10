@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/deepest-leaves-sum/
+// https://leetcode.com/problems/deepest-leaves-sum/
 
 /**
  * Definition for a binary tree node.
@@ -21,11 +21,9 @@ public:
     int deepestLeavesSum(TreeNode *root)
     {
         deepestLeavesSumRecursive(root, 0);
+
         for (pair<int, int> p : nodeDepth)
-        {
-            cout << p.first << endl;
             sum += p.first;
-        }
 
         return sum;
     }
