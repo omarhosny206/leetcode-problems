@@ -20,6 +20,7 @@ public:
                 maxHeap.pop();
             }
         }
+
         return maxHeap.size();
     }
 
