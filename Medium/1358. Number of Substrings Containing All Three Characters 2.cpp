@@ -7,9 +7,8 @@ public:
     {
         int result = 0;
         map<char, int> freq;
-
-        int counter = 0;
         int i = 0;
+        int counter = 0;
 
         for (int j = 0; j < s.length(); ++j)
         {

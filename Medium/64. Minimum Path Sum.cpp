@@ -5,22 +5,21 @@ class Solution
 public:
     int minPathSum(vector<vector<int>> &grid)
     {
-        int m = grid.size();
-        int n = grid[0].size();
-        vector<vector<int>> paths(m, vector<int>(n));
+        for (int j = grid[0].size() - 2; j >= 0; --j)
+            grid[grid.size() - 1][j] += grid[grid.size() - 1][j + 1];
 
-        paths[0][0] = grid[0][0];
+        for (int i = grid.size() - 2; i >= 0; --i)
+            for (int j = grid[0].size() - 1; j >= 0; --j)
+                grid[i][j] += min({getValue(grid, i + 1, j), getValue(grid, i, j + 1)});
 
-        for (int i = 1; i < m; ++i)
-            paths[i][0] = grid[i][0] + paths[i - 1][0];
+        return grid[0][0];
+    }
 
-        for (int i = 1; i < n; ++i)
-            paths[0][i] = grid[0][i] + paths[0][i - 1];
+    int getValue(vector<vector<int>> &grid, int i, int j)
+    {
+        if (j >= grid[0].size())
+            return 1e+8;
 
-        for (int i = 1; i < m; ++i)
-            for (int j = 1; j < n; ++j)
-                paths[i][j] = min(paths[i][j - 1] + grid[i][j], paths[i - 1][j] + grid[i][j]);
-
-        return paths[m - 1][n - 1];
+        return grid[i][j];
     }
 };

@@ -5,20 +5,17 @@ class Solution
 public:
     int maxProfit(vector<int> &prices)
     {
-
         int maxProfit = 0;
-        vector<int> maxSell(prices.size());
-        for (int i = prices.size() - 1; i >= 0; --i)
-        {
-            if (maxProfit < prices[i])
-                maxProfit = prices[i];
-            maxSell[i] = maxProfit;
-        }
+        int minPrice = INT_MAX;
 
-        maxProfit = 0;
-        for (int i = 0; i < prices.size(); ++i)
-            if (maxSell[i] - prices[i] > maxProfit)
-                maxProfit = maxSell[i] - prices[i];
+        for (int i = 0; i < prices.size(); i++)
+        {
+            if (prices[i] < minPrice)
+                minPrice = prices[i];
+
+            else if (prices[i] - minPrice > maxProfit)
+                maxProfit = prices[i] - minPrice;
+        }
 
         return maxProfit;
     }
