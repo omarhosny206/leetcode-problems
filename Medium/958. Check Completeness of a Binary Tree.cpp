@@ -19,8 +19,9 @@ public:
         if (root == nullptr)
             return true;
 
-        bool end = false;
         queue<TreeNode *> nodes;
+        bool end = false;
+
         nodes.push(root);
 
         while (!nodes.empty())
@@ -33,12 +34,14 @@ public:
 
             else
             {
-                if (end)
+                if (end == true)
                     return false;
+
                 nodes.push(current->left);
                 nodes.push(current->right);
             }
         }
+
         return true;
     }
 };
