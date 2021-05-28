@@ -6,23 +6,16 @@ public:
     string mergeAlternately(string word1, string word2)
     {
         string result = "";
-        int length1 = word1.size();
-        int length2 = word2.size();
-        int size = max(length1, length2);
+        int i = 0;
+        int j = 0;
 
-        for (int i = 0; i < size; ++i)
+        while (i < word1.length() || j < word2.length())
         {
-            if (length1)
-            {
-                result += word1[i];
-                length1--;
-            }
+            if (i < word1.length())
+                result += word1[i++];
 
-            if (length2)
-            {
-                result += word2[i];
-                length2--;
-            }
+            if (j < word2.length())
+                result += word2[j++];
         }
 
         return result;

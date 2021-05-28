@@ -5,13 +5,20 @@ class Solution
 public:
     int fib(int N)
     {
+        if (N <= 1)
+            return N;
 
-        if (N == 0)
-            return 0;
+        int result = 0;
+        int first = 0;
+        int second = 1;
 
-        if (N == 1)
-            return 1;
+        for (int i = 2; i <= N; ++i)
+        {
+            result = first + second;
+            first = second;
+            second = result;
+        }
 
-        return fib(N - 1) + fib(N - 2);
+        return result;
     }
 };
