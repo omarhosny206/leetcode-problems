@@ -37,7 +37,7 @@ public:
 
     string removeParentheses(string &s)
     {
-        string result;
+        string result = "";
 
         for (char &c : s)
             if (c != '(' && c != ')')
