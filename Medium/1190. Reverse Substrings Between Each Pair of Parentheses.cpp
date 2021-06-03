@@ -5,30 +5,43 @@ class Solution
 public:
     string reverseParentheses(string s)
     {
-        int i = 0;
-        string result = DFS(s, i);
+        string result = "";
+        stack<int> indices;
+
+        for (int i = 0; i < s.length(); ++i)
+        {
+            if (s[i] == '(')
+                indices.push(i);
+
+            else if (s[i] == ')')
+            {
+                int start = indices.top();
+                indices.pop();
+                Reverse(s, start + 1, i - 1);
+            }
+        }
+
+        result = removeParentheses(s);
         return result;
     }
 
-    string DFS(string &s, int &i)
+    void Reverse(string &s, int i, int j)
     {
-        string result = "";
-
-        while (i < s.length() && s[i] != ')')
+        while (i <= j)
         {
-            if (s[i] == '(')
-            {
-                i++;
-                string temp = DFS(s, i);
-                reverse(temp.begin(), temp.end());
-                result += temp;
-            }
-
-            else
-                result += s[i];
-
-            i++;
+            char temp = s[i];
+            s[i++] = s[j];
+            s[j--] = temp;
         }
+    }
+
+    string removeParentheses(string &s)
+    {
+        string result;
+
+        for (char &c : s)
+            if (c != '(' && c != ')')
+                result += c;
 
         return result;
     }

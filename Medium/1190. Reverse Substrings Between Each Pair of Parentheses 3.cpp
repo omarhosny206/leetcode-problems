@@ -19,9 +19,7 @@ public:
             if (s[i] == '(')
             {
                 i++;
-                string temp = DFS(s, i);
-                reverse(temp.begin(), temp.end());
-                result += temp;
+                result += DFS(s, i);
             }
 
             else
@@ -29,6 +27,9 @@ public:
 
             i++;
         }
+
+        if (i < s.length() && s[i] == ')')
+            reverse(result.begin(), result.end());
 
         return result;
     }
