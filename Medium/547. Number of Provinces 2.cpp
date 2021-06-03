@@ -24,14 +24,14 @@ public:
             }
         }
 
-        for (auto value : parent)
+        for (auto &value : parent)
             if (value == -1)
                 result++;
 
         return result;
     }
 
-    int Find(vector<int> &parent, int source)
+    int Find(vector<int> &parent, int &source)
     {
         if (parent[source] == -1)
             return source;
@@ -39,7 +39,7 @@ public:
         return Find(parent, parent[source]);
     }
 
-    void Union(vector<int> &parent, int source, int destination)
+    void Union(vector<int> &parent, int &source, int &destination)
     {
         parent[destination] = source;
         return;
