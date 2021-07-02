@@ -20,7 +20,7 @@
 |15|[3Sum](https://leetcode.com/problems/3sum/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/15.%203Sum.cpp) |Medium|
 |16|[3Sum Closest](https://leetcode.com/problems/3sum-closest/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/16.%203Sum%20Closest.cpp) |Medium|
 |17|[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/17.%20Letter%20Combinations%20of%20a%20Phone%20Number.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/17.%20Letter%20Combinations%20of%20a%20Phone%20Number%202.cpp) |Medium|
-|18|[Sum](https://leetcode.com/problems/sum/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/18.%204Sum.cpp) |Medium|
+|18|[4Sum](https://leetcode.com/problems/4sum/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/18.%204Sum.cpp) |Medium|
 |19|[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/19.%20Remove%20Nth%20Node%20From%20End%20of%20List.cpp) |Medium|
 |20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/20.%20Valid%20Parentheses.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/20.%20Valid%20Parentheses%202.cpp) |Easy|
 |21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/21.%20Merge%20Two%20Sorted%20Lists.cpp) |Easy|
