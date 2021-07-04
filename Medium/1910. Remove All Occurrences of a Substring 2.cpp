@@ -9,7 +9,7 @@ public:
 
         if (found != string::npos)
         {
-            s.erase(found, part.size());
+            s.erase(found, part.length());
             removeOccurrences(s, part);
         }
 
