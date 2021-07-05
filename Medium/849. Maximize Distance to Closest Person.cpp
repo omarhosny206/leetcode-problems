@@ -13,7 +13,6 @@ public:
         {
             if (seats[j] == 1)
             {
-
                 result = max(result, evaluateDistance(seats, i, j));
                 i = j;
             }
