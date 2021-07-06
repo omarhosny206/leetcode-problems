@@ -18,12 +18,11 @@ class Solution
 public:
     string smallestFromLeaf(TreeNode *root)
     {
-        int minSum = INT_MAX;
-        DFS(root, minSum, "");
+        DFS(root, "");
         return result;
     }
 
-    void DFS(TreeNode *root, int &minSum, string currentWord)
+    void DFS(TreeNode *root, string currentWord)
     {
         if (root == nullptr)
             return;
@@ -33,7 +32,7 @@ public:
         if (root->left == nullptr && root->right == nullptr)
             result = (result == "") ? currentWord : min(result, currentWord);
 
-        DFS(root->left, minSum, currentWord);
-        DFS(root->right, minSum, currentWord);
+        DFS(root->left, currentWord);
+        DFS(root->right, currentWord);
     }
 };
