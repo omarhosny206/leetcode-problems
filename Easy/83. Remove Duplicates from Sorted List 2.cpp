@@ -15,22 +15,17 @@ class Solution
 public:
     ListNode *deleteDuplicates(ListNode *head)
     {
-        set<int> nodes;
         ListNode *current = head;
-        while (current != nullptr)
+
+        while (current != nullptr && current->next != nullptr)
         {
-            nodes.insert(current->val);
-            current = current->next;
+            if (current->val == current->next->val)
+                current->next = current->next->next;
+
+            else
+                current = current->next;
         }
 
-        ListNode *answer = new ListNode();
-        current = answer;
-        for (int val : nodes)
-        {
-            current->next = new ListNode(val);
-            current = current->next;
-        }
-
-        return answer->next;
+        return head;
     }
 };
