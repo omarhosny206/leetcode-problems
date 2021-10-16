@@ -14,36 +14,40 @@ public:
         this->word = "";
     }
 
-    TrieNode(char v)
+    TrieNode(char val)
     {
-        this->val = v;
+        this->val = val;
         this->isWord = false;
     }
 };
 
-class Solution
+class Trie
 {
-    vector<string> result;
+public:
     TrieNode *root;
 
-public:
-    vector<string> findWords(vector<vector<char>> &board, vector<string> &words)
+    Trie()
     {
         root = new TrieNode();
-
-        for (string word : words)
-            insert(word);
-
-        for (int i = 0; i < board.size(); ++i)
-        {
-            for (int j = 0; j < board[i].size(); j++)
-                DFS(board, i, j, root);
-        }
-
-        return result;
     }
 
-    void DFS(vector<vector<char>> &board, int i, int j, TrieNode *root)
+    void insert(string word)
+    {
+        TrieNode *current = root;
+
+        for (char c : word)
+        {
+            if (current->children.find(c) == current->children.end())
+                current->children[c] = new TrieNode(c);
+
+            current = current->children[c];
+        }
+
+        current->isWord = true;
+        current->word = word;
+    }
+
+    void DFS(vector<string> &result, vector<vector<char>> &board, int i, int j, TrieNode *root)
     {
         if (root->isWord)
         {
@@ -61,29 +65,33 @@ public:
             char temp = board[i][j];
             board[i][j] = '.';
 
-            DFS(board, i - 1, j, root->children[temp]);
-            DFS(board, i + 1, j, root->children[temp]);
-            DFS(board, i, j - 1, root->children[temp]);
-            DFS(board, i, j + 1, root->children[temp]);
+            DFS(result, board, i - 1, j, root->children[temp]);
+            DFS(result, board, i + 1, j, root->children[temp]);
+            DFS(result, board, i, j - 1, root->children[temp]);
+            DFS(result, board, i, j + 1, root->children[temp]);
 
             board[i][j] = temp;
         }
-
-        return;
     }
+};
 
-    void insert(string word)
+class Solution
+{
+    vector<string> result;
+    Trie *trie;
+
+public:
+    vector<string> findWords(vector<vector<char>> &board, vector<string> &words)
     {
-        TrieNode *current = root;
-        for (char c : word)
-        {
-            if (current->children.find(c) == current->children.end())
-                current->children[c] = new TrieNode(c);
+        trie = new Trie();
 
-            current = current->children[c];
-        }
+        for (string word : words)
+            trie->insert(word);
 
-        current->isWord = true;
-        current->word = word;
+        for (int i = 0; i < board.size(); ++i)
+            for (int j = 0; j < board[i].size(); j++)
+                trie->DFS(result, board, i, j, trie->root);
+
+        return result;
     }
 };

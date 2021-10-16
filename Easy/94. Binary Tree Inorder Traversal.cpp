@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/binary-tree-inorder-traversal/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -15,25 +16,26 @@ class Solution
 public:
     vector<int> inorderTraversal(TreeNode *root)
     {
+        if (root == nullptr)
+            return {};
 
-        stack<TreeNode *> curr;
+        vector<int> result;
+        stack<TreeNode *> nodes;
 
-        vector<int> in_order_vals;
-
-        while (!curr.empty() || root != nullptr)
+        while (!nodes.empty() || root != nullptr)
         {
-
             while (root != nullptr)
             {
-                curr.push(root);
+                nodes.push(root);
                 root = root->left;
             }
 
-            root = curr.top();
-            curr.pop();
-            in_order_vals.push_back(root->val);
+            root = nodes.top();
+            nodes.pop();
+            result.push_back(root->val);
             root = root->right;
         }
-        return in_order_vals;
+
+        return result;
     }
 };

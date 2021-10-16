@@ -10,10 +10,12 @@ public:
         for (string word : words)
         {
             int exist = false;
+
             for (int i = 0; i < board.size(); ++i)
             {
                 if (exist)
                     break;
+
                 for (int j = 0; j < board[i].size(); ++j)
                 {
                     if (DFS(board, word, 0, i, j))

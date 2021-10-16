@@ -16,7 +16,7 @@ public:
     {
         TreeNode *result = nullptr;
 
-        while (root)
+        while (root != nullptr)
         {
             if (root->val > p->val)
             {

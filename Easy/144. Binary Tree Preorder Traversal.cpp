@@ -16,27 +16,28 @@ class Solution
 public:
     vector<int> preorderTraversal(TreeNode *root)
     {
-
-        vector<int> pre_order_vals;
-        stack<TreeNode *> node_stack;
-
         if (root == nullptr)
-            return pre_order_vals;
+            return {};
 
-        node_stack.push(root);
-        while (!node_stack.empty())
+        vector<int> result;
+        stack<TreeNode *> nodes;
+
+        nodes.push(root);
+
+        while (!nodes.empty())
         {
-            TreeNode *current_node = node_stack.top();
-            node_stack.pop();
+            TreeNode *current = nodes.top();
+            nodes.pop();
 
-            pre_order_vals.push_back(current_node->val);
+            result.push_back(current->val);
 
-            if (current_node->right != nullptr)
-                node_stack.push(current_node->right);
+            if (current->right != nullptr)
+                nodes.push(current->right);
 
-            if (current_node->left != nullptr)
-                node_stack.push(current_node->left);
+            if (current->left != nullptr)
+                nodes.push(current->left);
         }
-        return pre_order_vals;
+
+        return result;
     }
 };

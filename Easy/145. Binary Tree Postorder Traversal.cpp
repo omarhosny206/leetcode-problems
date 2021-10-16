@@ -16,28 +16,29 @@ class Solution
 public:
     vector<int> postorderTraversal(TreeNode *root)
     {
-
-        vector<int> post_order_vals;
-        stack<TreeNode *> curr;
-
         if (root == nullptr)
-            return post_order_vals;
+            return {};
 
-        curr.push(root);
-        while (!curr.empty())
+        vector<int> result;
+        stack<TreeNode *> nodes;
+
+        nodes.push(root);
+
+        while (!nodes.empty())
         {
-            TreeNode *current_node = curr.top();
-            curr.pop();
-            int val = current_node->val;
-            post_order_vals.push_back(val);
+            TreeNode *current = nodes.top();
+            nodes.pop();
 
-            if (current_node->left != nullptr)
-                curr.push(current_node->left);
+            result.push_back(current->val);
 
-            if (current_node->right != nullptr)
-                curr.push(current_node->right);
+            if (current->left != nullptr)
+                nodes.push(current->left);
+
+            if (current->right != nullptr)
+                nodes.push(current->right);
         }
-        reverse(post_order_vals.begin(), post_order_vals.end());
-        return post_order_vals;
+
+        reverse(result.begin(), result.end());
+        return result;
     }
 };
