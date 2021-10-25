@@ -10,8 +10,8 @@ public:
 
         for (int i = 0; i < prices.size(); i++)
         {
-            minPrice = min(minPrice, prices[i]);
             maxProfit = max(maxProfit, prices[i] - minPrice);
+            minPrice = min(minPrice, prices[i]);
         }
 
         return maxProfit;
