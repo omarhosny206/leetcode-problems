@@ -1,3 +1,4 @@
+
 // https://leetcode.com/problems/rotating-the-box/
 
 class Solution
@@ -7,13 +8,13 @@ public:
     {
         vector<vector<char>> result(box[0].size(), vector<char>(box.size()));
 
-        moveStone(box);
+        moveStones(box);
         flipBox(box, result);
 
         return result;
     }
 
-    void moveStone(vector<vector<char>> &box)
+    void moveStones(vector<vector<char>> &box)
     {
         for (int i = 0; i < box.size(); ++i)
         {
