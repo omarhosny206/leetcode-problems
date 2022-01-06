@@ -2,32 +2,32 @@
 
 class Solution
 {
-    vector<int> comb;
+    vector<vector<int>> combinations;
 
 public:
     vector<vector<int>> combine(int n, int k)
     {
-        vector<vector<int>> combinations;
-        findCombinations(combinations, n, k, 1);
+        vector<int> currentCombination;
+        findCombinations(currentCombination, n, k, 1);
         return combinations;
     }
 
-    void findCombinations(vector<vector<int>> &combinations, int n, int k, int index)
+    void findCombinations(vector<int> &currentCombination, int n, int k, int start)
     {
-        if (comb.size() == k)
+        if (start > n + 1)
+            return;
+
+        if (currentCombination.size() == k)
         {
-            combinations.push_back(comb);
+            combinations.push_back(currentCombination);
             return;
         }
 
-        if (index > n)
-            return;
-
-        for (int i = index; i <= n; i++)
+        for (int i = start; i <= n; i++)
         {
-            comb.push_back(i);
-            findCombinations(combinations, n, k, i + 1);
-            comb.pop_back();
+            currentCombination.push_back(i);
+            findCombinations(currentCombination, n, k, i + 1);
+            currentCombination.pop_back();
         }
     }
 };
