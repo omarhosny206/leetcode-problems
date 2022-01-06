@@ -5,7 +5,7 @@ class Solution
 public:
     bool carPooling(vector<vector<int>> &trips, int capacity)
     {
-        vector<vector<int>> locations(trips.size() * 2, vector<int>(2));
+        vector<pair<int, int>> locations;
         int currentCapacity = 0;
 
         for (vector<int> &trip : trips)
@@ -16,9 +16,9 @@ public:
 
         sort(locations.begin(), locations.end());
 
-        for (vector<int> &location : locations)
+        for (pair<int,int> &location : locations)
         {
-            currentCapacity += location[1];
+            currentCapacity += location.second;
 
             if (currentCapacity > capacity)
                 return false;
