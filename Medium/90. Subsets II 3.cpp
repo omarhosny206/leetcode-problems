@@ -15,16 +15,21 @@ public:
 
     void dfs(vector<int> &nums, int start)
     {
-        subsets.push_back(currentSubset);
-
-        for (int i = start; i < nums.size(); ++i)
+        if (start == nums.size())
         {
-            if (i > start && nums[i] == nums[i - 1])
-                continue;
-
-            currentSubset.push_back(nums[i]);
-            dfs(nums, i + 1);
-            currentSubset.pop_back();
+            subsets.push_back(currentSubset);
+            return;
         }
+
+        currentSubset.push_back(nums[start]);
+        dfs(nums, start + 1);
+        currentSubset.pop_back();
+
+        int i = start + 1;
+
+        while (i < nums.size() && nums[i] == nums[start])
+            i++;
+
+        dfs(nums, i);
     }
 };

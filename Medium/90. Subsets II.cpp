@@ -3,33 +3,28 @@
 class Solution
 {
     vector<vector<int>> subsets;
+    vector<int> currentSubset;
 
 public:
     vector<vector<int>> subsetsWithDup(vector<int> &nums)
     {
-        if (nums.size() == 0)
-            return {};
         sort(nums.begin(), nums.end());
-        vector<int> currentSet;
-        subsetsWithDup_Helper(nums, currentSet, 0);
+        dfs(nums, 0);
         return subsets;
     }
 
-    void subsetsWithDup_Helper(vector<int> &nums, vector<int> &currentSet, int position)
+    void dfs(vector<int> &nums, int start)
     {
+        subsets.push_back(currentSubset);
 
-        subsets.push_back(currentSet);
-
-        if (position == nums.size())
-            return;
-
-        for (int i = position; i < nums.size(); ++i)
+        for (int i = start; i < nums.size(); ++i)
         {
-            currentSet.push_back(nums[i]);
-            subsetsWithDup_Helper(nums, currentSet, i + 1);
-            currentSet.pop_back();
+            currentSubset.push_back(nums[i]);
+            dfs(nums, i + 1);
+            currentSubset.pop_back();
 
             int j = i + 1;
+
             while (j < nums.size() && nums[i] == nums[j])
             {
                 ++i;

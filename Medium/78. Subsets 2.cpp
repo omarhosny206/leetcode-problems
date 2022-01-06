@@ -14,13 +14,16 @@ public:
 
     void dfs(vector<int> &nums, int start)
     {
-        result.push_back(currentSubset);
-
-        for (int i = start; i < nums.size(); ++i)
+        if (start == nums.size())
         {
-            currentSubset.push_back(nums[i]);
-            dfs(nums, i + 1);
-            currentSubset.pop_back();
+            result.push_back(currentSubset);
+            return;
         }
+
+        currentSubset.push_back(nums[start]);
+        dfs(nums, start + 1);
+        currentSubset.pop_back();
+
+        dfs(nums, start + 1);
     }
 };
