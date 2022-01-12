@@ -13,22 +13,36 @@
  */
 class Solution
 {
+    int result = 0;
+
 public:
     int sumRootToLeaf(TreeNode *root)
     {
-        return dfs(root, 0);
+        dfs(root, "");
+        return result;
     }
 
-    int dfs(TreeNode *root, int sum)
+    void dfs(TreeNode *root, string currentPath)
     {
         if (root == nullptr)
-            return 0;
-
-        sum = (sum << 1) + root->val;
+            return;
 
         if (root->left == nullptr && root->right == nullptr)
-            return sum;
+            result += toDecimal(currentPath + to_string(root->val));
 
-        return dfs(root->left, sum) + dfs(root->right, sum);
+        currentPath += to_string(root->val);
+        dfs(root->left, currentPath);
+        dfs(root->right, currentPath);
+    }
+
+    int toDecimal(string num)
+    {
+        int result = 0;
+        int power = num.length() - 1;
+
+        for (int i = 0; i < num.length(); ++i)
+            result += (num[i] - '0') * pow(2, power--);
+
+        return result;
     }
 };

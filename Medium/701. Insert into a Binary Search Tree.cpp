@@ -16,20 +16,20 @@ class Solution
 public:
     TreeNode *insertIntoBST(TreeNode *root, int val)
     {
-        return insertIntoBST_Helper(root, val);
+        return dfs(root, val);
     }
 
-    TreeNode *insertIntoBST_Helper(TreeNode *root, int val)
+    TreeNode *dfs(TreeNode *root, int val)
     {
 
         if (root == nullptr)
             return new TreeNode(val);
 
         else if (root->val > val)
-            root->left = insertIntoBST_Helper(root->left, val);
+            root->left = dfs(root->left, val);
 
         else
-            root->right = insertIntoBST_Helper(root->right, val);
+            root->right = dfs(root->right, val);
 
         return root;
     }
