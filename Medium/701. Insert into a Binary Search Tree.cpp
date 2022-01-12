@@ -21,7 +21,6 @@ public:
 
     TreeNode *dfs(TreeNode *root, int val)
     {
-
         if (root == nullptr)
             return new TreeNode(val);
 
