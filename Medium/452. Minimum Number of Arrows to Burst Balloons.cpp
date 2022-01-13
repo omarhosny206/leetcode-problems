@@ -5,30 +5,32 @@ class Solution
 public:
     int findMinArrowShots(vector<vector<int>> &points)
     {
-        if (points.size() < 2)
-            return points.size();
+        int result = 1;
 
-        sort(points.begin(), points.end(), comp);
-
-        int answer = 1;
         int i = 0;
+        int j = i + 1;
 
-        for (int j = 1; j < points.size(); ++j)
+        sort(points.begin(), points.end(), compare);
+
+        while (j < points.size())
         {
-            int first_end = points[i][1];
-            int second_start = points[j][0];
-            if (first_end < second_start)
+            int firstEnd = points[i][1];
+            int secondStart = points[j][0];
+
+            if (firstEnd < secondStart)
             {
-                answer++;
+                result++;
                 i = j;
             }
+
+            j++;
         }
 
-        return answer;
+        return result;
     }
 
-    static bool comp(vector<int> &a, vector<int> &b)
+    static bool compare(vector<int> &first, vector<int> &second)
     {
-        return a[1] < b[1];
+        return first[1] < second[1];
     }
 };
