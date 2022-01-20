@@ -20,7 +20,7 @@ public:
         {
             int middle = low + (high - low) / 2;
 
-            if (isPossible(piles, h, middle) == true)
+            if (isPossible(piles, middle, h))
                 high = middle;
 
             else
@@ -30,12 +30,13 @@ public:
         return low;
     }
 
-    bool isPossible(vector<int> &piles, int h, int middle)
+    bool isPossible(vector<int> &piles, int eatingRate, int h)
     {
-        int sum = 0;
-        for (int pile : piles)
-            sum += (pile / middle) + (pile % middle == 0 ? 0 : 1);
+        int hours = 0;
 
-        return sum <= h;
+        for (int &pile : piles)
+            hours += (pile / eatingRate) + (pile % eatingRate == 0 ? 0 : 1);
+
+        return hours <= h;
     }
 };

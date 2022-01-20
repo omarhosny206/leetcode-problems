@@ -18,6 +18,7 @@ public:
 
         ListNode *slow = head;
         ListNode *fast = head;
+        bool hasCycle = false;
 
         while (fast != nullptr && fast->next != nullptr)
         {
@@ -25,10 +26,13 @@ public:
             fast = fast->next->next;
 
             if (fast == slow)
+            {
+                hasCycle = true;
                 break;
+            }
         }
 
-        if (fast != slow)
+        if (hasCycle == false)
             return nullptr;
 
         slow = head;

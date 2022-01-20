@@ -5,7 +5,11 @@ class Solution
 public:
     bool canPlaceFlowers(vector<int> &flowerbed, int n)
     {
-        int i = 0, counter = 0;
+        if (n == 0)
+            return true;
+
+        int counter = 0;
+        int i = 0;
 
         while (i < flowerbed.size())
         {
@@ -16,11 +20,12 @@ public:
                 counter++;
 
                 if (counter == n)
-                    break;
+                    return true;
             }
+
             i++;
         }
 
-        return counter >= n;
+        return false;
     }
 };
