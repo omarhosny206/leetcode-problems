@@ -12,10 +12,12 @@ public:
     {
         int capitals = 0;
         int smalls = 0;
+
         for (char c : word)
         {
             if (isupper(c))
                 capitals++;
+
             else
                 smalls++;
         }

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/all-elements-in-two-binary-search-trees/
+// https://leetcode.com/problems/all-elements-in-two-binary-search-trees/submissions/
 
 /**
  * Definition for a binary tree node.
@@ -13,61 +13,49 @@
  */
 class Solution
 {
-
 public:
     vector<int> getAllElements(TreeNode *root1, TreeNode *root2)
     {
-        vector<int> nodes;
-        insertNodes(root1, nodes);
-        insertNodes(root2, nodes);
-        quicksort(nodes, 0, nodes.size() - 1);
-        return nodes;
+        vector<int> firstNodes;
+        vector<int> secondNodes;
+
+        insertNodes(root1, firstNodes);
+        insertNodes(root2, secondNodes);
+
+        return merge(firstNodes, secondNodes);
+    }
+
+    vector<int> merge(vector<int> &firstNodes, vector<int> &secondNodes)
+    {
+        vector<int> result;
+        int i = 0;
+        int j = 0;
+
+        while (i < firstNodes.size() && j < secondNodes.size())
+        {
+            if (firstNodes[i] <= secondNodes[j])
+                result.push_back(firstNodes[i++]);
+
+            else
+                result.push_back(secondNodes[j++]);
+        }
+
+        while (i < firstNodes.size())
+            result.push_back(firstNodes[i++]);
+
+        while (j < secondNodes.size())
+            result.push_back(secondNodes[j++]);
+
+        return result;
     }
 
     void insertNodes(TreeNode *root, vector<int> &nodes)
     {
         if (root == nullptr)
             return;
-        nodes.push_back(root->val);
+
         insertNodes(root->left, nodes);
+        nodes.push_back(root->val);
         insertNodes(root->right, nodes);
-    }
-
-    int partition(vector<int> &nodes, int left, int right)
-    {
-        int pivotIndex = left + (right - left) / 2;
-        int pivotValue = nodes[pivotIndex];
-        int i = left, j = right;
-        int temp;
-        while (i <= j)
-        {
-            while (nodes[i] < pivotValue)
-            {
-                i++;
-            }
-            while (nodes[j] > pivotValue)
-            {
-                j--;
-            }
-            if (i <= j)
-            {
-                temp = nodes[i];
-                nodes[i] = nodes[j];
-                nodes[j] = temp;
-                i++;
-                j--;
-            }
-        }
-        return i;
-    }
-
-    void quicksort(vector<int> &nodes, int left, int right)
-    {
-        if (left < right)
-        {
-            int pivotIndex = partition(nodes, left, right);
-            quicksort(nodes, left, pivotIndex - 1);
-            quicksort(nodes, pivotIndex, right);
-        }
     }
 };
