@@ -5,24 +5,27 @@ class Solution
 public:
     int findMaxLength(vector<int> &nums)
     {
-        unordered_map<int, int> counts;
-        counts[0] = -1;
-        int max_length = 0;
-        int count = 0;
+        int result = 0;
+        unordered_map<int, int> position;
+        int sum = 0;
+
+        position[0] = -1;
 
         for (int i = 0; i < nums.size(); ++i)
         {
             if (nums[i] == 0)
-                count--;
-            else
-                count++;
+                sum--;
 
-            if (counts.find(count) != counts.end())
-                max_length = max(max_length, i - counts[count]);
             else
-                counts[count] = i;
+                sum++;
+
+            if (position.find(sum) != position.end())
+                result = max(result, i - position[sum]);
+
+            else
+                position[sum] = i;
         }
 
-        return max_length;
+        return result;
     }
 };

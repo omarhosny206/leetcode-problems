@@ -31,7 +31,7 @@ public:
         root = new TrieNode();
     }
 
-    void Insert(string &word)
+    void insert(string &word)
     {
         TrieNode *current = root;
 
@@ -46,13 +46,13 @@ public:
         current->isWord = true;
     }
 
-    bool Search(string &word)
+    bool search(string &word)
     {
         TrieNode *current = root;
-        return DFS(current, word, 0);
+        return dfs(current, word, 0);
     }
 
-    bool DFS(TrieNode *root, string &word, int position)
+    bool dfs(TrieNode *root, string &word, int position)
     {
         bool result = false;
 
@@ -62,14 +62,12 @@ public:
         if (word[position] == '.')
         {
             for (int i = 0; i < root->children.size(); ++i)
-            {
                 if (root->children[i])
-                    result = result || DFS(root->children[i], word, position + 1);
-            }
+                    result = result || dfs(root->children[i], word, position + 1);
         }
 
         else if (root->children[word[position] - 'a'])
-            result = DFS(root->children[word[position] - 'a'], word, position + 1);
+            result = dfs(root->children[word[position] - 'a'], word, position + 1);
 
         return result;
     }
@@ -88,12 +86,12 @@ public:
 
     void addWord(string word)
     {
-        trie->Insert(word);
+        trie->insert(word);
     }
 
     bool search(string word)
     {
-        return trie->Search(word);
+        return trie->search(word);
     }
 };
 

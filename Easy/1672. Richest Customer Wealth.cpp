@@ -5,7 +5,7 @@ class Solution
 public:
     int maximumWealth(vector<vector<int>> &accounts)
     {
-        int wealth = INT_MIN;
+        int result = INT_MIN;
 
         for (int i = 0; i < accounts.size(); ++i)
         {
@@ -14,10 +14,10 @@ public:
             for (int j = 0; j < accounts[i].size(); ++j)
                 sum += accounts[i][j];
 
-            if (sum > wealth)
-                wealth = sum;
+            if (result < sum)
+                result = sum;
         }
 
-        return wealth;
+        return result;
     }
 };

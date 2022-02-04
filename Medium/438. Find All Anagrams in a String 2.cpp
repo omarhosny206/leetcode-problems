@@ -6,9 +6,11 @@ public:
     vector<int> findAnagrams(string s, string p)
     {
         vector<int> result;
+
         unordered_map<int, int> freq;
-        int i = 0;
         int counter = 0;
+
+        int i = 0;
 
         for (char &c : p)
             freq[c]++;
@@ -18,7 +20,9 @@ public:
             if (--freq[s[j]] >= 0)
                 counter++;
 
-            if (j - i + 1 == p.length())
+            int windowSize = j - i + 1;
+
+            if (windowSize == p.length())
             {
                 if (counter == p.length())
                     result.push_back(i);
