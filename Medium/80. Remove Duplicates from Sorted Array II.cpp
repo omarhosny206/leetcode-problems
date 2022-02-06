@@ -5,24 +5,17 @@ class Solution
 public:
     int removeDuplicates(vector<int> &nums)
     {
-        int index = 0;
-        int counter = 1;
+        int i = 0;
 
-        for (int i = 1; i < nums.size(); ++i)
+        for (int &num : nums)
         {
-            if (nums[i] == nums[i - 1] && counter < 2)
+            if (i < 2 || num != nums[i - 2])
             {
-                nums[index++] = nums[i];
-                counter++;
-            }
-            else if (nums[i] != nums[i - 1])
-            {
-                nums[index++] = nums[i - 1];
-                counter = 1;
+                nums[i] = num;
+                i++;
             }
         }
 
-        nums[index++] = nums[nums.size() - 1];
-        return index;
+        return i;
     }
 };

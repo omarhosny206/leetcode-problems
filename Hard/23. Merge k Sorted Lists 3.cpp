@@ -17,21 +17,22 @@ public:
     {
         ListNode *result = new ListNode();
         ListNode *current = result;
-        priority_queue<int, vector<int>, greater<int>> nodes;
+        vector<int> nodes;
 
         for (ListNode *head : lists)
         {
             while (head != nullptr)
             {
-                nodes.push(head->val);
+                nodes.push_back(head->val);
                 head = head->next;
             }
         }
 
-        while (!nodes.empty())
+        sort(nodes.begin(), nodes.end());
+
+        for (int i = 0; i < nodes.size(); ++i)
         {
-            current->next = new ListNode(nodes.top());
-            nodes.pop();
+            current->next = new ListNode(nodes[i]);
             current = current->next;
         }
 
