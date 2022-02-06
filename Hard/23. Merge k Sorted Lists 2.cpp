@@ -12,35 +12,27 @@
  */
 class Solution
 {
-private:
-    struct Comparator
-    {
-        bool operator()(ListNode *first, ListNode *second)
-        {
-            return first->val > second->val;
-        }
-    };
-
 public:
     ListNode *mergeKLists(vector<ListNode *> &lists)
     {
         ListNode *result = new ListNode();
         ListNode *current = result;
-        priority_queue<ListNode *, vector<ListNode *>, Comparator> nodes;
+        priority_queue<int, vector<int>, greater<int>> nodes;
 
         for (ListNode *head : lists)
-            if (head)
-                nodes.push(head);
-
-        while (nodes.size())
         {
-            current->next = nodes.top();
+            while (head != nullptr)
+            {
+                nodes.push(head->val);
+                head = head->next;
+            }
+        }
+
+        while (!nodes.empty())
+        {
+            current->next = new ListNode(nodes.top());
             nodes.pop();
-
             current = current->next;
-
-            if (current->next)
-                nodes.push(current->next);
         }
 
         return result->next;
