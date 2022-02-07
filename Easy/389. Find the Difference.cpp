@@ -5,17 +5,17 @@ class Solution
 public:
     char findTheDifference(string s, string t)
     {
+        unordered_map<char, int> freq;
 
-        unordered_map<char, int> map;
+        for (char &c : s)
+            freq[c]++;
 
-        for (char c : s)
-            map.insert(make_pair(c, map[c]++));
-
-        for (char c : t)
+        for (char &c : t)
         {
-            if (map[c] == 0)
+            if (freq[c] == 0)
                 return c;
-            map[c]--;
+
+            freq[c]--;
         }
 
         return ' ';

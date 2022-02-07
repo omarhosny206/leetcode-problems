@@ -5,19 +5,21 @@ class Solution
 public:
     char findTheDifference(string s, string t)
     {
+        int i = 0;
+        int j = 0;
 
-        map<char, int> freq;
+        sort(s.begin(), s.end());
+        sort(t.begin(), t.end());
 
-        for (char c : s)
-            freq[c]++;
-
-        for (char c : t)
+        while (i < s.length() && j < t.length())
         {
-            if (freq[c] == 0)
-                return c;
-            freq[c]--;
+            if (s[i] != t[j])
+                return t[j];
+
+            i++;
+            j++;
         }
 
-        return ' ';
+        return t[j];
     }
 };
