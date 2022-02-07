@@ -5,14 +5,17 @@ class Solution
 public:
     char findTheDifference(string s, string t)
     {
-        char c = 0;
+        char result = (char)abs(countAsciiCode(s) - countAsciiCode(t));
+        return result;
+    }
 
-        for (char a : s)
-            c ^= a;
+    int countAsciiCode(string &word)
+    {
+        int result = 0;
 
-        for (char b : t)
-            c ^= b;
+        for (char &c : word)
+            result += c;
 
-        return c;
+        return result;
     }
 };
