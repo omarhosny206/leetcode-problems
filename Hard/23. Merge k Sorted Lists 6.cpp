@@ -41,7 +41,7 @@ public:
 
             if (counter > 0)
             {
-                current->next = lists[index];
+                current->next = new ListNode(minValue);
                 current = current->next;
                 lists[index] = lists[index]->next;
             }
