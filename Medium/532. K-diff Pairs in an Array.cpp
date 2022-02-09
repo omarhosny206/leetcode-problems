@@ -6,29 +6,24 @@ public:
     int findPairs(vector<int> &nums, int k)
     {
         int result = 0;
+        unordered_map<int, int> freq;
 
-        if (k == 0)
+        for (int &num : nums)
         {
-            unordered_map<int, int> freq;
 
-            for (int num : nums)
-                freq[num]++;
+            if (freq[num] == 1 && k == 0)
+                result++;
 
-            for (auto pair : freq)
-                if (pair.second > 1)
+            else if (freq[num] == 0)
+            {
+                if (freq[num - k] >= 1)
                     result++;
-        }
 
-        else
-        {
-            unordered_set<int> seen;
-
-            for (int num : nums)
-                seen.insert(num);
-
-            for (int num : seen)
-                if (seen.find(k + num) != seen.end())
+                if (freq[num + k] >= 1)
                     result++;
+            }
+
+            freq[num]++;
         }
 
         return result;

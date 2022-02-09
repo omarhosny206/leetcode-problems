@@ -8,16 +8,22 @@ public:
         int result = 0;
         unordered_map<int, int> freq;
 
-        for (int num : nums)
+        if (k == 0)
         {
-
-            if (k == 0)
+            for (int &num : nums)
             {
-                if (freq[num] == 1)
+                if (freq[num]] == 1)
                     result++;
+
+                freq[num]++;
             }
 
-            else if (freq[num] == 0)
+            return result;
+        }
+
+        for (int &num : nums)
+        {
+            if (freq[num] == 0)
             {
                 if (freq[num - k] >= 1)
                     result++;
