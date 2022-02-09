@@ -10,7 +10,6 @@ public:
 
         for (int &num : nums)
         {
-
             if (freq[num] == 1 && k == 0)
                 result++;
 
