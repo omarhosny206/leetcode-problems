@@ -5,7 +5,7 @@ class Solution
 public:
     bool checkInclusion(string s1, string s2)
     {
-        unordered_map<char, int> freq(26);
+        unordered_map<char, int> freq;
         int i = 0;
         int j = 0;
         int counter = 0;
