@@ -5,12 +5,15 @@ class Solution
 public:
     int singleNumber(vector<int> &nums)
     {
-        map<int, int> freq;
-        for (int n : nums)
-            freq[n]++;
-        for (int n : nums)
-            if (freq[n] == 1)
-                return n;
+        unordered_map<int, int> freq;
+
+        for (int &num : nums)
+            freq[num]++;
+
+        for (int &num : nums)
+            if (freq[num] == 1)
+                return num;
+
         return 0;
     }
 };
