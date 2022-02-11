@@ -25,7 +25,6 @@ public:
                     return true;
 
                 secondFreq[s2[i] - 'a']--;
-
                 i++;
             }
 
