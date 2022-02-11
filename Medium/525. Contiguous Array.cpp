@@ -13,11 +13,7 @@ public:
 
         for (int i = 0; i < nums.size(); ++i)
         {
-            if (nums[i] == 0)
-                sum--;
-
-            else
-                sum++;
+            sum += (nums[i] == 0) ? -1 : 1;
 
             if (position.find(sum) != position.end())
                 result = max(result, i - position[sum]);
