@@ -8,14 +8,14 @@ public:
         vector<int> result;
 
         vector<int> freq(26);
-        int counter = 0;
-
         int i = 0;
+        int j = 0;
+        int counter = 0;
 
         for (char &c : p)
             freq[c - 'a']++;
 
-        for (int j = 0; j < s.length(); ++j)
+        while (j < s.length())
         {
             if (--freq[s[j] - 'a'] >= 0)
                 counter++;
@@ -32,6 +32,8 @@ public:
 
                 i++;
             }
+
+            ++j;
         }
 
         return result;

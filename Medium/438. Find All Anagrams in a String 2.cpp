@@ -8,14 +8,14 @@ public:
         vector<int> result;
 
         unordered_map<int, int> freq;
-        int counter = 0;
-
         int i = 0;
+        int j = 0;
+        int counter = 0;
 
         for (char &c : p)
             freq[c]++;
 
-        for (int j = 0; j < s.length(); ++j)
+        while (j < s.length())
         {
             if (--freq[s[j]] >= 0)
                 counter++;
@@ -32,6 +32,8 @@ public:
 
                 i++;
             }
+
+            ++j;
         }
 
         return result;
