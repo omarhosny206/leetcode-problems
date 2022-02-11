@@ -18,7 +18,9 @@ public:
             if (--freq[s2[j] - 'a'] >= 0)
                 counter++;
 
-            if (j - i + 1 == s1.length())
+            int windowSize = j - i + 1;
+
+            if (windowSize == s1.length())
             {
                 if (counter == s1.length())
                     return true;
