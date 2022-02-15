@@ -5,20 +5,19 @@ class Solution
 public:
     int singleNumber(vector<int> &nums)
     {
-        if (nums.size() == 1)
-            return nums[0];
+        unordered_set<int> values;
 
-        int i = 0;
-
-        sort(nums.begin(), nums.end());
-
-        while (i < nums.size())
+        for (int &num : nums)
         {
-            if (nums[i] != nums[i + 1])
-                return nums[i];
+            if (values.find(num) != values.end())
+                values.erase(num);
 
-            i += 2;
+            else
+                values.insert(num);
         }
+
+        for (const int &num : values)
+            return num;
 
         return 0;
     }
