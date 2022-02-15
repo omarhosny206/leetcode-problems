@@ -9,13 +9,13 @@ public:
         vector<char> dnaCode = {'A', 'C', 'G', 'T'};
 
         queue<string> nodes;
-        unordered_set<string> mutations;
+        unordered_set<string> genes;
         unordered_set<string> visited;
 
         for (string &mutation : bank)
-            mutations.insert(mutation);
+            genes.insert(mutation);
 
-        if (mutations.find(end) == mutations.end())
+        if (genes.find(end) == genes.end())
             return -1;
 
         nodes.push(start);
@@ -45,7 +45,7 @@ public:
                         if (temp == end)
                             return numMutations;
 
-                        if (mutations.find(temp) != mutations.end())
+                        if (genes.find(temp) != genes.end())
                         {
                             nodes.push(temp);
                             visited.insert(temp);
