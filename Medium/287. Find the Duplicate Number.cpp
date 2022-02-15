@@ -7,6 +7,7 @@ public:
     {
         int tortoise = nums[0];
         int hare = nums[0];
+
         do
         {
             tortoise = nums[tortoise];

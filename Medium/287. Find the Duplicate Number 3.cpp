@@ -5,12 +5,13 @@ class Solution
 public:
     int findDuplicate(vector<int> &nums)
     {
-        set<int> numbers;
+        unordered_set<int> numbers;
 
-        for (int num : nums)
+        for (int &num : nums)
         {
             if (numbers.find(num) != numbers.end())
                 return num;
+
             numbers.insert(num);
         }
 

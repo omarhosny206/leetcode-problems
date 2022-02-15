@@ -1,10 +1,11 @@
-// https://leetcode.com/problems/single-number-ii/
+// https://leetcode.com/problems/single-number-iii/
 
 class Solution
 {
 public:
-    int singleNumber(vector<int> &nums)
+    vector<int> singleNumber(vector<int> &nums)
     {
+        vector<int> result;
         unordered_map<int, int> freq;
 
         for (int &num : nums)
@@ -12,8 +13,8 @@ public:
 
         for (int &num : nums)
             if (freq[num] == 1)
-                return num;
+                result.push_back(num);
 
-        return -1;
+        return result;
     }
 };

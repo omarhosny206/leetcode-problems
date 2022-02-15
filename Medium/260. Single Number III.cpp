@@ -6,9 +6,10 @@ public:
     vector<int> singleNumber(vector<int> &nums)
     {
         vector<int> answer = {0, 0};
-        int sum = 0, lowBit;
+        int sum = 0;
+        int lowBit;
 
-        for (auto num : nums)
+        for (int &num : nums)
             sum ^= num;
 
         if (sum == INT_MIN)
@@ -17,7 +18,7 @@ public:
         else
             lowBit = sum & (-sum);
 
-        for (auto num : nums)
+        for (int &num : nums)
         {
             if (num & lowBit)
                 answer[0] ^= num;

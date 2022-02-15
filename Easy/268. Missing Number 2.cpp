@@ -5,11 +5,12 @@ class Solution
 public:
     int missingNumber(vector<int> &nums)
     {
+        int sum = 0;
         int expectedSum = (nums.size() * (nums.size() + 1)) / 2;
-        int givenSum = 0;
-        for (int i = 0; i < nums.size(); i++)
-            givenSum += nums[i];
 
-        return expectedSum - givenSum;
+        for (int &num : nums)
+            sum += num;
+
+        return expectedSum - sum;
     }
 };

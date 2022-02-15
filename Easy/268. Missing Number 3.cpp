@@ -5,12 +5,15 @@ class Solution
 public:
     int missingNumber(vector<int> &nums)
     {
-        unordered_set<int> vals;
-        for (int n : nums)
-            vals.insert(n);
+        unordered_set<int> values;
+
+        for (int &num : nums)
+            values.insert(num);
+
         for (int i = 0; i <= nums.size(); ++i)
-            if (vals.find(i) == vals.end())
+            if (values.find(i) == values.end())
                 return i;
+
         return -1;
     }
 };
