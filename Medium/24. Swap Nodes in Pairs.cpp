@@ -15,18 +15,26 @@ class Solution
 public:
     ListNode *swapPairs(ListNode *head)
     {
-        if (head == nullptr || head->next == nullptr)
-            return head;
+        if (head == nullptr)
+            return nullptr;
 
-        ListNode *current = head;
-        while (current != nullptr && current->next != nullptr)
+        ListNode *result = new ListNode();
+        ListNode *current = result;
+
+        current->next = head;
+
+        while (current->next != nullptr && current->next->next != nullptr)
         {
-            ListNode *nextNode = current->next;
-            int currentVal = current->val;
-            current->val = nextNode->val;
-            nextNode->val = currentVal;
-            current = current->next->next;
+            ListNode *first = current->next;
+            ListNode *second = current->next->next;
+
+            first->next = second->next;
+            second->next = first;
+
+            current->next = second;
+            current = first;
         }
-        return head;
+
+        return result->next;
     }
 };

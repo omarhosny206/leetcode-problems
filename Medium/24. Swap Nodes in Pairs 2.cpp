@@ -10,43 +10,66 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode* swapPairs(ListNode* head) {
-        
-        if(head == nullptr || head->next == nullptr)
-            return head;
-        
-        queue<ListNode*> even;
-        queue<ListNode*> odd;
-        ListNode* current = head;
-        int i = 0;
-        while(current != nullptr) {
-            (i == 0 || i % 2 == 0) ? odd.push(current) : even.push(current);
-            current = current->next;
+    ListNode *swapPairs(ListNode *head)
+    {
+        if (head == nullptr)
+            return nullptr;
+
+        ListNode *result = new ListNode();
+        ListNode *current = result;
+
+        ListNode *odd = new ListNode();
+        ListNode *currentOdd = odd;
+
+        ListNode *even = new ListNode();
+        ListNode *currentEven = even;
+
+        int i = 1;
+
+        while (head != nullptr)
+        {
+            if (i % 2 == 0)
+            {
+                currentEven->next = head;
+                currentEven = currentEven->next;
+                head = head->next;
+                currentEven->next = nullptr;
+            }
+
+            else
+            {
+                currentOdd->next = head;
+                currentOdd = currentOdd->next;
+                head = head->next;
+                currentOdd->next = nullptr;
+            }
+
             i++;
         }
-        
-        ListNode* result = new ListNode();
-        current = result;
-        
-        
-        while (!even.empty() || !odd.empty()) {
-            
-            if(!even.empty()) {
-                current->next = new ListNode(even.front()->val);
+
+        odd = odd->next;
+        even = even->next;
+
+        while (odd != nullptr || even != nullptr)
+        {
+            if (even != nullptr)
+            {
+                current->next = even;
                 current = current->next;
-                even.pop();
+                even = even->next;
             }
-            
-            if(!odd.empty()) {
-                current->next = new ListNode(odd.front()->val);
+
+            if (odd != nullptr)
+            {
+                current->next = odd;
                 current = current->next;
-                odd.pop();
+                odd = odd->next;
             }
         }
-        
-        
+
         return result->next;
     }
 };
