@@ -11,6 +11,7 @@ public:
     {
         int numTurns = 0;
         string start = "0000";
+        vector<int> moves = {1, -1};
 
         if (start == target)
             return 0;
@@ -38,26 +39,18 @@ public:
                 {
                     string temp = current;
 
-                    temp[j] = (((current[j] - '0') + 1) % 10) + '0';
-
-                    if (temp == target)
-                        return numTurns;
-
-                    if (isOk(temp))
+                    for (int k = 0; k < moves.size(); ++k)
                     {
-                        nodes.push(temp);
-                        visited.insert(temp);
-                    }
+                        temp[j] = (((current[j] - '0') + moves[k] + 10) % 10) + '0';
 
-                    temp[j] = (((current[j] - '0') - 1 + 10) % 10) + '0';
+                        if (temp == target)
+                            return numTurns;
 
-                    if (temp == target)
-                        return numTurns;
-
-                    if (isOk(temp))
-                    {
-                        nodes.push(temp);
-                        visited.insert(temp);
+                        if (isOk(temp))
+                        {
+                            nodes.push(temp);
+                            visited.insert(temp);
+                        }
                     }
                 }
             }
