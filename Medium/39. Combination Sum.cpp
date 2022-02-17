@@ -15,9 +15,7 @@ public:
     void dfs(vector<int> &candidates, int target, int currentSum, int position)
     {
         if (currentSum > target)
-        {
             return;
-        }
 
         if (currentSum == target)
         {
