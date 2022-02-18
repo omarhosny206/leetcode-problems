@@ -15,7 +15,6 @@ public:
 
         while (i < num.length())
         {
-
             while (!values.empty() && k > 0 && values.top() > num[i])
             {
                 values.pop();
