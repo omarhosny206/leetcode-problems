@@ -9,6 +9,7 @@ public:
             return nums[0];
 
         int counter = 1;
+
         sort(nums.begin(), nums.end());
 
         for (int i = 1; i < nums.size(); ++i)
