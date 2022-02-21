@@ -5,16 +5,24 @@ class Solution
 public:
     int majorityElement(vector<int> &nums)
     {
-        map<int, int> freq;
-        int size = nums.size() / 2;
+        if (nums.size() <= 2)
+            return nums[0];
 
-        for (int num : nums)
-            freq[num]++;
+        int counter = 1;
+        sort(nums.begin(), nums.end());
 
-        for (auto pair : freq)
-            if (pair.second > size)
-                return pair.first;
+        for (int i = 1; i < nums.size(); ++i)
+        {
+            if (nums[i] == nums[i - 1])
+                counter++;
 
-        return 0;
+            else
+                counter = 1;
+
+            if (counter > nums.size() / 2)
+                return nums[i];
+        }
+
+        return -1;
     }
 };

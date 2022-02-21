@@ -5,26 +5,28 @@ class Solution
 public:
     int removeCoveredIntervals(vector<vector<int>> &intervals)
     {
-        int result = intervals.size();
+        int result = 1;
+        int i = 0;
 
-        sort(intervals.begin(), intervals.end(), comp);
+        sort(intervals.begin(), intervals.end(), compare);
 
-        int end = intervals[0][1];
-
-        for (int i = 1; i < intervals.size(); ++i)
+        for (int j = 0; j < intervals.size(); ++j)
         {
-            if (intervals[i][1] <= end)
-                result--;
+            if (intervals[i][0] <= intervals[j][0] && intervals[i][1] >= intervals[j][1])
+                continue;
 
             else
-                end = intervals[i][1];
+            {
+                i = j;
+                result++;
+            }
         }
 
         return result;
     }
 
-    static bool comp(vector<int> &a, vector<int> &b)
+    static bool compare(vector<int> &first, vector<int> second)
     {
-        return a[0] < b[0] || (a[0] == b[0] && a[1] > b[1]);
+        return first[0] < second[0] || (first[0] == second[0]) && first[1] > second[1];
     }
 };
