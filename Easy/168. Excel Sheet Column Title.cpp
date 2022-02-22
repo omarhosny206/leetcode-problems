@@ -14,12 +14,11 @@ public:
             columnNumber /= 26;
         }
 
-        Reverse(result);
-
+        reverse(result);
         return result;
     }
 
-    void Reverse(string &result)
+    void reverse(string &result)
     {
         int i = 0;
         int j = result.size() - 1;
