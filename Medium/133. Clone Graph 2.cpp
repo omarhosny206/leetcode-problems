@@ -36,17 +36,14 @@ public:
 
     Node *dfs(Node *node)
     {
+        if (visited[node->val] != nullptr)
+            return visited[node->val];
+
         Node *result = new Node(node->val);
         visited[node->val] = result;
 
-        for (Node *current : node->neighbors)
-        {
-            if (visited[current->val] != nullptr)
-                result->neighbors.push_back(visited[current->val]);
-
-            else
-                result->neighbors.push_back(dfs(current));
-        }
+        for (Node *neighbor : node->neighbors)
+            result->neighbors.push_back(dfs(neighbor));
 
         return result;
     }
