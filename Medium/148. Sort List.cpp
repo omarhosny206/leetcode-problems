@@ -15,31 +15,63 @@ class Solution
 public:
     ListNode *sortList(ListNode *head)
     {
+        if (head == nullptr || head->next == nullptr)
+            return head;
 
-        if (head == nullptr)
-            return nullptr;
+        ListNode *fast = head;
+        ListNode *slow = head;
+        ListNode *temp = slow;
 
-        vector<int> vals;
-        ListNode *current = head;
-
-        while (current != nullptr)
+        while (fast != nullptr && fast->next != nullptr)
         {
-            vals.push_back(current->val);
+            temp = slow;
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        temp->next = nullptr;
+
+        ListNode *left = sortList(head);
+        ListNode *right = sortList(slow);
+        return merge(left, right);
+    }
+
+    ListNode *merge(ListNode *left, ListNode *right)
+    {
+        ListNode *result = new ListNode();
+        ListNode *current = result;
+
+        while (left != nullptr && right != nullptr)
+        {
+            if (left->val < right->val)
+            {
+                current->next = left;
+                left = left->next;
+                current = current->next;
+            }
+
+            else
+            {
+                current->next = right;
+                right = right->next;
+                current = current->next;
+            }
+        }
+
+        while (left != nullptr)
+        {
+            current->next = left;
+            left = left->next;
             current = current->next;
         }
 
-        sort(vals.begin(), vals.end());
-
-        current = head;
-
-        int i = 0;
-        while (current != nullptr)
+        while (right != nullptr)
         {
-            current->val = vals[i];
+            current->next = right;
+            right = right->next;
             current = current->next;
-            i++;
         }
 
-        return head;
+        return result->next;
     }
 };

@@ -9,22 +9,27 @@ public:
             return {};
 
         vector<string> result;
-        int a = nums[0];
+        int i = 0;
 
-        for (int i = 0; i < nums.size(); ++i)
+        for (int j = 1; j < nums.size(); ++j)
         {
-            if (i == nums.size() - 1 || nums[i] != nums[i + 1] - 1)
+            if (nums[j] != nums[j - 1] + 1)
             {
-                if (nums[i] == a)
-                    result.push_back(to_string(a));
-                else
-                    result.push_back(to_string(a) + "->" + to_string(nums[i]));
-
-                if (i != nums.size() - 1)
-                    a = nums[i + 1];
+                result.push_back(getInterval(nums, i, j));
+                i = j;
             }
         }
 
+        result.push_back(getInterval(nums, i, nums.size()));
+
         return result;
+    }
+
+    string getInterval(vector<int> &nums, int i, int j)
+    {
+        if (j - i == 1)
+            return to_string(nums[i]);
+
+        return to_string(nums[i]) + "->" + to_string(nums[j - 1]);
     }
 };
