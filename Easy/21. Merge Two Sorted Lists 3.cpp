@@ -20,31 +20,28 @@ public:
 
     ListNode *merge(ListNode *first, ListNode *second)
     {
+        if (first == nullptr)
+            return second;
+
+        if (second == nullptr)
+            return first;
+
         ListNode *result = new ListNode();
         ListNode *current = result;
 
-        while (first != nullptr && second != nullptr)
+        if (first->val <= second->val)
         {
-            if (first->val <= second->val)
-            {
-                current->next = new ListNode(first->val);
-                first = first->next;
-            }
-
-            else
-            {
-                current->next = new ListNode(second->val);
-                second = second->next;
-            }
-
+            current->next = new ListNode(first->val);
             current = current->next;
+            current->next = merge(first->next, second);
         }
 
-        if (first != nullptr)
-            current->next = first;
-
-        if (second != nullptr)
-            current->next = second;
+        else
+        {
+            current->next = new ListNode(second->val);
+            current = current->next;
+            current->next = merge(first, second->next);
+        }
 
         return result->next;
     }
