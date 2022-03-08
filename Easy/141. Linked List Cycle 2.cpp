@@ -14,13 +14,16 @@ public:
     bool hasCycle(ListNode *head)
     {
         unordered_set<ListNode *> nodes;
+
         while (head != nullptr)
         {
             if (nodes.find(head) != nodes.end())
                 return true;
+
             nodes.insert(head);
             head = head->next;
         }
+
         return false;
     }
 };
