@@ -5,34 +5,33 @@ class Solution
 public:
     int numIslands(vector<vector<char>> &grid)
     {
-        int num_islands = 0;
-        int r = grid.size();
-        int c = grid[0].size();
+        int result = 0;
 
-        for (int i = 0; i < r; ++i)
+        for (int i = 0; i < grid.size(); ++i)
         {
-            for (int j = 0; j < c; ++j)
+            for (int j = 0; j < grid[i].size(); ++j)
             {
                 if (grid[i][j] == '1')
                 {
-                    num_islands++;
-                    DFS(grid, i, j);
+                    result++;
+                    dfs(grid, i, j);
                 }
             }
         }
 
-        return num_islands;
+        return result;
     }
 
-    void DFS(vector<vector<char>> &grid, int i, int j)
+    void dfs(vector<vector<char>> &grid, int i, int j)
     {
         if (i < 0 || i >= grid.size() || j < 0 || j >= grid[i].size() || grid[i][j] != '1')
             return;
 
         grid[i][j] = '0';
-        DFS(grid, i, j - 1);
-        DFS(grid, i, j + 1);
-        DFS(grid, i - 1, j);
-        DFS(grid, i + 1, j);
+
+        dfs(grid, i, j - 1);
+        dfs(grid, i, j + 1);
+        dfs(grid, i - 1, j);
+        dfs(grid, i + 1, j);
     }
 };
