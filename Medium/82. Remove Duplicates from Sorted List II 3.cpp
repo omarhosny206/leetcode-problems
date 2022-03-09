@@ -18,22 +18,21 @@ public:
         ListNode *result = new ListNode(0);
         ListNode *current = result;
 
-        current->next = head;
+        map<int, int> freq;
 
         while (head != nullptr)
         {
-            if (head->next != nullptr && head->val == head->next->val)
-            {
-                while (head->next != nullptr && head->val == head->next->val)
-                    head = head->next;
-
-                current->next = head->next;
-            }
-
-            else
-                current = current->next;
-
+            freq[head->val]++;
             head = head->next;
+        }
+
+        for (auto &pair : freq)
+        {
+            if (pair.second == 1)
+            {
+                current->next = new ListNode(pair.first);
+                current = current->next;
+            }
         }
 
         return result->next;

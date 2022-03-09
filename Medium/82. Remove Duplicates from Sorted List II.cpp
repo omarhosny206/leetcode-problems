@@ -15,25 +15,30 @@ class Solution
 public:
     ListNode *deleteDuplicates(ListNode *head)
     {
-        ListNode *dummy = new ListNode(0, head);
-        ListNode *current = dummy;
+        ListNode *result = new ListNode();
+        ListNode *current = result;
 
-        while (head != nullptr)
+        ListNode *right = head;
+
+        while (right != nullptr)
         {
-            if (head->next != nullptr && head->val == head->next->val)
-            {
-                while (head->next != nullptr && head->val == head->next->val)
-                    head = head->next;
+            ListNode *left = right;
 
-                current->next = head->next;
+            while (right->next != nullptr && right->val == right->next->val)
+                right = right->next;
+
+            if (left == right)
+            {
+                current->next = left;
+                current = current->next;
             }
 
             else
-                current = current->next;
+                current->next = right->next;
 
-            head = head->next;
+            right = right->next;
         }
 
-        return dummy->next;
+        return result->next;
     }
 };
