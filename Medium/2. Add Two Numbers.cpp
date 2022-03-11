@@ -16,8 +16,9 @@ class Solution
 public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
     {
-        ListNode *answer = new ListNode();
-        ListNode *current = answer;
+        ListNode *result = new ListNode();
+        ListNode *current = result;
+
         int sum = 0;
         int carry = 0;
 
@@ -46,6 +47,6 @@ public:
         if (carry != 0)
             current->next = new ListNode(carry);
 
-        return answer->next;
+        return result->next;
     }
 };

@@ -16,11 +16,13 @@ class Solution
 public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
     {
-        ListNode *answer = new ListNode();
-        ListNode *current = answer;
+        ListNode *result = new ListNode();
+        ListNode *current = result;
+
+        vector<int> values;
+
         int sum = 0;
         int carry = 0;
-        list<int> final_result;
 
         while (l1 != nullptr || l2 != nullptr)
         {
@@ -39,19 +41,18 @@ public:
             }
 
             carry = sum / 10;
-            final_result.push_back(sum % 10);
+            values.push_back(sum % 10);
         }
 
         if (carry != 0)
-            final_result.push_back(carry);
+            values.push_back(carry);
 
-        while (!final_result.empty())
+        for (int &value : values)
         {
-            current->next = new ListNode(final_result.front());
+            current->next = new ListNode(value);
             current = current->next;
-            final_result.pop_front();
         }
 
-        return answer->next;
+        return result->next;
     }
 };
