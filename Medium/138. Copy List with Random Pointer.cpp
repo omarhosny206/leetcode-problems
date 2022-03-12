@@ -7,7 +7,7 @@ public:
     int val;
     Node* next;
     Node* random;
-    
+
     Node(int _val) {
         val = _val;
         next = NULL;
@@ -21,7 +21,12 @@ class Solution
 public:
     Node *copyRandomList(Node *head)
     {
-        map<Node *, Node *> nodes;
+        return deepCopy(head);
+    }
+
+    Node *deepCopy(Node *head)
+    {
+        unordered_map<Node *, Node *> nodes;
         Node *current = head;
 
         while (current != nullptr)
