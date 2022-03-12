@@ -7,7 +7,7 @@ public:
     int val;
     Node* next;
     Node* random;
-    
+
     Node(int _val) {
         val = _val;
         next = NULL;
@@ -18,16 +18,17 @@ public:
 
 class Solution
 {
+    unordered_map<Node *, Node *> nodes;
+
 public:
     Node *copyRandomList(Node *head)
     {
-        map<Node *, Node *> nodes;
-        return linkedListBuilder(head, nodes);
+        return deepCopy(head);
     }
 
-    Node *linkedListBuilder(Node *head, map<Node *, Node *> &nodes)
+    Node *deepCopy(Node *head)
     {
-        if (!head)
+        if (head == nullptr)
             return nullptr;
 
         if (nodes.find(head) != nodes.end())
@@ -35,8 +36,10 @@ public:
 
         Node *current = new Node(head->val);
         nodes[head] = current;
-        current->next = linkedListBuilder(head->next, nodes);
-        current->random = linkedListBuilder(head->random, nodes);
+
+        current->next = deepCopy(head->next, nodes);
+        current->random = deepCopy(head->random, nodes);
+
         return current;
     }
 };
