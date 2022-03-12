@@ -31,14 +31,14 @@ public:
         if (head == nullptr)
             return nullptr;
 
-        if (nodes.find(head) != nodes.end())
+        if (nodes[head] != nullptr)
             return nodes[head];
 
         Node *current = new Node(head->val);
         nodes[head] = current;
 
-        current->next = deepCopy(head->next, nodes);
-        current->random = deepCopy(head->random, nodes);
+        current->next = deepCopy(head->next);
+        current->random = deepCopy(head->random);
 
         return current;
     }
