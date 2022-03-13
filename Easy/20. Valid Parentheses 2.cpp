@@ -5,6 +5,7 @@ class Solution
 public:
     bool isValid(string s)
     {
+        stack<char> parentheses;
 
         map<char, int> mapping{
             {'(', 1},
@@ -14,20 +15,20 @@ public:
             {'[', 5},
             {']', 6}};
 
-        stack<char> parentheses_stack;
-        for (char c : s)
+        for (char &c : s)
         {
             if (mapping[c] % 2 != 0)
-                parentheses_stack.push(c);
+                parentheses.push(c);
 
             else
             {
-                if (parentheses_stack.empty() || mapping[c] != mapping[parentheses_stack.top()] + 1)
+                if (parentheses.empty() || mapping[c] != mapping[parentheses.top()] + 1)
                     return false;
-                parentheses_stack.pop();
+
+                parentheses.pop();
             }
         }
 
-        return parentheses_stack.size() == 0;
+        return parentheses.empty();
     }
 };
