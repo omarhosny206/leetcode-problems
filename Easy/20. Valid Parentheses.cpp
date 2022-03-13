@@ -6,14 +6,15 @@ public:
     bool isValid(string s)
     {
         stack<char> parentheses;
-        for (int i = 0; i < s.length(); ++i)
+
+        for (char &c : s)
         {
-            if (isOpenParenthese(s[i]))
-                parentheses.push(s[i]);
+            if (isOpenParenthese(c))
+                parentheses.push(c);
 
             else
             {
-                if (parentheses.empty() || s[i] != getPair(parentheses.top()))
+                if (parentheses.empty() || parentheses.top() != getPair(c))
                     return false;
 
                 parentheses.pop();
@@ -23,19 +24,19 @@ public:
         return parentheses.empty();
     }
 
-    bool isOpenParenthese(char c)
+    bool isOpenParenthese(char parenthese)
     {
-        return c == '(' || c == '{' || c == '[';
+        return parenthese == '(' || parenthese == '{' || parenthese == '[';
     }
 
-    char getPair(char c)
+    char getPair(char parenthese)
     {
-        if (c == '(')
-            return ')';
+        if (parenthese == ')')
+            return '(';
 
-        else if (c == '{')
-            return '}';
+        else if (parenthese == '}')
+            return '{';
 
-        return ']';
+        return '[';
     }
 };
