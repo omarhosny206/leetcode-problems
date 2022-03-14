@@ -63,6 +63,7 @@
 |67|[Add Binary](https://leetcode.com/problems/add-binary/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/67.%20Add%20Binary.cpp) |Easy|
 |69|[Sqrt(x)](https://leetcode.com/problems/sqrtx/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/69.%20Sqrt(x).cpp) |Easy|
 |70|[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/70.%20Climbing%20Stairs.cpp) |Easy|
+|71|[Simplify Path](https://leetcode.com/problems/simplify-path/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/71.%20Simplify%20Path.cpp) |Medium|
 |72|[Edit Distance](https://leetcode.com/problems/edit-distance/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/72.%20Edit%20Distance.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/72.%20Edit%20Distance%202.cpp)  |Hard|
 |73|[Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/73.%20Set%20Matrix%20Zeroes.cpp) |Medium|
 |74|[Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/74.%20Search%20a%202D%20Matrix.cpp) |Medium|
