@@ -11,6 +11,7 @@ public:
         for (int i = 0; i < pushed.size(); ++i)
         {
             nums.push(pushed[i]);
+
             while (!nums.empty() && nums.top() == popped[j])
             {
                 nums.pop();
