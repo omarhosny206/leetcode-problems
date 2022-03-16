@@ -6,13 +6,12 @@ public:
     bool validateStackSequences(vector<int> &pushed, vector<int> &popped)
     {
         stack<int> nums;
-        int i = 0;
         int j = 0;
 
-        while (i < pushed.size() && j < popped.size())
+        for (int i = 0; i < pushed.size(); ++i)
         {
-            nums.push(pushed[i++]);
-            
+            nums.push(pushed[i]);
+
             while (!nums.empty() && nums.top() == popped[j])
             {
                 nums.pop();
@@ -20,6 +19,6 @@ public:
             }
         }
 
-        return nums.empty();
+        return j == popped.size();
     }
 };
