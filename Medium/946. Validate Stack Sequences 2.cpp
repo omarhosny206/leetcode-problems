@@ -12,6 +12,7 @@ public:
         while (i < pushed.size() && j < popped.size())
         {
             nums.push(pushed[i++]);
+            
             while (!nums.empty() && nums.top() == popped[j])
             {
                 nums.pop();
