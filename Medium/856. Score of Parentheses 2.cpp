@@ -8,7 +8,7 @@ public:
         int score = 0;
         stack<int> current;
 
-        for (char c : S)
+        for (char &c : S)
         {
             if (c == '(')
             {
