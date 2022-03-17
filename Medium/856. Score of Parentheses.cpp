@@ -3,20 +3,21 @@
 class Solution
 {
 public:
-    int scoreOfParentheses(string S)
+    int scoreOfParentheses(string s)
     {
         int score = 0;
         int counter = 0;
 
-        for (int i = 0; i < S.length(); ++i)
+        for (int i = 0; i < s.length(); ++i)
         {
-            if (S[i] == '(')
+            if (s[i] == '(')
                 counter++;
 
             else
             {
                 counter--;
-                if (S[i - 1] == '(')
+
+                if (s[i - 1] == '(')
                     score += pow(2, counter);
             }
         }
