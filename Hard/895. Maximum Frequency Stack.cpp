@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/maximum-frequency-stack/
 
 class FreqStack
 {
