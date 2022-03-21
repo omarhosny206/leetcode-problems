@@ -5,24 +5,25 @@ class Solution
 public:
     vector<int> partitionLabels(string S)
     {
-        vector<int> last(26);
-        for (int i = 0; i < S.length(); ++i)
-            last[S[i] - 'a'] = i;
+        vector<int> result;
+        vector<int> lastPosition(26);
+        int start = 0;
+        int end = 0;
 
-        int j = 0;
-        int anchor = 0;
-        vector<int> answer;
+        for (int i = 0; i < S.length(); ++i)
+            lastPosition[S[i] - 'a'] = i;
 
         for (int i = 0; i < S.length(); ++i)
         {
-            j = max(j, last[S[i] - 'a']);
-            if (i == j)
+            end = max(end, lastPosition[S[i] - 'a']);
+
+            if (i == end)
             {
-                answer.push_back(i - anchor + 1);
-                anchor = i + 1;
+                result.push_back(i - start + 1);
+                start = i + 1;
             }
         }
 
-        return answer;
+        return result;
     }
 };
