@@ -19,8 +19,8 @@ public:
 
             if (i == end)
             {
-                result.push_back(i - start + 1);
-                start = i + 1;
+                result.push_back(end - start + 1);
+                start = end + 1;
             }
         }
 
