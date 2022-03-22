@@ -13,7 +13,7 @@ public:
             {
                 if (k - i <= n * 26)
                 {
-                    result += char((i - 1) + 'a');
+                    result += (i - 1) + 'a';
                     k -= i;
                     break;
                 }

@@ -14,7 +14,7 @@ public:
             {
                 if (k - i <= n * 26)
                 {
-                    result[index++] = char((i - 1) + 'a');
+                    result[index++] = (i - 1) + 'a';
                     k -= i;
                     break;
                 }

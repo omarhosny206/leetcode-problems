@@ -10,9 +10,9 @@ public:
 
         for (int i = n - 1; i >= 0; --i)
         {
-            int temp = min(k, 25);
-            result[i] += temp;
-            k -= temp;
+            int value = min(k, 25);
+            result[i] += (char)value;
+            k -= value;
         }
 
         return result;
