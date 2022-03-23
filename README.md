@@ -6,7 +6,7 @@
 <p align="center">  
 	<br>
 	<a href="https://leetcode.com/problemset/algorithms/">
-        <img height=200 width = 400 src="https://res.cloudinary.com/practicaldev/image/fetch/s--e5fXFHCH--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://assets.leetcode.com/static_assets/public/images/LeetCode_Sharing.png"> 
+        <img height=200 width = 400 src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghluelm27rj30dw0780sm.jpg"> 
     </a>
     <br>
 </p>
