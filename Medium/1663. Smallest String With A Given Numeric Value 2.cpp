@@ -5,20 +5,14 @@ class Solution
 public:
     string getSmallestString(int n, int k)
     {
-        string result = string(n, ' ');
-        int index = 0;
+        string result(n, 'a');
+        k -= n;
 
-        while (n--)
+        for (int i = n - 1; i >= 0; --i)
         {
-            for (int i = 1; i <= 26; ++i)
-            {
-                if (k - i <= n * 26)
-                {
-                    result[index++] = (i - 1) + 'a';
-                    k -= i;
-                    break;
-                }
-            }
+            int value = min(k, 25);
+            result[i] += (char)value;
+            k -= value;
         }
 
         return result;

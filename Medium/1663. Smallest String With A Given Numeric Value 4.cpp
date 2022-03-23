@@ -5,8 +5,7 @@ class Solution
 public:
     string getSmallestString(int n, int k)
     {
-        string result = string(n, ' ');
-        int index = 0;
+        string result;
 
         while (n--)
         {
@@ -14,7 +13,7 @@ public:
             {
                 if (k - i <= n * 26)
                 {
-                    result[index++] = (i - 1) + 'a';
+                    result += (i - 1) + 'a';
                     k -= i;
                     break;
                 }
