@@ -5,7 +5,7 @@ class Solution
 public:
     int numRescueBoats(vector<int> &people, int limit)
     {
-        int minBoats = 0;
+        int result = 0;
         int i = 0;
         int j = people.size() - 1;
         sort(people.begin(), people.end());
@@ -15,9 +15,9 @@ public:
             if (people[i] + people[j] <= limit)
                 i++;
             j--;
-            minBoats++;
+            result++;
         }
 
-        return minBoats;
+        return result;
     }
 };
