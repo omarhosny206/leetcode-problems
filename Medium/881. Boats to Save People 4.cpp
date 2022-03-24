@@ -14,9 +14,14 @@ public:
         while (i <= j)
         {
             if (people[i] + people[j] <= limit)
+            {
                 i++;
+                j--;
+            }
 
-            j--;
+            else
+                j--;
+
             result++;
         }
 
