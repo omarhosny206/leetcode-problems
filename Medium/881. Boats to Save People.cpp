@@ -8,6 +8,7 @@ public:
         int result = 0;
         int i = 0;
         int j = people.size() - 1;
+        
         sort(people.begin(), people.end());
 
         while (i <= j)
