@@ -6,26 +6,30 @@ public:
     int twoCitySchedCost(vector<vector<int>> &costs)
     {
         int result = 0;
-        priority_queue<pair<int, int>> maxHeap;
+        int i = 0;
 
-        for (int i = 0; i < costs.size(); ++i)
-            maxHeap.push({costs[i][1] - costs[i][0], i});
+        sort(costs.begin(), costs.end(), compare);
 
-        int size = maxHeap.size();
-        while (maxHeap.size() != size / 2)
+        while (i < costs.size() / 2)
         {
-            int index = maxHeap.top().second;
-            maxHeap.pop();
-            result += costs[index][0];
+            result += costs[i][0];
+            i++;
         }
 
-        while (!maxHeap.empty())
+        while (i < costs.size())
         {
-            int index = maxHeap.top().second;
-            maxHeap.pop();
-            result += costs[index][1];
+            result += costs[i][1];
+            i++;
         }
 
         return result;
+    }
+
+    static bool compare(vector<int> &first, vector<int> &second)
+    {
+        int firstDifference = first[0] - first[1];
+        int secondDifference = second[0] - second[1];
+
+        return firstDifference < secondDifference;
     }
 };
