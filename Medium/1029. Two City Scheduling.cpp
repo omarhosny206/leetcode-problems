@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/two-city-scheduling/
 
 class Solution
 {
