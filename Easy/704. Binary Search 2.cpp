@@ -13,20 +13,17 @@ public:
 
     int binarySearch(vector<int> &nums, int target, int left, int right)
     {
-        while (left <= right)
-        {
-            int middle = left + (right - left) / 2;
+        if (left > right)
+            return -1;
 
-            if (nums[middle] == target)
-                return middle;
+        int middle = left + (right - left) / 2;
 
-            else if (nums[middle] > target)
-                return binarySearch(nums, target, left, middle - 1);
+        if (nums[middle] == target)
+            return middle;
 
-            else
-                return binarySearch(nums, target, middle + 1, right);
-        }
+        else if (nums[middle] > target)
+            return binarySearch(nums, target, left, middle - 1);
 
-        return -1;
+        return binarySearch(nums, target, middle + 1, right);
     }
 };
