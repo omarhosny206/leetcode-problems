@@ -10,10 +10,10 @@ public:
 
         for (int i = 0; i < nums.size(); ++i)
         {
-            if (seen.find(target - nums[i]) != seen.end())
-                return {seen[target - nums[i]], i};
+            if (seen.find(nums[i]) != seen.end())
+                return {seen[nums[i]], i};
 
-            seen[nums[i]] = i;
+            seen[target - nums[i]] = i;
         }
 
         return {};

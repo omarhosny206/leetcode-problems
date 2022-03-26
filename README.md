@@ -14,7 +14,7 @@
 
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
-|1|[Two Sum](https://leetcode.com/problems/two-sum/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1.%20Two%20Sum.cpp) |Easy|
+|1|[Two Sum](https://leetcode.com/problems/two-sum/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1.%20Two%20Sum.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1.%20Two%20Sum%202.cpp) |Easy|
 |2|[Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/2.%20Add%20Two%20Numbers.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/2.%20Add%20Two%20Numbers%202.cpp) |Medium|
 |3|[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/3.%20Longest%20Substring%20Without%20Repeating%20Characters.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/3.%20Longest%20Substring%20Without%20Repeating%20Characters%202.cpp) |Medium|
 |5|[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/5.%20Longest%20Palindromic%20Substring.cpp) |Medium|
@@ -355,7 +355,7 @@
 |700|[Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/700.%20Search%20in%20a%20Binary%20Search%20Tree.cpp) |Easy|
 |701|[Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/701.%20Insert%20into%20a%20Binary%20Search%20Tree.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/701.%20Insert%20into%20a%20Binary%20Search%20Tree%202.cpp) |Medium|
 |703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/703.%20Kth%20Largest%20Element%20in%20a%20Stream.cpp) |Easy|
-|704|[Binary Search](https://leetcode.com/problems/binary-search/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/704.%20Binary%20Search.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/704.%20Binary%20Search%202.cpp) |Easy|
+|704|[Binary Search](https://leetcode.com/problems/binary-search/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/704.%20Binary%20Search.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/704.%20Binary%20Search%202.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/704.%20Binary%20Search%203.cpp) |Easy|
 |705|[Design HashSet](https://leetcode.com/problems/design-hashset/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/705.%20Design%20HashSet.cpp) |Easy|
 |706|[Design HashMap](https://leetcode.com/problems/design-hashmap/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/706.%20Design%20HashMap.cpp) |Easy|
 |707|[Design Linked List](https://leetcode.com/problems/design-linked-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/707.%20Design%20Linked%20List.cpp) |Medium|
