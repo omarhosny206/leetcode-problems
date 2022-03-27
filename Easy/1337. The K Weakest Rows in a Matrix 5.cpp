@@ -2,23 +2,36 @@
 
 class Solution
 {
+private:
+    struct Comparator
+    {
+        bool operator()(pair<int, int> &firstRow, pair<int, int> &secondRow)
+        {
+            if (firstRow.first == secondRow.first)
+                return firstRow.second > secondRow.second;
+
+            return firstRow.first > secondRow.first;
+        }
+    };
+
 public:
     vector<int> kWeakestRows(vector<vector<int>> &mat, int k)
     {
         vector<int> result;
-        multimap<int, int> rows;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, Comparator> minHeap;
 
         int i = 0;
         for (vector<int> &row : mat)
         {
             int numOnes = binarySearch(row);
-            rows.insert({numOnes, i++});
+            minHeap.push({numOnes, i++});
         }
 
-        auto iterator = rows.begin();
-
         while (k--)
-            result.push_back(iterator++->second);
+        {
+            result.push_back(minHeap.top().second);
+            minHeap.pop();
+        }
 
         return result;
     }
