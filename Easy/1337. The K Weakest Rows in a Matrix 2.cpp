@@ -6,24 +6,39 @@ public:
     vector<int> kWeakestRows(vector<vector<int>> &mat, int k)
     {
         vector<int> result;
-        multimap<int, int> mapping;
+        vector<pair<int, int>> rows;
 
         int i = 0;
-        for (vector<int> row : mat)
+        for (vector<int> &row : mat)
         {
-            int counter = 0;
-            for (int num : row)
-                if (num == 1)
-                    counter++;
-
-            mapping.emplace(counter, i++);
+            int numOnes = countOnes(row);
+            rows.push_back({numOnes, i++});
         }
 
-        auto itr = mapping.begin();
+        sort(rows.begin(), rows.end(), compare);
 
-        while (k--)
-            result.push_back(itr++->second);
+        for (int j = 0; j < k; ++j)
+            result.push_back(rows[j].second);
 
         return result;
+    }
+
+    int countOnes(vector<int> &row)
+    {
+        int result = 0;
+
+        for (int &num : row)
+            if (num == 1)
+                result++;
+
+        return result;
+    }
+
+    static bool compare(pair<int, int> &firstRow, pair<int, int> &secondRow)
+    {
+        if (firstRow.first == secondRow.first)
+            return firstRow.second < secondRow.second;
+
+        return firstRow.first < secondRow.first;
     }
 };
