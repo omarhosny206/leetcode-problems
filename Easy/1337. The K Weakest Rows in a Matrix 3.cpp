@@ -11,7 +11,7 @@ public:
         int i = 0;
         for (vector<int> &row : mat)
         {
-            int binarySearch = countOnes(row);
+            int numOnes = binarySearch(row);
             rows.push_back({numOnes, i++});
         }
 
