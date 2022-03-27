@@ -6,16 +6,16 @@ public:
     vector<int> kWeakestRows(vector<vector<int>> &mat, int k)
     {
         vector<int> result;
-        multimap<int, int> mapping;
+        multimap<int, int> rows;
 
         int i = 0;
         for (vector<int> &row : mat)
         {
             int numOnes = countOnes(row);
-            mapping.insert({numOnes, i++});
+            rows.insert({numOnes, i++});
         }
 
-        auto iterator = mapping.begin();
+        auto iterator = rows.begin();
 
         while (k--)
             result.push_back(iterator++->second);
