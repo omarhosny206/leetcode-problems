@@ -9,20 +9,27 @@ public:
         multimap<int, int> mapping;
 
         int i = 0;
-        for (vector<int> row : mat)
+        for (vector<int> &row : mat)
         {
-            int counter = 0;
-            for (int num : row)
-                if (num == 1)
-                    counter++;
-
-            mapping.emplace(counter, i++);
+            int numOnes = countOnes(row);
+            mapping.insert({numOnes, i++});
         }
 
-        auto itr = mapping.begin();
+        auto iterator = mapping.begin();
 
         while (k--)
-            result.push_back(itr++->second);
+            result.push_back(iterator++->second);
+
+        return result;
+    }
+
+    int countOnes(vector<int> &row)
+    {
+        int result = 0;
+
+        for (int &num : row)
+            if (num == 1)
+                result++;
 
         return result;
     }
