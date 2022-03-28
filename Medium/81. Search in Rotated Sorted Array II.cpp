@@ -15,7 +15,6 @@ public:
 
     bool binarySearch(vector<int> &nums, int left, int right, int target)
     {
-
         if (left >= nums.size() || right >= nums.size())
             return false;
 
