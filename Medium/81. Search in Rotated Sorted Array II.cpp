@@ -1,51 +1,38 @@
-// https://leetcode.com/problems/search-in-rotated-sorted-array/
+// https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 
 class Solution
 {
 public:
-    int search(vector<int> &nums, int target)
+    bool search(vector<int> &nums, int target)
     {
-        if (nums.size() == 0)
+        int i = 0;
+
+        while (i < nums.size() - 1 && nums[i] <= nums[i + 1])
+            i++;
+
+        return binarySearch(nums, 0, i, target) || binarySearch(nums, i + 1, nums.size() - 1, target);
+    }
+
+    bool binarySearch(vector<int> &nums, int left, int right, int target)
+    {
+
+        if (left >= nums.size() || right >= nums.size())
             return false;
 
-        int start = 0;
-        int end = nums.size() - 1;
-
-        while (start <= end)
+        while (left <= right)
         {
-            int middle = start + (end - start) / 2;
+            int middle = left + (right - left) / 2;
 
             if (nums[middle] == target)
                 return true;
 
-            if (nums[start] == nums[middle])
-            {
-                start++;
-                continue;
-            }
+            if (nums[middle] > target)
+                right = middle - 1;
 
-            bool pivotArray = nums[start] <= nums[middle];
-            bool targetArray = nums[start] <= target;
-
-            if (pivotArray ^ targetArray)
-            {
-                if (pivotArray)
-                    start = middle + 1;
-                else
-                    end = middle - 1;
-            }
             else
-            {
-                if (nums[middle] < target)
-                {
-                    start = middle + 1;
-                }
-                else
-                {
-                    end = middle - 1;
-                }
-            }
+                left = middle + 1;
         }
+
         return false;
     }
 };
