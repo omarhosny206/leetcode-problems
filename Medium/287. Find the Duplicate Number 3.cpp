@@ -5,16 +5,16 @@ class Solution
 public:
     int findDuplicate(vector<int> &nums)
     {
-        unordered_set<int> numbers;
+        unordered_set<int> values;
 
         for (int &num : nums)
         {
-            if (numbers.find(num) != numbers.end())
+            if (values.find(num) != values.end())
                 return num;
 
-            numbers.insert(num);
+            values.insert(num);
         }
 
-        return 1;
+        return -1;
     }
 };
