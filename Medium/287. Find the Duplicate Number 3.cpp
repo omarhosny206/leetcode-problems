@@ -5,11 +5,15 @@ class Solution
 public:
     int findDuplicate(vector<int> &nums)
     {
-        sort(nums.begin(), nums.end());
+        unordered_map<int, bool> seen;
 
-        for (int i = 1; i < nums.size(); ++i)
-            if (nums[i] == nums[i - 1])
-                return nums[i];
+        for (int &num : nums)
+        {
+            if (seen[num])
+                return num;
+
+            seen[num] = true;
+        }
 
         return -1;
     }
