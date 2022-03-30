@@ -1,45 +1,55 @@
+// https://leetcode.com/problems/search-a-2d-matrix/
+
 class Solution
 {
 public:
     bool searchMatrix(vector<vector<int>> &matrix, int target)
     {
-        int low = 0;
-        int high = matrix.size() - 1;
+        int row = getRow(matrix, target);
+        return binarySearch(matrix, row, target);
+    }
 
-        while (low <= high)
+    bool binarySearch(vector<vector<int>> &matrix, int row, int target)
+    {
+        int left = 0;
+        int right = matrix[row].size() - 1;
+
+        while (left <= right)
         {
-            int row = low + (high - low) / 2;
-            bool check = BinarySearch(matrix[row], target);
+            int middle = left + (right - left) / 2;
 
-            if (matrix[row][0] <= target && matrix[row][matrix[row].size() - 1] >= target)
-                return BinarySearch(matrix[row], target);
+            if (matrix[row][middle] == target)
+                return true;
 
-            else if (matrix[row][0] > target)
-                high = row - 1;
+            if (matrix[row][middle] > target)
+                right = middle - 1;
 
             else
-                low = row + 1;
+                left = middle + 1;
         }
 
         return false;
     }
 
-    bool BinarySearch(vector<int> &row, int target)
+    int getRow(vector<vector<int>> &matrix, int target)
     {
-        int low = 0;
-        int high = row.size() - 1;
+        int top = 0;
+        int bottom = matrix.size() - 1;
 
-        while (low <= high)
+        while (top <= bottom)
         {
-            int middle = low + (high - low) / 2;
-            if (row[middle] == target)
-                return true;
-            if (row[middle] > target)
-                high = middle - 1;
+            int middle = top + (bottom - top) / 2;
+
+            if (matrix[middle][0] <= target && matrix[middle][matrix[middle].size() - 1] >= target)
+                return middle;
+
+            if (matrix[middle][0] > target)
+                bottom = middle - 1;
+
             else
-                low = middle + 1;
+                top = middle + 1;
         }
 
-        return false;
+        return 0;
     }
 };
