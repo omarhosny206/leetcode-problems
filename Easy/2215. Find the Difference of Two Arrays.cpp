@@ -3,8 +3,8 @@
 class Solution
 {
     vector<vector<int>> result;
-    unordered_set<int> firstSeen;
-    unordered_set<int> secondSeen;
+    unordered_set<int> firstValues;
+    unordered_set<int> secondValues;
 
 public:
     vector<vector<int>> findDifference(vector<int> &nums1, vector<int> &nums2)
@@ -12,28 +12,28 @@ public:
         result = vector<vector<int>>(2);
 
         for (int &num : nums1)
-            firstSeen.insert(num);
+            firstValues.insert(num);
 
         for (int &num : nums2)
-            secondSeen.insert(num);
+            secondValues.insert(num);
 
-        insertFirstDistinctNumbers();
-        insertSecondDistinctNumbers();
+        insertFirstDistinctValues();
+        insertSecondDistinctValues();
 
         return result;
     }
 
-    void insertFirstDistinctNumbers()
+    void insertFirstDistinctValues()
     {
-        for (const int &num : firstSeen)
-            if (secondSeen.find(num) == secondSeen.end())
+        for (const int &num : firstValues)
+            if (secondValues.find(num) == secondValues.end())
                 result[0].push_back(num);
     }
 
-    void insertSecondDistinctNumbers()
+    void insertSecondDistinctValues()
     {
-        for (const int &num : secondSeen)
-            if (firstSeen.find(num) == firstSeen.end())
+        for (const int &num : secondValues)
+            if (firstValues.find(num) == firstValues.end())
                 result[1].push_back(num);
     }
 };
