@@ -5,22 +5,22 @@ class Solution
 public:
     void reverseString(vector<char> &s)
     {
-        Reverse(s, 0, s.size() - 1);
+        reverse(s, 0, s.size() - 1);
     }
 
-    void Reverse(vector<char> &s, int i, int j)
+    void reverse(vector<char> &letters, int i, int j)
     {
         if (i > j)
             return;
 
-        Reverse(s, i + 1, j - 1);
-        Swap(s, i, j);
+        reverse(letters, i + 1, j - 1);
+        swap(letters, i, j);
     }
 
-    void Swap(vector<char> &s, int i, int j)
+    void swap(vector<char> &letters, int i, int j)
     {
-        char temp = s[i];
-        s[i] = s[j];
-        s[j] = temp;
+        char temp = letters[i];
+        letters[i] = letters[j];
+        letters[j] = temp;
     }
 };
