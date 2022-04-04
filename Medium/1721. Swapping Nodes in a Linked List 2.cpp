@@ -12,36 +12,33 @@
  */
 class Solution
 {
-    ListNode *leftNode;
-    ListNode *rightNode;
-
 public:
     ListNode *swapNodes(ListNode *head, int k)
     {
-        leftNode = head;
-        rightNode = head;
-        int position = k;
+        ListNode *left = head;
+        ListNode *right = head;
+        ListNode *current = head;
 
-        getNodes(head, k, position);
+        int size = 0;
 
-        int temp = leftNode->val;
-        leftNode->val = rightNode->val;
-        rightNode->val = temp;
+        while (current != nullptr)
+        {
+            current = current->next;
+            size++;
+        }
+
+        size -= k;
+
+        while (size--)
+            right = right->next;
+
+        while (--k)
+            left = left->next;
+
+        int temp = left->val;
+        left->val = right->val;
+        right->val = temp;
 
         return head;
-    }
-
-    void getNodes(ListNode *head, int &left, int &right)
-    {
-        if (head == nullptr)
-            return;
-
-        if (--left == 0)
-            leftNode = head;
-
-        getNodes(head->next, left, right);
-
-        if (--right == 0)
-            rightNode = head;
     }
 };
