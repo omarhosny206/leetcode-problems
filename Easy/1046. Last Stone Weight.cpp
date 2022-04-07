@@ -1,28 +1,27 @@
-// https://leetcode.com/problems/last-stone-weight/
-
 class Solution
 {
 public:
     int lastStoneWeight(vector<int> &stones)
     {
-        priority_queue<int> stones_max_heap;
-        for (int stone : stones)
-            stones_max_heap.push(stone);
+        priority_queue<int, vector<int>> maxHeap;
 
-        while (!stones_max_heap.empty())
+        for (int &stone : stones)
+            maxHeap.push(stone);
+
+        while (maxHeap.size() > 1)
         {
-            int stone_y = stones_max_heap.top();
-            stones_max_heap.pop();
+            int first = maxHeap.top();
+            maxHeap.pop();
 
-            if (stones_max_heap.empty())
-                return stone_y;
+            int second = maxHeap.top();
+            maxHeap.pop();
 
-            int stone_x = stones_max_heap.top();
-            stones_max_heap.pop();
+            int difference = first - second;
 
-            if (stone_y - stone_x != 0)
-                stones_max_heap.push(stone_y - stone_x);
+            if (difference > 0)
+                maxHeap.push(difference);
         }
-        return 0;
+
+        return maxHeap.empty() ? 0 : maxHeap.top();
     }
 };
