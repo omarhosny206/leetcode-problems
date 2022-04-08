@@ -9,15 +9,18 @@ public:
     KthLargest(int k, vector<int> &nums)
     {
         size = k;
-        for (int num : nums)
+
+        for (int &num : nums)
             elements.push(num);
     }
 
     int add(int val)
     {
         elements.push(val);
+
         while (elements.size() > size)
             elements.pop();
+
         return elements.top();
     }
 };
