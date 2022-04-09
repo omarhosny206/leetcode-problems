@@ -7,19 +7,18 @@ public:
     {
         vector<int> result;
         unordered_map<int, int> freq;
+        priority_queue<pair<int, int>> maxHeap;
 
-        for (int num : nums)
+        for (int &num : nums)
             freq[num]++;
 
-        priority_queue<pair<int, int>> max_heap;
-
-        for (auto pair : freq)
-            max_heap.push({pair.second, pair.first});
+        for (auto &pair : freq)
+            maxHeap.push({pair.second, pair.first});
 
         while (k--)
         {
-            result.push_back(max_heap.top().second);
-            max_heap.pop();
+            result.push_back(maxHeap.top().second);
+            maxHeap.pop();
         }
 
         return result;

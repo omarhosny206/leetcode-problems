@@ -2,30 +2,39 @@
 
 class Solution
 {
+    struct Comparator
+    {
+        bool operator()(pair<int, int> &firstPair, pair<int, int> &secondPair)
+        {
+            return firstPair.first > secondPair.first;
+        }
+    };
+
 public:
     vector<int> topKFrequent(vector<int> &nums, int k)
     {
-        vector<int> result(k);
+        vector<int> result;
         unordered_map<int, int> freq;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, Comparator> maxHeap;
 
-        for (int num : nums)
+        for (int &num : nums)
             freq[num]++;
 
-        vector<pair<int, int>> max_heap;
+        for (auto &pair : freq)
+        {
+            maxHeap.push({pair.second, pair.first});
 
-        for (auto pair : freq)
-            max_heap.push_back(pair);
+            if (maxHeap.size() > k)
+                maxHeap.pop();
+        }
 
-        sort(max_heap.begin(), max_heap.end(), comp);
+        while (k--)
+        {
+            result.push_back(maxHeap.top().second);
+            maxHeap.pop();
+        }
 
-        for (int i = 0; i < k; ++i)
-            result[i] = max_heap[i].first;
-
+        reverse(result.begin(), result.end());
         return result;
-    }
-
-    static bool comp(pair<int, int> &a, pair<int, int> &b)
-    {
-        return a.second > b.second;
     }
 };
