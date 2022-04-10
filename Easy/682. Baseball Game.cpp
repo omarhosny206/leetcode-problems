@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/baseball-game/
 
 class Solution
 {
@@ -34,7 +33,7 @@ public:
             result += nums.top();
             nums.pop();
         }
-
+        
         return result;
     }
 };
