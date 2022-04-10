@@ -347,6 +347,7 @@
 |676|[Implement Magic Dictionary](https://leetcode.com/problems/implement-magic-dictionary/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/676.%20Implement%20Magic%20Dictionary.cpp) |Medium|
 |677|[Map Sum Pairs](https://leetcode.com/problems/map-sum-pairs/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/677.%20Map%20Sum%20Pairs.cpp) |Medium|
 |680|[Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/680.%20Valid%20Palindrome%20II.cpp) |Easy|
+|682|[Baseball Game](https://leetcode.com/problems/baseball-game/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/682.%20Baseball%20Game.cpp) |Easy|
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/684.%20Redundant%20Connection.cpp) |Medium|
 |687|[Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/687.%20Longest%20Univalue%20Path.cpp) |Medium|
 |690|[Employee Importance](https://leetcode.com/problems/employee-importance/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/690.%20Employee%20Importance.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/690.%20Employee%20Importance%202.cpp) |Easy|
