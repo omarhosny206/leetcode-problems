@@ -20,7 +20,9 @@ public:
             {
                 int first = nums.top();
                 nums.pop();
+
                 int second = nums.top();
+                
                 nums.push(first);
                 nums.push(first + second);
             }
