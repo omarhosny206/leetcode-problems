@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/spiral-matrix-ii/
 
 class Solution
 {
