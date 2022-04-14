@@ -16,10 +16,10 @@ class Solution
 public:
     TreeNode *searchBST(TreeNode *root, int val)
     {
-        return searchBST_Helper(root, val);
+        return binarySearch(root, val);
     }
 
-    TreeNode *searchBST_Helper(TreeNode *root, int val)
+    TreeNode *binarySearch(TreeNode *root, int val)
     {
         if (root == nullptr)
             return nullptr;
@@ -28,8 +28,8 @@ public:
             return root;
 
         else if (root->val > val)
-            return searchBST_Helper(root->left, val);
+            return binarySearch(root->left, val);
 
-        return searchBST_Helper(root->right, val);
+        return binarySearch(root->right, val);
     }
 };
