@@ -16,20 +16,18 @@ class Solution
 public:
     TreeNode *searchBST(TreeNode *root, int val)
     {
-        return binarySearch(root, val);
-    }
+        while (root != nullptr)
+        {
+            if (root->val == val)
+                return root;
 
-    TreeNode *binarySearch(TreeNode *root, int val)
-    {
-        if (root == nullptr)
-            return nullptr;
+            else if (root->val > val)
+                root = root->left;
 
-        if (root->val == val)
-            return root;
+            else
+                root = root->right;
+        }
 
-        else if (root->val > val)
-            return binarySearch(root->left, val);
-
-        return binarySearch(root->right, val);
+        return nullptr;
     }
 };
