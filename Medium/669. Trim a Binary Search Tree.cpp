@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/trim-a-binary-search-tree/
 
 /**
  * Definition for a binary tree node.
