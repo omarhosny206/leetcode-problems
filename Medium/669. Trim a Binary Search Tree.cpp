@@ -16,20 +16,22 @@ class Solution
 public:
     TreeNode *trimBST(TreeNode *root, int low, int high)
     {
-        return trimBST_Helper(root, low, high);
+        return dfs(root, low, high);
     }
 
-    TreeNode *trimBST_Helper(TreeNode *root, int low, int high)
+    TreeNode *dfs(TreeNode *root, int low, int high)
     {
         if (root == nullptr)
             return nullptr;
-        if (root->val > high)
-            return trimBST_Helper(root->left, low, high);
-        if (root->val < low)
-            return trimBST_Helper(root->right, low, high);
 
-        root->left = trimBST_Helper(root->left, low, high);
-        root->right = trimBST_Helper(root->right, low, high);
+        if (root->val > high)
+            return dfs(root->left, low, high);
+
+        if (root->val < low)
+            return dfs(root->right, low, high);
+
+        root->left = dfs(root->left, low, high);
+        root->right = dfs(root->right, low, high);
 
         return root;
     }
