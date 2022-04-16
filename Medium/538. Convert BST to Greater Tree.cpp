@@ -13,7 +13,7 @@
  */
 class Solution
 {
-    int sum = 0;
+    int postfixSum = 0;
 
 public:
     TreeNode *convertBST(TreeNode *root)
@@ -29,8 +29,8 @@ public:
 
         dfs(root->right);
 
-        root->val += sum;
-        sum = root->val;
+        root->val += postfixSum;
+        postfixSum = root->val;
 
         dfs(root->left);
     }
