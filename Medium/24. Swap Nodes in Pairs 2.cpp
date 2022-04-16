@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/swap-nodes-in-pairs/
 
 /**
  * Definition for singly-linked list.
