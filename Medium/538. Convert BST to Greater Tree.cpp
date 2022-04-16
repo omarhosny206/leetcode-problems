@@ -18,18 +18,20 @@ class Solution
 public:
     TreeNode *convertBST(TreeNode *root)
     {
-        convertBSTRecursive(root);
+        dfs(root);
         return root;
     }
 
-    void convertBSTRecursive(TreeNode *root)
+    void dfs(TreeNode *root)
     {
-
         if (root == nullptr)
             return;
-        convertBSTRecursive(root->right);
+
+        dfs(root->right);
+
         root->val += sum;
         sum = root->val;
-        convertBSTRecursive(root->left);
+
+        dfs(root->left);
     }
 };
