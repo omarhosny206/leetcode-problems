@@ -19,7 +19,10 @@ public:
         vector<int> nodes;
         dfs(root, nodes);
 
-        return buildTree(nodes);
+        if (nodes.size() == 0)
+            return nullptr;
+
+        return buildTree(nodes, 0);
     }
 
     void dfs(TreeNode *root, vector<int> &nodes)
@@ -32,20 +35,13 @@ public:
         dfs(root->right, nodes);
     }
 
-    TreeNode *buildTree(vector<int> &nodes)
+    TreeNode *buildTree(vector<int> &nodes, int i)
     {
-        TreeNode *result = new TreeNode();
-        TreeNode *current = result;
+        if (i == nodes.size())
+            return nullptr;
 
-        int i = 0;
-
-        while (i < nodes.size())
-        {
-            current->right = new TreeNode(nodes[i]);
-            current = current->right;
-            i++;
-        }
-
-        return result->right;
+        TreeNode *root = new TreeNode(nodes[i]);
+        root->right = buildTree(nodes, i + 1);
+        return root;
     }
 };
