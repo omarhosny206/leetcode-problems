@@ -13,33 +13,30 @@
  */
 class Solution
 {
+    TreeNode *current;
+
 public:
     TreeNode *increasingBST(TreeNode *root)
     {
-        priority_queue<int, vector<int>, greater<int>> nodes_minHeap;
-        DFS(root, nodes_minHeap);
-        root = treeBuilder(nodes_minHeap);
-        return root;
+        TreeNode *result = new TreeNode();
+        current = result;
+
+        dfs(root);
+
+        return result->right;
     }
 
-    void DFS(TreeNode *root, priority_queue<int, vector<int>, greater<int>> &nodes_minHeap)
+    void dfs(TreeNode *root)
     {
         if (root == nullptr)
             return;
-        nodes_minHeap.push(root->val);
-        DFS(root->left, nodes_minHeap);
-        DFS(root->right, nodes_minHeap);
-    }
 
-    TreeNode *treeBuilder(priority_queue<int, vector<int>, greater<int>> nodes_minHeap)
-    {
+        dfs(root->left);
 
-        if (nodes_minHeap.empty())
-            return nullptr;
+        root->left = nullptr;
+        current->right = root;
+        current = current->right;
 
-        TreeNode *root = new TreeNode(nodes_minHeap.top());
-        nodes_minHeap.pop();
-        root->right = treeBuilder(nodes_minHeap);
-        return root;
+        dfs(root->right);
     }
 };

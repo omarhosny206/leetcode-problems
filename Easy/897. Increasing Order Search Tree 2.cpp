@@ -37,7 +37,6 @@ public:
 
     TreeNode *treeBuilder(vector<int> &nodes)
     {
-
         if (nodes.empty())
             return nullptr;
 
