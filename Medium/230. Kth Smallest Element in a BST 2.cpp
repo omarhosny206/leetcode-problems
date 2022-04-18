@@ -13,29 +13,22 @@
  */
 class Solution
 {
-    int result = 0;
+    vector<int> nodes;
 
 public:
     int kthSmallest(TreeNode *root, int k)
     {
-        dfs(root, k);
-        return result;
+        dfs(root);
+        return nodes[k - 1];
     }
 
-    void dfs(TreeNode *root, int &k)
+    void dfs(TreeNode *root)
     {
         if (root == nullptr)
             return;
 
-        dfs(root->left, k);
-
-        k--;
-        if (k == 0)
-        {
-            result = root->val;
-            return;
-        }
-
-        dfs(root->right, k);
+        dfs(root->left);
+        nodes.push_back(root->val);
+        dfs(root->right);
     }
 };

@@ -13,29 +13,26 @@
  */
 class Solution
 {
-    int result = 0;
+    priority_queue<int, vector<int>, greater<int>> nodes;
 
 public:
     int kthSmallest(TreeNode *root, int k)
     {
-        dfs(root, k);
-        return result;
+        dfs(root);
+
+        while (--k)
+            nodes.pop();
+
+        return nodes.top();
     }
 
-    void dfs(TreeNode *root, int &k)
+    void dfs(TreeNode *root)
     {
         if (root == nullptr)
             return;
 
-        dfs(root->left, k);
-
-        k--;
-        if (k == 0)
-        {
-            result = root->val;
-            return;
-        }
-
-        dfs(root->right, k);
+        dfs(root->left);
+        nodes.push(root->val);
+        dfs(root->right);
     }
 };
