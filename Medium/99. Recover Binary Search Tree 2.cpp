@@ -13,18 +13,18 @@
  */
 class Solution
 {
-    TreeNode *previous = nullptr;
-    TreeNode *first = nullptr;
-    TreeNode *second = nullptr;
-
 public:
     void recoverTree(TreeNode *root)
     {
-        dfs(root);
+        TreeNode *previous = nullptr;
+        TreeNode *first = nullptr;
+        TreeNode *second = nullptr;
+
+        dfs(root, previous, first, second);
         swap(first->val, second->val);
     }
 
-    void dfs(TreeNode *root)
+    void dfs(TreeNode *root, TreeNode *&previous, TreeNode *&first, TreeNode *&second)
     {
         if (root == nullptr)
             return;
