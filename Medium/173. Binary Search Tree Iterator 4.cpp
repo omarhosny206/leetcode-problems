@@ -13,7 +13,7 @@
  */
 class BSTIterator
 {
-    stack<int> nodes;
+    queue<int> nodes;
 
 public:
     BSTIterator(TreeNode *root)
@@ -23,7 +23,7 @@ public:
 
     int next()
     {
-        int node = nodes.top();
+        int node = nodes.front();
         nodes.pop();
 
         return node;
@@ -39,9 +39,9 @@ public:
         if (root == nullptr)
             return;
 
-        dfs(root->right);
-        nodes.push(root->val);
         dfs(root->left);
+        nodes.push(root->val);
+        dfs(root->right);
     }
 };
 

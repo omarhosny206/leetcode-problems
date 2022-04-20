@@ -13,33 +13,36 @@
  */
 class BSTIterator
 {
-    vector<int> nodes;
-    int i = 0;
+    stack<TreeNode *> nodes;
 
 public:
     BSTIterator(TreeNode *root)
     {
-        dfs(root);
+        getLeftSubtree(root);
     }
 
     int next()
     {
-        return nodes[i++];
+        TreeNode *node = nodes.top();
+        nodes.pop();
+
+        getLeftSubtree(node->right);
+
+        return node->val;
     }
 
     bool hasNext()
     {
-        return i < nodes.size();
+        return !nodes.empty();
     }
 
-    void dfs(TreeNode *root)
+    void getLeftSubtree(TreeNode *root)
     {
-        if (root == nullptr)
-            return;
-
-        dfs(root->left);
-        nodes.push_back(root->val);
-        dfs(root->right);
+        while (root != nullptr)
+        {
+            nodes.push(root);
+            root = root->left;
+        }
     }
 };
 
