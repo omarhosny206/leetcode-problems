@@ -13,19 +13,20 @@
  */
 class BSTIterator
 {
-    stack<TreeNode *> nodes;
+    queue<int> nodes;
 
 public:
     BSTIterator(TreeNode *root)
     {
-        treeTraversal(root);
+        dfs(root);
     }
 
     int next()
     {
-        TreeNode *top = nodes.top();
+        int node = nodes.front();
         nodes.pop();
-        return top->val;
+
+        return node;
     }
 
     bool hasNext()
@@ -33,13 +34,14 @@ public:
         return !nodes.empty();
     }
 
-    void treeTraversal(TreeNode *root)
+    void dfs(TreeNode *root)
     {
         if (root == nullptr)
             return;
-        treeTraversal(root->right);
-        nodes.push(root);
-        treeTraversal(root->left);
+
+        dfs(root->left);
+        nodes.push(root->val);
+        dfs(root->right);
     }
 };
 

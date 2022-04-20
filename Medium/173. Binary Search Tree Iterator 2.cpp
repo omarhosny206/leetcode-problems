@@ -13,19 +13,20 @@
  */
 class BSTIterator
 {
-    priority_queue<int, vector<int>, greater<int>> nodes;
+    stack<int> nodes;
 
 public:
     BSTIterator(TreeNode *root)
     {
-        DFS(root);
+        dfs(root);
     }
 
     int next()
     {
-        int top = nodes.top();
+        int node = nodes.top();
         nodes.pop();
-        return top;
+
+        return node;
     }
 
     bool hasNext()
@@ -33,13 +34,14 @@ public:
         return !nodes.empty();
     }
 
-    void DFS(TreeNode *root)
+    void dfs(TreeNode *root)
     {
         if (root == nullptr)
             return;
+
+        dfs(root->right);
         nodes.push(root->val);
-        DFS(root->left);
-        DFS(root->right);
+        dfs(root->left);
     }
 };
 
