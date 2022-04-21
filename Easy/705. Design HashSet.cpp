@@ -2,29 +2,28 @@
 
 class MyHashSet
 {
-    vector<bool> HashSet;
+    vector<bool> seen;
+    const int SIZE = 1e6 + 1;
 
 public:
-    /** Initialize your data structure here. */
     MyHashSet()
     {
-        HashSet = vector<bool>(1000000, false);
+        seen = vector<bool>(SIZE, false);
     }
 
     void add(int key)
     {
-        HashSet[key] = true;
+        seen[key] = true;
     }
 
     void remove(int key)
     {
-        HashSet[key] = false;
+        seen[key] = false;
     }
 
-    /** Returns true if this set contains the specified element */
     bool contains(int key)
     {
-        return HashSet[key];
+        return seen[key];
     }
 };
 
