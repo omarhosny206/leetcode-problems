@@ -56,11 +56,11 @@ public:
     {
         int index = hash(key);
 
-        for (auto iterator = buckets[index].begin(); iterator != buckets[index].end(); ++iterator)
+        for (Node *&node : buckets[index])
         {
-            if ((*iterator)->key == key)
+            if (node->key == key)
             {
-                buckets[index].remove(*iterator);
+                buckets[index].remove(node);
                 return;
             }
         }
