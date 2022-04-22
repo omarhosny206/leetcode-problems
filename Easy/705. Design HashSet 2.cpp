@@ -17,13 +17,13 @@ public:
         if (contains(key))
             return;
 
-        int index = hashFunction(key);
+        int index = hash(key);
         buckets[index].push_back(key);
     }
 
     void remove(int key)
     {
-        int index = hashFunction(key);
+        int index = hash(key);
         auto position = find(buckets[index].begin(), buckets[index].end(), key);
 
         if (position != buckets[index].end())
@@ -32,7 +32,7 @@ public:
 
     bool contains(int key)
     {
-        int index = hashFunction(key);
+        int index = hash(key);
         return search(buckets[index], key);
     }
 
@@ -45,7 +45,7 @@ public:
         return false;
     }
 
-    int hashFunction(int key)
+    int hash(int key)
     {
         return key % numBuckets;
     }
