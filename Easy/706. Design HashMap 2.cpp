@@ -43,11 +43,11 @@ public:
     {
         int index = hash(key);
 
-        for (auto iterator = buckets[index].begin(); iterator != buckets[index].end(); ++iterator)
+        for (auto &pair : buckets[index])
         {
-            if (iterator->first == key)
+            if (pair.first == key)
             {
-                buckets[index].remove(*iterator);
+                buckets[index].remove(pair);
                 return;
             }
         }
