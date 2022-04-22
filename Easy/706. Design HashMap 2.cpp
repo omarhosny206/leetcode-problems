@@ -2,35 +2,59 @@
 
 class MyHashMap
 {
-    vector<int> values;
-    const int SIZE = 1e6 + 1;
+    int numBuckets;
+    vector<list<pair<int, int>>> buckets;
 
 public:
     MyHashMap()
     {
-        values = vector<int>(SIZE, -1);
+        numBuckets = 15000;
+        buckets = vector<list<pair<int, int>>>(numBuckets);
     }
 
     void put(int key, int value)
     {
-        values[key] = value;
+        int index = hash(key);
+
+        for (auto &pair : buckets[index])
+        {
+            if (pair.first == key)
+            {
+                pair.second = value;
+                return;
+            }
+        }
+
+        buckets[index].push_back({key, value});
     }
 
     int get(int key)
     {
-        return values[key];
+        int index = hash(key);
+
+        for (auto &pair : buckets[index])
+            if (pair.first == key)
+                return pair.second;
+
+        return -1;
     }
 
     void remove(int key)
     {
-        values[key] = -1;
+        int index = hash(key);
+
+        for (auto iterator = buckets[index].begin(); iterator != buckets[index].end(); ++iterator)
+        {
+            if (iterator->first == key)
+            {
+                buckets[index].remove(*iterator);
+                return;
+            }
+        }
+    }
+
+    int hash(int key)
+    {
+        return key % numBuckets;
     }
 };
-
-/**
- * Your MyHashMap object will be instantiated and called as such:
- * MyHashMap* obj = new MyHashMap();
- * obj->put(key,value);
- * int param_2 = obj->get(key);
- * obj->remove(key);
- */
