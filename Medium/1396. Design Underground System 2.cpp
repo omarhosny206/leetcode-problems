@@ -2,8 +2,9 @@
 
 class UndergroundSystem
 {
+    unordered_map<int, string> place;
+    unordered_map<string, int> time;
     unordered_map<string, pair<int, int>> tripInfo;
-    unordered_map<int, pair<string, int>> customerInfo;
 
 public:
     UndergroundSystem()
@@ -12,23 +13,28 @@ public:
 
     void checkIn(int id, string stationName, int t)
     {
-        customerInfo[id] = {stationName, t};
+        place[id] = stationName;
+        string customerStation = to_string(id) + ":" + stationName;
+        time[customerStation] = t;
     }
 
     void checkOut(int id, string stationName, int t)
     {
-        string startStation = customerInfo[id].first;
+        string startStation = place[id];
         string newStation = startStation + ":" + stationName;
-        int takenTime = t - customerInfo[id].second;
+
+        string customerStation = to_string(id) + ":" + startStation;
+
+        int takenTime = t - time[customerStation];
 
         tripInfo[newStation].first += takenTime;
         tripInfo[newStation].second++;
     }
 
-    double gettripInfoTime(string startStation, string endStation)
+    double getAverageTime(string startStation, string endStation)
     {
         string newStation = startStation + ":" + endStation;
-        return (double)tripInfo[newStation].first / tripInfo[newStation].second;
+        return (double)tripInfo[newStation].first / (double)tripInfo[newStation].second;
     }
 };
 
@@ -37,5 +43,5 @@ public:
  * UndergroundSystem* obj = new UndergroundSystem();
  * obj->checkIn(id,stationName,t);
  * obj->checkOut(id,stationName,t);
- * double param_3 = obj->gettripInfoTime(startStation,endStation);
+ * double param_3 = obj->getAverageTime(startStation,endStation);
  */
