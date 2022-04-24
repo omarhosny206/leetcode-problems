@@ -21,20 +21,20 @@ public:
     void checkOut(int id, string stationName, int t)
     {
         string startStation = place[id];
-        string newStation = startStation + ":" + stationName;
+        string combinedStation = startStation + ":" + stationName;
 
         string customerStation = to_string(id) + ":" + startStation;
 
         int takenTime = t - time[customerStation];
 
-        tripInfo[newStation].first += takenTime;
-        tripInfo[newStation].second++;
+        tripInfo[combinedStation].first += takenTime;
+        tripInfo[combinedStation].second++;
     }
 
     double getAverageTime(string startStation, string endStation)
     {
-        string newStation = startStation + ":" + endStation;
-        return (double)tripInfo[newStation].first / (double)tripInfo[newStation].second;
+        string combinedStation = startStation + ":" + endStation;
+        return (double)tripInfo[combinedStation].first / (double)tripInfo[combinedStation].second;
     }
 };
 

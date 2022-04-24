@@ -18,17 +18,17 @@ public:
     void checkOut(int id, string stationName, int t)
     {
         string startStation = customerInfo[id].first;
-        string newStation = startStation + ":" + stationName;
+        string combinedStation = startStation + ":" + stationName;
         int takenTime = t - customerInfo[id].second;
 
-        tripInfo[newStation].first += takenTime;
-        tripInfo[newStation].second++;
+        tripInfo[combinedStation].first += takenTime;
+        tripInfo[combinedStation].second++;
     }
 
     double getAverageTime(string startStation, string endStation)
     {
-        string newStation = startStation + ":" + endStation;
-        return (double)tripInfo[newStation].first / tripInfo[newStation].second;
+        string combinedStation = startStation + ":" + endStation;
+        return (double)tripInfo[combinedStation].first / tripInfo[combinedStation].second;
     }
 };
 
