@@ -25,7 +25,7 @@ public:
         tripInfo[newStation].second++;
     }
 
-    double gettripInfoTime(string startStation, string endStation)
+    double getAverageTime(string startStation, string endStation)
     {
         string newStation = startStation + ":" + endStation;
         return (double)tripInfo[newStation].first / tripInfo[newStation].second;
@@ -37,5 +37,5 @@ public:
  * UndergroundSystem* obj = new UndergroundSystem();
  * obj->checkIn(id,stationName,t);
  * obj->checkOut(id,stationName,t);
- * double param_3 = obj->gettripInfoTime(startStation,endStation);
+ * double param_3 = obj->getAverageTime(startStation,endStation);
  */
