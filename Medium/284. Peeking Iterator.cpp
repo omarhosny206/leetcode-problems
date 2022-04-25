@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/peeking-iterator/
 
 /*
  * Below is the interface for Iterator, which is already defined for you.
