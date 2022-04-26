@@ -3,13 +3,13 @@
 class Graph
 {
 private:
-    vector<vector<int>> graph;
+    vector<vector<pair<int, int>>> graph;
     vector<bool> visited;
     vector<int> distance;
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> vertices;
 
 public:
-    Graph(vector<vector<int>> &data)
+    Graph(vector<vector<pair<int, int>>> &data)
     {
         this->graph = data;
         this->visited = vector<bool>(graph.size());
@@ -31,13 +31,10 @@ public:
 
             visited[source] = true;
 
-            for (int j = 0; j < graph[source].size(); ++j)
+            for (pair<int, int> &edge : graph[source])
             {
-                if (j == source)
-                    continue;
-
-                int destination = j;
-                int edgeDistance = graph[source][destination];
+                int destination = edge.first;
+                int edgeDistance = edge.second;
 
                 if (!visited[destination] && edgeDistance < distance[destination])
                 {
@@ -65,15 +62,15 @@ public:
     int minCostConnectPoints(vector<vector<int>> &points)
     {
         Graph *graph = nullptr;
-        vector<vector<int>> data(points.size(), vector<int>(points.size()));
+        vector<vector<pair<int, int>>> data(points.size());
 
         for (int i = 0; i < points.size(); ++i)
         {
             for (int j = i + 1; j < points.size(); ++j)
             {
                 int distance = abs(points[i][0] - points[j][0]) + abs(points[i][1] - points[j][1]);
-                data[i][j] = distance;
-                data[j][i] = distance;
+                data[i].push_back({j, distance});
+                data[j].push_back({i, distance});
             }
         }
 
