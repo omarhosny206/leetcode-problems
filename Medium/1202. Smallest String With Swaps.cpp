@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/smallest-string-with-swaps/
 
 class Solution
 {
