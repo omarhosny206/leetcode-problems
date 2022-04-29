@@ -8,13 +8,13 @@ public:
         vector<int> color(graph.size(), -1);
 
         for (int i = 0; i < graph.size(); ++i)
-            if (color[i] == -1 && !DFS(graph, color, i, 0))
+            if (color[i] == -1 && !dfs(graph, color, i, 0))
                 return false;
 
         return true;
     }
 
-    bool DFS(vector<vector<int>> &graph, vector<int> &color, int source, int previousColor)
+    bool dfs(vector<vector<int>> &graph, vector<int> &color, int source, int previousColor)
     {
         if (color[source] != -1)
             return color[source] != previousColor;
@@ -23,7 +23,7 @@ public:
 
         for (int &destination : graph[source])
         {
-            bool check = DFS(graph, color, destination, color[source]);
+            bool check = dfs(graph, color, destination, color[source]);
 
             if (check == false)
                 return false;
