@@ -8,13 +8,13 @@ public:
         vector<int> color(graph.size(), -1);
 
         for (int i = 0; i < graph.size(); ++i)
-            if (color[i] == -1 && !BFS(graph, color, i))
+            if (color[i] == -1 && !bfs(graph, color, i))
                 return false;
 
         return true;
     }
 
-    bool BFS(vector<vector<int>> &graph, vector<int> &color, int source)
+    bool bfs(vector<vector<int>> &graph, vector<int> &color, int source)
     {
         queue<int> nodes;
         nodes.push(source);
