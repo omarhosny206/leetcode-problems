@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/evaluate-division/
 
 class Solution
 {
