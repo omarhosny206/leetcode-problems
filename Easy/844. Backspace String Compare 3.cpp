@@ -15,7 +15,7 @@ public:
         string result = "";
         stack<char> letters;
 
-        for (char c : text)
+        for (char &c : text)
         {
             if (c != '#')
                 letters.push(c);
