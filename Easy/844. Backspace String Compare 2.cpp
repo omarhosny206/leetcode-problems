@@ -3,12 +3,12 @@
 class Solution
 {
 public:
-    bool backspaceCompare(string S, string T)
+    bool backspaceCompare(string s, string t)
     {
         stack<char> first;
         stack<char> second;
 
-        for (char c : S)
+        for (char &c : s)
         {
             if (c != '#')
                 first.push(c);
@@ -17,7 +17,7 @@ public:
                 first.pop();
         }
 
-        for (char c : T)
+        for (char &c : t)
         {
             if (c != '#')
                 second.push(c);
