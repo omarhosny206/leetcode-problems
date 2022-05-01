@@ -3,30 +3,31 @@
 class Solution
 {
 public:
-    bool backspaceCompare(string S, string T)
+    bool backspaceCompare(string s, string t)
     {
-        string new_s = stringBuilder(S);
-        string new_t = stringBuilder(T);
-        return new_s == new_t;
+        string first = buildString(s);
+        string second = buildString(t);
+        return first == second;
     }
 
-    string stringBuilder(string text)
+    string buildString(string &text)
     {
         string result = "";
-        stack<char> text_stack;
+        stack<char> letters;
 
         for (char c : text)
         {
             if (c != '#')
-                text_stack.push(c);
-            else if (!text_stack.empty())
-                text_stack.pop();
+                letters.push(c);
+
+            else if (!letters.empty())
+                letters.pop();
         }
 
-        while (!text_stack.empty())
+        while (!letters.empty())
         {
-            result += text_stack.top();
-            text_stack.pop();
+            result += letters.top();
+            letters.pop();
         }
 
         return result;
