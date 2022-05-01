@@ -12,6 +12,7 @@ public:
         {
             if (c != '#')
                 first.push(c);
+
             else if (!first.empty())
                 first.pop();
         }
@@ -20,6 +21,7 @@ public:
         {
             if (c != '#')
                 second.push(c);
+
             else if (!second.empty())
                 second.pop();
         }
