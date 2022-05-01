@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/backspace-string-compare/
 
 class Solution
 {
