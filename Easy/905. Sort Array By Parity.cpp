@@ -3,20 +3,20 @@
 class Solution
 {
 public:
-    vector<int> sortArrayByParity(vector<int> &A)
+    vector<int> sortArrayByParity(vector<int> &nums)
     {
-        int i = 0;
-        int j = A.size() - 1;
-        vector<int> result(A.size());
+        int index = 0;
 
-        for (int num : A)
+        for (int i = 0; i < nums.size(); ++i)
         {
-            if (num % 2 == 0)
-                result[i++] = num;
-            else
-                result[j--] = num;
+            if (nums[i] % 2 == 0)
+            {
+                int temp = nums[index];
+                nums[index++] = nums[i];
+                nums[i] = temp;
+            }
         }
 
-        return result;
+        return nums;
     }
 };

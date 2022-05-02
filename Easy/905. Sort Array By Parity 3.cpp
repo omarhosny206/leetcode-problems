@@ -10,30 +10,20 @@ public:
 
         while (i < j)
         {
-            if (isOdd(nums[i]) && isEven(nums[j]))
+            if (nums[i] % 2 > nums[j] % 2)
             {
                 int temp = nums[i];
                 nums[i] = nums[j];
                 nums[j] = temp;
             }
 
-            if (isEven(nums[i]))
+            if (nums[i] % 2 == 0)
                 i++;
 
-            if (isOdd(nums[j]))
+            if (nums[j] % 2 == 1)
                 j--;
         }
 
         return nums;
-    }
-
-    bool isEven(int &num)
-    {
-        return num % 2 == 0;
-    }
-
-    bool isOdd(int &num)
-    {
-        return num % 2 == 1;
     }
 };
