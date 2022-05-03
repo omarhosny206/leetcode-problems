@@ -5,24 +5,28 @@ class Solution
 public:
     int findUnsortedSubarray(vector<int> &nums)
     {
-        int start = INT_MAX;
-        int end = INT_MIN;
+        int start = 0;
+        int end = nums.size() - 1;
 
-        vector<int> sortedNums = nums;
+        int minDecreasing = INT_MAX;
+        int maxIncreasing = INT_MIN;
 
-        sort(sortedNums.begin(), sortedNums.end());
+        for (int i = 1; i < nums.size(); ++i)
+            if (nums[i] < nums[i - 1])
+                minDecreasing = min(minDecreasing, nums[i]);
 
-        for (int i = 0; i < nums.size(); ++i)
-        {
-            if (sortedNums[i] != nums[i])
-            {
-                start = min(start, i);
-                end = max(end, i);
-            }
-        }
+        for (int i = nums.size() - 2; i >= 0; --i)
+            if (nums[i] > nums[i + 1])
+                maxIncreasing = max(maxIncreasing, nums[i]);
 
-        if (start == INT_MAX)
+        if (minDecreasing == INT_MAX && maxIncreasing == INT_MIN)
             return 0;
+
+        while (start < nums.size() && nums[start] <= minDecreasing)
+            start++;
+
+        while (end >= 0 && nums[end] >= maxIncreasing)
+            end--;
 
         return end - start + 1;
     }
