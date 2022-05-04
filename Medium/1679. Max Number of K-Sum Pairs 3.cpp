@@ -13,10 +13,9 @@ public:
 
         for (int &num : nums)
         {
-            freq[num]--;
-
-            if (freq[num] >= 0 && freq[k - num] > 0)
+            if ((num != k - num && freq[num] > 0 && freq[k - num] > 0) || (num == k - num && freq[k - num] > 1))
             {
+                freq[num]--;
                 freq[k - num]--;
                 result++;
             }

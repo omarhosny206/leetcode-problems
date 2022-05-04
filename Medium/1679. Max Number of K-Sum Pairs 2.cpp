@@ -5,24 +5,25 @@ class Solution
 public:
     int maxOperations(vector<int> &nums, int k)
     {
-        sort(nums.begin(), nums.end());
-        int operations = 0;
-        int i = 0, j = nums.size() - 1;
-        while (i < j)
+        int result = 0;
+        unordered_map<int, int> freq;
+
+        for (int &num : nums)
+            freq[num]++;
+
+        for (int &num : nums)
         {
-            if (nums[i] + nums[j] == k)
+            if (freq[num] > 0 && freq[k - num] > 0)
             {
-                operations++;
-                i++;
-                j--;
+                freq[num]--;
+                freq[k - num]--;
+                result++;
+
+                if (freq[num] < 0)
+                    result--;
             }
-
-            else if (nums[i] + nums[j] > k)
-                j--;
-
-            else
-                i++;
         }
-        return operations;
+
+        return result;
     }
 };
