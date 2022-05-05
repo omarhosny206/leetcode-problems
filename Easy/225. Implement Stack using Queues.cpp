@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/implement-stack-using-queues/solution/
 
 class MyStack
 {
