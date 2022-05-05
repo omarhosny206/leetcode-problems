@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/implement-stack-using-queues/solution/
+// https://leetcode.com/problems/implement-stack-using-queues/
 
 class MyStack
 {
@@ -11,13 +11,20 @@ public:
 
     void push(int x)
     {
-        int size = values.size();
+        queue<int> temp;
+
+        while (!values.empty())
+        {
+            temp.push(values.front());
+            values.pop();
+        }
+
         values.push(x);
 
-        while (size--)
+        while (!temp.empty())
         {
-            values.push(values.front());
-            values.pop();
+            values.push(temp.front());
+            temp.pop();
         }
     }
 

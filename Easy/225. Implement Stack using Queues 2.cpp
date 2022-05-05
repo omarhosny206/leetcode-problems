@@ -6,42 +6,38 @@ class MyStack
     queue<int> second;
 
 public:
-    /** Initialize your data structure here. */
     MyStack()
     {
     }
 
-    /** Push element x onto stack. */
     void push(int x)
     {
         second.push(x);
+
         while (!first.empty())
         {
             second.push(first.front());
             first.pop();
         }
 
-        queue<int> temp;
-        temp = second;
+        queue<int> temp = second;
         second = first;
         first = temp;
     }
 
-    /** Removes the element on top of the stack and returns that element. */
     int pop()
     {
-        int p = first.front();
+        int result = first.front();
         first.pop();
-        return p;
+
+        return result;
     }
 
-    /** Get the top element. */
     int top()
     {
         return first.front();
     }
 
-    /** Returns whether the stack is empty. */
     bool empty()
     {
         return first.empty();
