@@ -14,14 +14,10 @@ public:
                 letters.push({c, 1});
 
             else if (letters.top().first == c)
-            {
                 letters.top().second++;
-            }
 
             if (letters.top().second == k)
-            {
                 letters.pop();
-            }
         }
 
         while (!letters.empty())
@@ -30,11 +26,11 @@ public:
             letters.pop();
         }
 
-        Reverse(result);
+        reverse(result);
         return result;
     }
 
-    void Reverse(string &word)
+    void reverse(string &word)
     {
         int i = 0;
         int j = word.length() - 1;
