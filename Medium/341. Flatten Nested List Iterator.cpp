@@ -24,18 +24,6 @@ class NestedIterator
     int position = 0;
 
 public:
-    void dfs(vector<NestedInteger> &nestedList)
-    {
-        for (auto element : nestedList)
-        {
-            if (element.isInteger())
-                result.push_back(element.getInteger());
-
-            else
-                dfs(element.getList());
-        }
-    }
-
     NestedIterator(vector<NestedInteger> &nestedList)
     {
         dfs(nestedList);
@@ -49,6 +37,18 @@ public:
     bool hasNext()
     {
         return position != result.size();
+    }
+
+    void dfs(vector<NestedInteger> &nestedList)
+    {
+        for (auto element : nestedList)
+        {
+            if (element.isInteger())
+                result.push_back(element.getInteger());
+
+            else
+                dfs(element.getList());
+        }
     }
 };
 
