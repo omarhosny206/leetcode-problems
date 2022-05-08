@@ -2,6 +2,12 @@
 
 # Recording my journey on [LeetCode](https://leetcode.com/problemset/algorithms/) 
 
+<p align="center">  
+<b> <i style="color:green">778+ </i>Solved Questions <b>
+</p>
+
+
+
 
 <p align="center">  
 	<br>
