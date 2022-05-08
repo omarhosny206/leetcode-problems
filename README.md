@@ -402,6 +402,7 @@
 |819|[Most Common Word](https://leetcode.com/problems/most-common-word/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/819.%20Most%20Common%20Word.cpp) |Easy|
 |821|[Shortest Distance to a Character](https://leetcode.com/problems/shortest-distance-to-a-character/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/821.%20Shortest%20Distance%20to%20a%20Character.cpp) |Easy|
 |824|[Goat Latin](https://leetcode.com/problems/goat-latin/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/824.%20Goat%20Latin.cpp) |Easy|
+|827|[Making A Large Island](https://leetcode.com/problems/making-a-large-island/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/827.%20Making%20A%20Large%20Island.cpp) |Hard|
 |830|[Positions of Large Groups](https://leetcode.com/problems/positions-of-large-groups/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/830.%20Positions%20of%20Large%20Groups.cpp) |Easy|
 |832|[Flipping an Image](https://leetcode.com/problems/flipping-an-image/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/832.%20Flipping%20an%20Image.cpp) |Easy|
 |836|[Rectangle Overlap](https://leetcode.com/problems/rectangle-overlap/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/836.%20Rectangle%20Overlap.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/836.%20Rectangle%20Overlap%202.cpp) |Easy|
