@@ -20,8 +20,7 @@
 
 class NestedIterator
 {
-    vector<int> result;
-    int position = 0;
+    queue<int> result;
 
 public:
     void dfs(vector<NestedInteger> &nestedList)
@@ -29,7 +28,7 @@ public:
         for (auto element : nestedList)
         {
             if (element.isInteger())
-                result.push_back(element.getInteger());
+                result.push(element.getInteger());
 
             else
                 dfs(element.getList());
@@ -43,12 +42,15 @@ public:
 
     int next()
     {
-        return result[position++];
+        int value = result.front();
+        result.pop();
+
+        return value;
     }
 
     bool hasNext()
     {
-        return position != result.size();
+        return !result.empty();
     }
 };
 
