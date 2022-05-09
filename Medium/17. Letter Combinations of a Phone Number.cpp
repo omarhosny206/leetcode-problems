@@ -2,10 +2,11 @@
 
 class Solution
 {
+    vector<string> result;
+
 public:
     vector<string> letterCombinations(string digits)
     {
-
         if (digits.length() == 0)
             return {};
 
@@ -22,24 +23,23 @@ public:
             "wxyz",
         };
 
-        vector<string> result;
-        letterCombinationsRecursive(result, digits, "", 0, mapping);
+        dfs(digits, mapping, "", 0);
         return result;
     }
 
-    void letterCombinationsRecursive(vector<string> &result, string digits, string current, int index, string mapping[])
+    void dfs(string &digits, string mapping[], string current, int i)
     {
-
-        if (index == digits.length())
+        if (i == digits.length())
         {
             result.push_back(current);
             return;
         }
 
-        string letters = mapping[digits[index] - '0'];
-        for (int i = 0; i < letters.length(); i++)
+        for (char &c : mapping[digits[i] - '0'])
         {
-            letterCombinationsRecursive(result, digits, current + letters[i], index + 1, mapping);
+            current += c;
+            dfs(digits, mapping, current, i + 1);
+            current.pop_back();
         }
     }
 };
