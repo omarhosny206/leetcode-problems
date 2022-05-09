@@ -10,7 +10,7 @@ public:
         if (digits.length() == 0)
             return {};
 
-        string mapping[] = {
+        vector<string> mappings = {
             "0",
             "1",
             "abc",
@@ -23,11 +23,11 @@ public:
             "wxyz",
         };
 
-        dfs(digits, mapping, "", 0);
+        dfs(digits, mappings, "", 0);
         return result;
     }
 
-    void dfs(string &digits, string mapping[], string current, int i)
+    void dfs(string &digits, vector<string> &mappings, string current, int i)
     {
         if (i == digits.length())
         {
@@ -35,10 +35,10 @@ public:
             return;
         }
 
-        for (char &c : mapping[digits[i] - '0'])
+        for (char &c : mappings[digits[i] - '0'])
         {
             current += c;
-            dfs(digits, mapping, current, i + 1);
+            dfs(digits, mappings, current, i + 1);
             current.pop_back();
         }
     }
