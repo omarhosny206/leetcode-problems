@@ -2,26 +2,27 @@
 
 class Solution
 {
-    int answer = 0;
+    int result = 0;
 
 public:
     int countVowelStrings(int n)
     {
         vector<char> vowels = {'a', 'e', 'i', 'o', 'u'};
-        DFS(n, ' ', vowels);
-        return answer;
+        dfs(n, vowels, ' ');
+
+        return result;
     }
 
-    void DFS(int n, char letter, vector<char> &vowels)
+    void dfs(int n, vector<char> &vowels, char previousVowel)
     {
         if (n == 0)
         {
-            answer++;
+            result++;
             return;
         }
 
-        for (char c : vowels)
-            if (letter <= c)
-                DFS(n - 1, c, vowels);
+        for (char &vowel : vowels)
+            if (vowel >= previousVowel)
+                dfs(n - 1, vowels, vowel);
     }
 };
