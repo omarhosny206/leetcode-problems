@@ -7,13 +7,14 @@ class Solution
 public:
     int countVowelStrings(int n)
     {
-        vector<char> vowels = {'a', 'e', 'i', 'o', 'u'};
-        dfs(n, vowels, ' ');
+        string vowels = "aeiou";
+        string current = "";
+        dfs(n, vowels, current, 0);
 
         return result;
     }
 
-    void dfs(int n, vector<char> &vowels, char previousVowel)
+    void dfs(int n, string &vowels, string &current, int index)
     {
         if (n == 0)
         {
@@ -21,8 +22,11 @@ public:
             return;
         }
 
-        for (char &vowel : vowels)
-            if (vowel >= previousVowel)
-                dfs(n - 1, vowels, vowel);
+        for (int i = index; i < vowels.length(); ++i)
+        {
+            current += vowels[i];
+            dfs(n - 1, vowels, current, i);
+            current.pop_back();
+        }
     }
 };
