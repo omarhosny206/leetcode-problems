@@ -26,10 +26,10 @@ public:
         if (root == nullptr)
             return root;
 
-        return BFS(root);
+        return bfs(root);
     }
 
-    Node *BFS(Node *root)
+    Node *bfs(Node *root)
     {
         queue<Node *> nodes;
         nodes.push(root);
@@ -37,6 +37,7 @@ public:
         while (!nodes.empty())
         {
             int size = nodes.size();
+
             for (int i = 0; i < size; ++i)
             {
                 Node *current = nodes.front();
