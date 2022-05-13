@@ -25,22 +25,22 @@ class Solution
 public:
     Node *connect(Node *root)
     {
-        DFS(root, 0);
+        dfs(root, 0);
 
-        for (auto level : nodes)
+        for (auto &level : nodes)
             for (int i = 0; i < level.second.size() - 1; ++i)
                 level.second[i]->next = level.second[i + 1];
 
         return root;
     }
 
-    void DFS(Node *root, int level)
+    void dfs(Node *root, int level)
     {
         if (root == nullptr)
             return;
 
         nodes[level].push_back(root);
-        DFS(root->left, level + 1);
-        DFS(root->right, level + 1);
+        dfs(root->left, level + 1);
+        dfs(root->right, level + 1);
     }
 };
