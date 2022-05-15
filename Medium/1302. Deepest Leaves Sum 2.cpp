@@ -13,30 +13,32 @@
  */
 class Solution
 {
-    int result = 0;
-    int maxDepth = 0;
-
 public:
     int deepestLeavesSum(TreeNode *root)
     {
-        dfs(root, 0);
-        return result;
+        int maxDepth = getDepth(root);
+        return dfs(root, 1, maxDepth);
     }
 
-    void dfs(TreeNode *root, int currentDepth)
+    int dfs(TreeNode *root, int currentDepth, int maxDepth)
     {
         if (root == nullptr)
-            return;
+            return 0;
 
-        if (maxDepth < currentDepth)
-            result = 0;
+        if (currentDepth == maxDepth)
+            return root->val;
 
-        if (root->left == nullptr && root->right == nullptr && currentDepth >= maxDepth)
-            result += root->val;
+        return dfs(root->left, currentDepth + 1, maxDepth) + dfs(root->right, currentDepth + 1, maxDepth);
+    }
 
-        maxDepth = max(maxDepth, currentDepth);
+    int getDepth(TreeNode *root)
+    {
+        if (root == nullptr)
+            return 0;
 
-        dfs(root->left, currentDepth + 1);
-        dfs(root->right, currentDepth + 1);
+        int left = getDepth(root->left);
+        int right = getDepth(root->right);
+
+        return 1 + max(left, right);
     }
 };
