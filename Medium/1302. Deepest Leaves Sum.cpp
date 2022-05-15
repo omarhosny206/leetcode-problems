@@ -13,38 +13,39 @@
  */
 class Solution
 {
-    int sum = 0;
-    int maxDepth = 0;
-    map<int, int> nodeDepth;
-
 public:
     int deepestLeavesSum(TreeNode *root)
     {
-        deepestLeavesSumRecursive(root, 0);
-
-        for (pair<int, int> p : nodeDepth)
-            sum += p.first;
-
-        return sum;
+        return bfs(root);
     }
 
-    void deepestLeavesSumRecursive(TreeNode *current, int depth)
+    int bfs(TreeNode *root)
     {
-        if (current == nullptr)
-            return;
+        int levelSum = 0;
+        queue<TreeNode *> nodes;
 
-        if (maxDepth < depth)
-            nodeDepth.clear();
+        nodes.push(root);
 
-        maxDepth = max(maxDepth, depth);
+        while (!nodes.empty())
+        {
+            levelSum = 0;
+            int size = nodes.size();
 
-        if (current->left == nullptr && current->right == nullptr && depth >= maxDepth)
-            nodeDepth[current->val] = depth;
+            for (int i = 0; i < size; ++i)
+            {
+                TreeNode *current = nodes.front();
+                nodes.pop();
 
-        if (current->left)
-            deepestLeavesSumRecursive(current->left, depth + 1);
+                levelSum += current->val;
 
-        if (current->right)
-            deepestLeavesSumRecursive(current->right, depth + 1);
+                if (current->left != nullptr)
+                    nodes.push(current->left);
+
+                if (current->right != nullptr)
+                    nodes.push(current->right);
+            }
+        }
+
+        return levelSum;
     }
 };

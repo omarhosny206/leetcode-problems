@@ -13,39 +13,30 @@
  */
 class Solution
 {
+    int result = 0;
+    int maxDepth = 0;
+
 public:
     int deepestLeavesSum(TreeNode *root)
     {
-        return bfs(root);
+        dfs(root, 0);
+        return result;
     }
 
-    int bfs(TreeNode *root)
+    void dfs(TreeNode *root, int currentDepth)
     {
-        int levelSum = 0;
-        queue<TreeNode *> nodes;
+        if (root == nullptr)
+            return;
 
-        nodes.push(root);
+        if (maxDepth < currentDepth)
+            result = 0;
 
-        while (!nodes.empty())
-        {
-            levelSum = 0;
-            int size = nodes.size();
+        if (root->left == nullptr && root->right == nullptr && currentDepth >= maxDepth)
+            result += root->val;
 
-            for (int i = 0; i < size; ++i)
-            {
-                TreeNode *current = nodes.front();
-                nodes.pop();
+        maxDepth = max(maxDepth, currentDepth);
 
-                levelSum += current->val;
-
-                if (current->left != nullptr)
-                    nodes.push(current->left);
-
-                if (current->right != nullptr)
-                    nodes.push(current->right);
-            }
-        }
-
-        return levelSum;
+        dfs(root->left, currentDepth + 1);
+        dfs(root->right, currentDepth + 1);
     }
 };
