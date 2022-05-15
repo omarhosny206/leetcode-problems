@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/deepest-leaves-sum/
+// https://leetcode.com/problems/deepest-leaves-sum/
 
 /**
  * Definition for a binary tree node.
@@ -16,21 +16,27 @@ class Solution
 public:
     int deepestLeavesSum(TreeNode *root)
     {
-        int level_sum = 0;
+        return bfs(root);
+    }
+
+    int bfs(TreeNode *root)
+    {
+        int levelSum = 0;
         queue<TreeNode *> nodes;
 
         nodes.push(root);
 
         while (!nodes.empty())
         {
-            level_sum = 0;
+            levelSum = 0;
             int size = nodes.size();
 
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < size; ++i)
             {
                 TreeNode *current = nodes.front();
                 nodes.pop();
-                level_sum += current->val;
+
+                levelSum += current->val;
 
                 if (current->left != nullptr)
                     nodes.push(current->left);
@@ -40,6 +46,6 @@ public:
             }
         }
 
-        return level_sum;
+        return levelSum;
     }
 };
