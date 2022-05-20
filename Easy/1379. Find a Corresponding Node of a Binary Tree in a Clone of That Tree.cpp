@@ -12,28 +12,27 @@
 
 class Solution
 {
-    TreeNode *node;
+    TreeNode *result;
 
 public:
     TreeNode *getTargetCopy(TreeNode *original, TreeNode *cloned, TreeNode *target)
     {
-        DFS(original, cloned, target);
-        return node;
+        dfs(original, cloned, target);
+        return result;
     }
 
-    void DFS(TreeNode *original, TreeNode *cloned, TreeNode *target)
+    void dfs(TreeNode *original, TreeNode *cloned, TreeNode *target)
     {
         if (original == nullptr)
             return;
 
-        getTargetCopy(original->left, cloned->left, target);
-
         if (original == target)
         {
-            node = cloned;
+            result = cloned;
             return;
         }
 
-        getTargetCopy(original->right, cloned->right, target);
+        dfs(original->left, cloned->left, target);
+        dfs(original->right, cloned->right, target);
     }
 };
