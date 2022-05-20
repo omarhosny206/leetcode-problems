@@ -66,6 +66,7 @@
 |59|[Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/59.%20Spiral%20Matrix%20II.cpp) |Medium|
 |61|[Rotate List](https://leetcode.com/problems/rotate-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/61.%20Rotate%20List.cpp) |Medium|
 |62|[Unique Paths](https://leetcode.com/problems/unique-paths/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/62.%20Unique%20Paths.cpp) |Medium|
+|63|[Unique Paths II](https://leetcode.com/problems/unique-paths-ii/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/63.%20Unique%20Paths%20II.cpp) |Medium|
 |64|[Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/64.%20Minimum%20Path%20Sum.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/64.%20Minimum%20Path%20Sum%202.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/64.%20Minimum%20Path%20Sum%203.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/64.%20Minimum%20Path%20Sum%204.cpp) |Medium|
 |66|[Plus One](https://leetcode.com/problems/plus-one/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/66.%20Plus%20One.cpp) |Easy|
 |67|[Add Binary](https://leetcode.com/problems/add-binary/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/67.%20Add%20Binary.cpp) |Easy|
