@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/merge-sorted-array/
 
 class Solution
 {
