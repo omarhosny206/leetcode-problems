@@ -10,14 +10,15 @@ public:
 
         while (i < j)
         {
-
             int sum = numbers[i] + numbers[j];
 
             if (sum == target)
                 return {i + 1, j + 1};
+
             else if (sum > target)
             {
                 int num = numbers[j];
+                
                 while (num == numbers[j])
                     j--;
             }
@@ -25,10 +26,12 @@ public:
             else if (sum < target)
             {
                 int num = numbers[i];
+
                 while (num == numbers[i])
                     i++;
             }
         }
+        
         return {};
     }
 };
