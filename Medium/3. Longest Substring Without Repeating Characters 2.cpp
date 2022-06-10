@@ -6,7 +6,7 @@ public:
     int lengthOfLongestSubstring(string s)
     {
         set<char> chars;
-        int answer = 0;
+        int result = 0;
         int i = 0;
         int j = 0;
 
@@ -15,13 +15,13 @@ public:
             if (chars.find(s[j]) == chars.end())
             {
                 chars.insert(s[j++]);
-                answer = max(answer, j - i);
+                result = max(result, j - i);
             }
 
             else
                 chars.erase(s[i++]);
         }
 
-        return answer;
+        return result;
     }
 };

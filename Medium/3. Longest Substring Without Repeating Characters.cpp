@@ -5,18 +5,19 @@ class Solution
 public:
     int lengthOfLongestSubstring(string s)
     {
-        map<char, int> chars;
-        int answer = 0;
+        int result = 0;
+        unordered_map<char, int> seen;
+        int i = 0;
 
-        for (int i = 0, j = 0; j < s.length(); j++)
+        for (int j = 0; j < s.length(); j++)
         {
-            if (chars.find(s[j]) != chars.end())
-                i = max(i, chars[s[j]]);
+            if (seen.find(s[j]) != seen.end())
+                i = max(i, seen[s[j]]);
 
-            answer = max(answer, j - i + 1);
-            chars[s[j]] = j + 1;
+            seen[s[j]] = j + 1;
+            result = max(result, j - i + 1);
         }
 
-        return answer;
+        return result;
     }
 };
