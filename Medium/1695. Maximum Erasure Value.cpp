@@ -5,33 +5,40 @@ class Solution
 public:
     int maximumUniqueSubarray(vector<int> &nums)
     {
-        queue<int> unique;
-        unordered_map<int, bool> seen;
+        int result = INT_MIN;
+        unordered_map<int, int> freq;
+
+        int i = 0;
+        int j = 0;
         int sum = 0;
-        int max_score = INT_MIN;
+        int counter = 0;
 
-        for (int num : nums)
+        while (j < nums.size())
         {
-            if (seen[num] == true)
-            {
-                while (num != unique.front())
-                {
-                    sum -= unique.front();
-                    seen[unique.front()] = false;
-                    unique.pop();
-                }
+            sum += nums[j];
+            freq[nums[j]]++;
 
-                sum -= unique.front();
-                unique.pop();
+            if (freq[nums[j]] > 1)
+                counter++;
+
+            if (counter == 0)
+                result = max(result, sum);
+
+            else
+            {
+                while (i < j && counter != 0)
+                {
+                    if (--freq[nums[i]] >= 1)
+                        counter--;
+
+                    sum -= nums[i];
+                    i++;
+                }
             }
 
-            sum += num;
-            max_score = max(max_score, sum);
-            unique.push(num);
-            seen[num] = true;
+            j++;
         }
 
-        max_score = max(max_score, sum);
-        return max_score;
+        return result;
     }
 };
