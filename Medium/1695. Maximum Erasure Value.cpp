@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/maximum-erasure-value/
 
 class Solution
 {
