@@ -6,11 +6,11 @@ public:
     int maximumUniqueSubarray(vector<int> &nums)
     {
         int result = INT_MIN;
+        unordered_set<int> seen;
 
         int i = 0;
         int j = 0;
         int sum = 0;
-        unordered_set<int> seen;
 
         while (j < nums.size())
         {
@@ -21,8 +21,9 @@ public:
                 i++;
             }
 
-            sum += nums[j];
             seen.insert(nums[j]);
+
+            sum += nums[j];
             result = max(result, sum);
             j++;
         }
