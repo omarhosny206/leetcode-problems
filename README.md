@@ -514,6 +514,7 @@
 |1041|[Robot Bounded In Circle](https://leetcode.com/problems/robot-bounded-in-circle/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/1041.%20Robot%20Bounded%20In%20Circle.cpp) |Medium|
 |1046|[Last Stone Weight](https://leetcode.com/problems/last-stone-weight/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1046.%20Last%20Stone%20Weight.cpp) |Easy|
 |1047|[Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1047.%20Remove%20All%20Adjacent%20Duplicates%20In%20String.cpp) |Easy|
+|1048|[Longest String Chain](https://leetcode.com/problems/longest-string-chain/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/1048.%20Longest%20String%20Chain.cpp) |Medium|
 |1051|[Height Checker](https://leetcode.com/problems/height-checker/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1051.%20Height%20Checker.cpp) |Easy|
 |1078|[Occurrences After Bigram](https://leetcode.com/problems/occurrences-after-bigram/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/1078.%20Occurrences%20After%20Bigram.cpp) |Easy|
 |1079|[Letter Tile Possibilities](https://leetcode.com/problems/letter-tile-possibilities/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/1079.%20Letter%20Tile%20Possibilities.cpp) |Medium|
