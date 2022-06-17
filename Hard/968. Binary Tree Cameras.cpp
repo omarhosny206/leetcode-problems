@@ -21,16 +21,16 @@ class Solution
 public:
     int minCameraCover(TreeNode *root)
     {
-        return DFS(root) == cameraIsRequired ? result + 1 : result;
+        return dfs(root) == cameraIsRequired ? result + 1 : result;
     }
 
-    int DFS(TreeNode *root)
+    int dfs(TreeNode *root)
     {
         if (root == nullptr)
             return isCovered;
 
-        int left = DFS(root->left);
-        int right = DFS(root->right);
+        int left = dfs(root->left);
+        int right = dfs(root->right);
 
         if (left == cameraIsRequired || right == cameraIsRequired)
         {
