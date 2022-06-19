@@ -29,7 +29,7 @@ public:
         root = new TrieNode();
     }
 
-    void Insert(string word)
+    void insert(string word)
     {
         TrieNode *current = root;
 
@@ -44,7 +44,7 @@ public:
         current->isWord = true;
     }
 
-    vector<string> Search(string prefix)
+    vector<string> search(string prefix)
     {
         vector<string> words;
         TrieNode *current = root;
@@ -57,11 +57,11 @@ public:
             current = current->children[c];
         }
 
-        DFS(current, words, prefix);
+        dfs(current, words, prefix);
         return words;
     }
 
-    void DFS(TrieNode *root, vector<string> &words, string currentWord)
+    void dfs(TrieNode *root, vector<string> &words, string currentWord)
     {
         if (words.size() == 3)
             return;
@@ -70,7 +70,7 @@ public:
             words.push_back(currentWord);
 
         for (auto pair : root->children)
-            DFS(root->children[pair.first], words, currentWord + pair.first);
+            dfs(root->children[pair.first], words, currentWord + pair.first);
     }
 };
 
@@ -84,12 +84,12 @@ public:
         string prefix = "";
 
         for (string &product : products)
-            trie->Insert(product);
+            trie->insert(product);
 
         for (char &c : searchWord)
         {
             prefix += c;
-            result.push_back(trie->Search(prefix));
+            result.push_back(trie->search(prefix));
         }
 
         return result;
