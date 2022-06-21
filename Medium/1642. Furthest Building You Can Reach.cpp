@@ -16,14 +16,17 @@ public:
                 continue;
 
             min_heap.push(height);
+
             if (min_heap.size() > ladders)
             {
                 usedBricks += min_heap.top();
                 min_heap.pop();
+            
                 if (usedBricks > bricks)
                     return i;
             }
         }
+        
         return heights.size() - 1;
     }
 };
