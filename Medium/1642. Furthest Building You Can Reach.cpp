@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/furthest-building-you-can-reach/
 
 class Solution
 {
@@ -26,7 +25,7 @@ public:
                     return i;
             }
         }
-        
+
         return heights.size() - 1;
     }
 };
