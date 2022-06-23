@@ -7,7 +7,8 @@ public:
     {
         priority_queue<int> maxHeap;
         int current = 0;
-        sort(courses.begin(), courses.end(), comparator);
+
+        sort(courses.begin(), courses.end(), compare);
 
         for (int i = 0; i < courses.size(); i++)
         {
@@ -24,7 +25,7 @@ public:
         return maxHeap.size();
     }
 
-    static bool comparator(vector<int> &a, vector<int> &b)
+    static bool compare(vector<int> &a, vector<int> &b)
     {
         return (a[1] < b[1]);
     }
