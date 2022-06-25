@@ -6,6 +6,7 @@ public:
     bool checkPossibility(vector<int> &nums)
     {
         bool oneChangeMade = false;
+
         for (int i = 1; i < nums.size(); ++i)
         {
             if (nums[i - 1] > nums[i])
@@ -22,6 +23,7 @@ public:
                     return false;
             }
         }
+        
         return true;
     }
 };
