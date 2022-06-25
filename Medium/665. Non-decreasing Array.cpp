@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/non-decreasing-array/
 
 class Solution
 {
@@ -15,7 +16,7 @@ public:
                     nums[i - 1] = nums[i];
                     counter++;
                 }
-
+                
                 else
                 {
                     nums[i] = nums[i - 1];
