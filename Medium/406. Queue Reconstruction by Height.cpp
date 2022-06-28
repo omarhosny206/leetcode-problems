@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/queue-reconstruction-by-height/
 
 class Solution
 {
@@ -8,27 +7,23 @@ public:
         vector<vector<int>> result(people.size(), {-1, -1});
         sort(people.begin(), people.end(), compare);
 
-        result[people[0][1]] = people[0];
-
-        for (int i = 1; i < people.size(); ++i)
+        for (vector<int> &person : people)
         {
-            vector<int> person = people[i];
-
-            int j = 0;
+            int i = 0;
             int counter = person[1];
 
             while (counter > 0)
             {
-                if (person[0] <= result[j][0] || result[j][0] == -1)
+                if (person[0] <= result[i][0] || result[i][0] == -1)
                     counter--;
 
-                j++;
+                i++;
             }
 
-            while (j < people.size() && result[j][0] != -1)
-                j++;
+            while (i < people.size() && result[i][0] != -1)
+                i++;
 
-            result[j] = person;
+            result[i] = person;
         }
 
         return result;
