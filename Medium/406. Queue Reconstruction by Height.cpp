@@ -5,16 +5,16 @@ class Solution
 public:
     vector<vector<int>> reconstructQueue(vector<vector<int>> &people)
     {
-        vector<vector<int>> queue;
-        sort(people.begin(), people.end(), comp);
+        vector<vector<int>> result;
+        sort(people.begin(), people.end(), compare);
 
-        for (vector<int> person : people)
-            queue.insert(queue.begin() + person[1], person);
+        for (vector<int> &person : people)
+            result.insert(result.begin() + person[1], person);
 
-        return queue;
+        return result;
     }
 
-    static bool comp(vector<int> &a, vector<int> &b)
+    static bool compare(vector<int> &a, vector<int> &b)
     {
         return ((a[0] > b[0]) || (a[0] == b[0] && a[1] < b[1]));
     }
