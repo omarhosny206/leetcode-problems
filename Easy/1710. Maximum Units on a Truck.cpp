@@ -6,7 +6,8 @@ public:
     int maximumUnits(vector<vector<int>> &boxTypes, int truckSize)
     {
         int result = 0;
-        sort(boxTypes.begin(), boxTypes.end(), comp);
+
+        sort(boxTypes.begin(), boxTypes.end(), compare);
 
         for (int i = 0; i < boxTypes.size(); ++i)
         {
@@ -26,7 +27,7 @@ public:
         return result;
     }
 
-    static bool comp(vector<int> &a, vector<int> &b)
+    static bool compare(vector<int> &a, vector<int> &b)
     {
         return a[1] > b[1];
     }
