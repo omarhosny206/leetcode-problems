@@ -5,29 +5,31 @@ class Solution
 public:
     int longestConsecutive(vector<int> &nums)
     {
-        unordered_set<int> numbers;
-        for (int num : nums)
-            numbers.insert(num);
+        int result = 0;
+        unordered_set<int> values;
 
-        int answer = 0;
+        for (int &num : nums)
+            values.insert(num);
 
-        for (int num : nums)
+        for (int &num : nums)
         {
-            if (numbers.find(num - 1) == numbers.end())
-            {
-                int next = num + 1;
-                int counter = 1;
+            bool isFirstNumber = (values.find(num - 1) == values.end());
 
-                while (numbers.find(next) != numbers.end())
+            if (isFirstNumber)
+            {
+                int counter = 1;
+                int next = num + 1;
+
+                while (values.find(next) != values.end())
                 {
-                    next++;
                     counter++;
+                    next++;
                 }
 
-                answer = max(answer, counter);
+                result = max(result, counter);
             }
         }
 
-        return answer;
+        return result;
     }
 };
