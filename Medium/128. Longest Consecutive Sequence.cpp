@@ -5,29 +5,31 @@ class Solution
 public:
     int longestConsecutive(vector<int> &nums)
     {
-        unordered_map<int, int> numbers;
-        for (int num : nums)
-            numbers[num] = 1;
+        int result = 0;
+        unordered_map<int, bool> seen;
 
-        int answer = 0;
+        for (int &num : nums)
+            seen[num] = true;
 
-        for (int num : nums)
+        for (int &num : nums)
         {
-            if (numbers[num - 1] == 0)
-            {
-                int next = num + 1;
-                int counter = 1;
+            bool isFirstNumber = (seen[num - 1] == false);
 
-                while (numbers[next] == 1)
+            if (isFirstNumber)
+            {
+                int counter = 1;
+                int next = num + 1;
+
+                while (seen[next])
                 {
-                    next++;
                     counter++;
+                    next++;
                 }
 
-                answer = max(answer, counter);
+                result = max(result, counter);
             }
         }
 
-        return answer;
+        return result;
     }
 };
