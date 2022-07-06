@@ -3,22 +3,22 @@
 class Solution
 {
 public:
-    int fib(int N)
+    int fib(int n)
     {
-        vector<int> memo(N + 1, INT_MAX);
+        vector<int> memo(n + 1, -1);
 
-        return Fibonacci(N, memo);
+        return fib(n, memo);
     }
 
-    int Fibonacci(int N, vector<int> &memo)
+    int fib(int n, vector<int> &memo)
     {
-        if (N <= 1)
-            return N;
+        if (n <= 1)
+            return n;
 
-        if (memo[N] != INT_MAX)
-            return memo[N];
+        if (memo[n] != -1)
+            return memo[n];
 
-        memo[N] = Fibonacci(N - 1, memo) + Fibonacci(N - 2, memo);
-        return memo[N];
+        memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+        return memo[n];
     }
 };
