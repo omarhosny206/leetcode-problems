@@ -3,16 +3,17 @@
 class Solution
 {
 public:
-    int fib(int N)
+    int fib(int n)
     {
-        if (N <= 1)
-            return N;
+        int result;
 
-        int result = 0;
+        if (n <= 1)
+            return n;
+
         int first = 0;
         int second = 1;
 
-        for (int i = 2; i <= N; ++i)
+        for (int i = 2; i <= n; ++i)
         {
             result = first + second;
             first = second;
