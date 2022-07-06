@@ -3,14 +3,14 @@
 class Solution
 {
 public:
-    int fib(int N)
+    int fib(int n)
     {
-        if (N == 0)
+        if (n == 0)
             return 0;
 
-        if (N == 1)
+        if (n == 1)
             return 1;
 
-        return fib(N - 1) + fib(N - 2);
+        return fib(n - 1) + fib(n - 2);
     }
 };
