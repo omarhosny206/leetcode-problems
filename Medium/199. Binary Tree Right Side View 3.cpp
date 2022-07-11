@@ -13,32 +13,25 @@
  */
 class Solution
 {
-    vector<int> result;
-
 public:
     vector<int> rightSideView(TreeNode *root)
     {
         if (root == nullptr)
-            return result;
+            return {};
 
-        bfs(root);
-        return result;
-    }
-
-    void bfs(TreeNode *root)
-    {
+        vector<int> result;
         queue<TreeNode *> nodes;
 
         nodes.push(root);
-        result.push_back(root->val);
 
         while (!nodes.empty())
         {
             int size = nodes.size();
+            TreeNode *current;
 
             for (int i = 0; i < size; ++i)
             {
-                TreeNode *current = nodes.front();
+                current = nodes.front();
                 nodes.pop();
 
                 if (current->left != nullptr)
@@ -48,8 +41,9 @@ public:
                     nodes.push(current->right);
             }
 
-            if (nodes.size() > 0)
-                result.push_back(nodes.back()->val);
+            result.push_back(current->val);
         }
+
+        return result;
     }
 };

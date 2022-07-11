@@ -41,15 +41,15 @@ public:
                 TreeNode *current = nodes.front();
                 nodes.pop();
 
-                if (current->left != nullptr)
-                    nodes.push(current->left);
-
                 if (current->right != nullptr)
                     nodes.push(current->right);
+
+                if (current->left != nullptr)
+                    nodes.push(current->left);
             }
 
             if (nodes.size() > 0)
-                result.push_back(nodes.back()->val);
+                result.push_back(nodes.front()->val);
         }
     }
 };
