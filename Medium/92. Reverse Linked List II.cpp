@@ -15,9 +15,6 @@ class Solution
 public:
     ListNode *reverseBetween(ListNode *head, int m, int n)
     {
-        if (head == nullptr)
-            return nullptr;
-
         ListNode *current = head;
         ListNode *previous = nullptr;
 
@@ -44,6 +41,7 @@ public:
 
         if (leftLinkedList != nullptr)
             leftLinkedList->next = previous;
+
         else
             head = previous;
 

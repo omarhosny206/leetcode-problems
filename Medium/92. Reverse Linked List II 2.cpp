@@ -12,40 +12,46 @@
  */
 class Solution
 {
-    bool stop;
-    ListNode *left;
-
 public:
-    ListNode *reverseBetween(ListNode *head, int m, int n)
+    ListNode *reverseBetween(ListNode *head, int left, int right)
     {
-        left = head;
-        stop = false;
-        recurseAndReverse(head, m, n);
-        return head;
-    }
+        if (left == right)
+            return head;
 
-    void recurseAndReverse(ListNode *right, int m, int n)
-    {
-        if (n == 1)
-            return;
+        ListNode *first = head;
+        ListNode *second = head;
 
-        right = right->next;
+        int leftPointer = left;
+        int rightPointer = right;
 
-        if (m > 1)
-            left = left->next;
+        stack<ListNode *> nodes;
 
-        recurseAndReverse(right, m - 1, n - 1);
+        while (--left)
+            first = first->next;
 
-        if (left == right || right->next == left)
-            stop = true;
-
-        if (!stop)
+        while (--right)
         {
-            int temp = left->val;
-            left->val = right->val;
-            right->val = temp;
-
-            left = left->next;
+            nodes.push(second);
+            second = second->next;
         }
+
+        if (second)
+            nodes.push(second);
+
+        while (leftPointer < rightPointer)
+        {
+            int val = first->val;
+            first->val = nodes.top()->val;
+            nodes.top()->val = val;
+
+            first = first->next;
+
+            nodes.pop();
+
+            leftPointer++;
+            rightPointer--;
+        }
+
+        return head;
     }
 };
