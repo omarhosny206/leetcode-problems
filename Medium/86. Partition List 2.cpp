@@ -15,31 +15,29 @@ class Solution
 public:
     ListNode *partition(ListNode *head, int x)
     {
-        ListNode *leftDummy = new ListNode(0);
-        ListNode *rightDummy = new ListNode(0);
-        ListNode *currentLeft = leftDummy;
-        ListNode *currentRight = rightDummy;
+        ListNode *leftList = new ListNode();
+        ListNode *currentLeft = leftList;
+        ListNode *rightList = new ListNode();
+        ListNode *currentRight = rightList;
 
         while (head != nullptr)
         {
             if (head->val < x)
             {
-                currentLeft->next = head;
+                currentLeft->next = new ListNode(head->val);
                 currentLeft = currentLeft->next;
             }
 
             else
             {
-                currentRight->next = head;
+                currentRight->next = new ListNode(head->val);
                 currentRight = currentRight->next;
             }
 
             head = head->next;
         }
 
-        currentLeft->next = rightDummy->next;
-        currentRight->next = nullptr;
-
-        return leftDummy->next;
+        currentLeft->next = rightList->next;
+        return leftList->next;
     }
 };
