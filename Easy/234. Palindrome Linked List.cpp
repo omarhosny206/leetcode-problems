@@ -15,42 +15,42 @@ class Solution
 public:
     bool isPalindrome(ListNode *head)
     {
-        if (head == nullptr)
-            return true;
-
         ListNode *slow = head;
         ListNode *fast = head;
+
         while (fast->next != nullptr && fast->next->next != nullptr)
         {
             slow = slow->next;
             fast = fast->next->next;
         }
 
-        ListNode *secondLinkedList = reverseList(slow->next);
         ListNode *firstLinkedList = head;
+        ListNode *secondLinkedList = reverse(slow->next);
 
         while (secondLinkedList != nullptr && firstLinkedList != nullptr)
         {
             if (firstLinkedList->val != secondLinkedList->val)
                 return false;
+
             firstLinkedList = firstLinkedList->next;
             secondLinkedList = secondLinkedList->next;
         }
+
         return true;
     }
 
-    ListNode *reverseList(ListNode *head)
+    ListNode *reverse(ListNode *head)
     {
         ListNode *prev = nullptr;
-        ListNode *Next = nullptr;
+        ListNode *next = nullptr;
         ListNode *current = head;
 
         while (current != nullptr)
         {
-            Next = current->next;
+            next = current->next;
             current->next = prev;
             prev = current;
-            current = Next;
+            current = next;
         }
 
         return prev;
