@@ -24,7 +24,7 @@ public:
         if (root == NULL)
             return true;
 
-        else if (root->val >= max || root->val <= min)
+        if (root->val >= max || root->val <= min)
             return false;
 
         return dfs(root->left, (long long)root->val, min) && dfs(root->right, max, (long long)root->val);
