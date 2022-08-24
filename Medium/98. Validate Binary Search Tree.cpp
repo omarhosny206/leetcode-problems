@@ -16,19 +16,20 @@ class Solution
 public:
     bool isValidBST(TreeNode *root)
     {
-        return isValidBST_Recursively(root, LLONG_MAX, LLONG_MIN);
+        return dfs(root, LLONG_MAX, LLONG_MIN);
     }
 
-    bool isValidBST_Recursively(TreeNode *root, int64_t max, int64_t min)
+    bool dfs(TreeNode *root, long long max, long long min)
     {
-
         if (root == NULL)
             return true;
 
-        else if (root->val >= max || root->val <= min)
+        if (root->val >= max || root->val <= min)
             return false;
 
-        else
-            return isValidBST_Recursively(root->left, int64_t(root->val), min) && isValidBST_Recursively(root->right, max, int64_t(root->val));
+        bool left = dfs(root->left, (long long)root->val, min);
+        bool right = dfs(root->right, max, (long long)root->val);
+
+        return left && right;
     }
 };
