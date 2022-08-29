@@ -44,7 +44,7 @@ public:
                     int row = current.first + direction[0];
                     int column = current.second + direction[1];
 
-                    if (isValidNode(grid, row, column))
+                    if (isValidPosition(grid, row, column))
                     {
                         nodes.push({row, column});
                         grid[row][column] = '0';
@@ -54,7 +54,7 @@ public:
         }
     }
 
-    bool isValidNode(vector<vector<char>> &grid, int i, int j)
+    bool isValidPosition(vector<vector<char>> &grid, int i, int j)
     {
         if (i >= grid.size() || j >= grid[0].size() || i < 0 || j < 0 || grid[i][j] == '0')
             return false;
