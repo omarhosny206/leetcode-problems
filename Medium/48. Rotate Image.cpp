@@ -5,13 +5,13 @@ class Solution
 public:
     void rotate(vector<vector<int>> &matrix)
     {
-        Transpose(matrix);
+        transpose(matrix);
 
-        for (int i = 0; i < matrix.size(); i++)
-            Reverse(matrix, i);
+        for (vector<int> &row : matrix)
+            reverse(row);
     }
 
-    void Transpose(vector<vector<int>> &matrix)
+    void transpose(vector<vector<int>> &matrix)
     {
         for (int i = 0; i < matrix.size(); i++)
         {
@@ -24,16 +24,16 @@ public:
         }
     }
 
-    void Reverse(vector<vector<int>> &matrix, int row)
+    void reverse(vector<int> &row)
     {
         int i = 0;
-        int j = matrix[i].size() - 1;
+        int j = row.size() - 1;
 
         while (i < j)
         {
-            int temp = matrix[row][i];
-            matrix[row][i++] = matrix[row][j];
-            matrix[row][j--] = temp;
+            int temp = row[i];
+            row[i++] = row[j];
+            row[j--] = temp;
         }
     }
 };
