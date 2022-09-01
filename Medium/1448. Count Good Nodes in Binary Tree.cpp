@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/count-good-nodes-in-binary-tree/
 
 /**
  * Definition for a binary tree node.
