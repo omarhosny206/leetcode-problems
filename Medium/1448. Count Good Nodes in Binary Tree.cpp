@@ -18,27 +18,21 @@ class Solution
 public:
     int goodNodes(TreeNode *root)
     {
-        if (root == nullptr)
-            return 0;
-
-        int max = root->val;
-        DFS(root, max);
-
+        dfs(root, INT_MIN);
         return result;
     }
 
-    void DFS(TreeNode *root, int max)
+    void dfs(TreeNode *root, int pathMaxValue)
     {
         if (root == nullptr)
             return;
 
-        if (root->val >= max)
-        {
-            result++;
-            max = root->val;
-        }
+        pathMaxValue = max(pathMaxValue, root->val);
 
-        DFS(root->left, max);
-        DFS(root->right, max);
+        if (root->val == pathMaxValue)
+            result++;
+
+        dfs(root->left, pathMaxValue);
+        dfs(root->right, pathMaxValue);
     }
 };
