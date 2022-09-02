@@ -16,22 +16,21 @@ class Solution
 public:
     vector<double> averageOfLevels(TreeNode *root)
     {
-        if (root == nullptr)
-            return {};
-
-        vector<double> average_vals;
+        vector<double> result;
         queue<TreeNode *> nodes;
+
         nodes.push(root);
 
         while (!nodes.empty())
         {
+            int size = nodes.size();
             double sum = 0;
-            double size = nodes.size();
 
             for (int i = 0; i < size; ++i)
             {
                 TreeNode *current = nodes.front();
                 nodes.pop();
+
                 sum += current->val;
 
                 if (current->left != nullptr)
@@ -41,9 +40,9 @@ public:
                     nodes.push(current->right);
             }
 
-            average_vals.push_back(sum / size);
+            result.push_back(sum / size);
         }
 
-        return average_vals;
+        return result;
     }
 };
