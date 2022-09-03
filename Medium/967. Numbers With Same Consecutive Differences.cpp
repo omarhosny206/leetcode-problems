@@ -7,11 +7,13 @@ class Solution
 public:
     vector<int> numsSameConsecDiff(int n, int k)
     {
-        dfs(n, k, 0);
+        for (int i = 1; i <= 9; ++i)
+            dfs(n - 1, k, i, i);
+
         return result;
     }
 
-    void dfs(int n, int k, int current)
+    void dfs(int n, int k, int i, int current)
     {
         if (n == 0)
         {
@@ -19,20 +21,16 @@ public:
             return;
         }
 
-        int start = (current == 0) ? 1 : 0;
-
-        for (int i = start; i <= 9; ++i)
+        if (i + k <= 9)
         {
-            if (current == 0)
-                dfs(n - 1, k, current * 10 + i);
+            int temp = current * 10 + (i + k);
+            dfs(n - 1, k, i + k, temp);
+        }
 
-            else
-            {
-                int last = current % 10;
-
-                if (abs(i - last) == k)
-                    dfs(n - 1, k, current * 10 + i);
-            }
+        if (i - k >= 0 && k != 0)
+        {
+            int temp = current * 10 + (i - k);
+            dfs(n - 1, k, i - k, temp);
         }
     }
 };
