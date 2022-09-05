@@ -22,33 +22,39 @@ public:
 
 class Solution
 {
+    vector<vector<int>> result;
+
 public:
     vector<vector<int>> levelOrder(Node *root)
     {
         if (root == nullptr)
             return {};
 
-        vector<vector<int>> result;
+        bfs(root);
+        return result;
+    }
+
+    void bfs(Node *root)
+    {
         queue<Node *> nodes;
+
         nodes.push(root);
 
         while (!nodes.empty())
         {
             int size = nodes.size();
-            vector<int> row;
-            int n = result.size();
-            result.push_back(row);
+            result.push_back({});
 
             for (int i = 0; i < size; ++i)
             {
                 Node *current = nodes.front();
                 nodes.pop();
-                result[n].push_back(current->val);
+
+                result[result.size() - 1].push_back(current->val);
+
                 for (Node *node : current->children)
                     nodes.push(node);
             }
         }
-
-        return result;
     }
 };
