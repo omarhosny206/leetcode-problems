@@ -16,17 +16,17 @@ class Solution
 public:
     TreeNode *pruneTree(TreeNode *root)
     {
-        DFS(root);
+        dfs(root);
         return root;
     }
 
-    void DFS(TreeNode *&root)
+    void dfs(TreeNode *&root)
     {
         if (root == nullptr)
             return;
 
-        DFS(root->left);
-        DFS(root->right);
+        dfs(root->left);
+        dfs(root->right);
 
         if (root->val == 0 && root->left == nullptr && root->right == nullptr)
             root = nullptr;
