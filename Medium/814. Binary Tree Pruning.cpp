@@ -16,18 +16,20 @@ class Solution
 public:
     TreeNode *pruneTree(TreeNode *root)
     {
-        return containsOne(root) ? root : nullptr;
+        return dfs(root) ? root : nullptr;
     }
 
-    bool containsOne(TreeNode *root)
+    bool dfs(TreeNode *root)
     {
         if (root == nullptr)
             return false;
-        bool left = containsOne(root->left);
-        bool right = containsOne(root->right);
+
+        bool left = dfs(root->left);
+        bool right = dfs(root->right);
 
         if (left == false)
             root->left = nullptr;
+
         if (right == false)
             root->right = nullptr;
 
