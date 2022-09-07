@@ -13,23 +13,38 @@
  */
 class Solution
 {
+    string result = "";
+
 public:
     string tree2str(TreeNode *root)
     {
-        return dfs(root);
+        dfs(root, 0);
+        return result;
     }
 
-    string dfs(TreeNode *root)
+    void dfs(TreeNode *root, int i)
     {
         if (root == nullptr)
-            return "";
+            return;
 
-        if (root->left == nullptr && root->right == nullptr)
-            return to_string(root->val);
+        result += to_string(root->val);
 
-        if (root->right == nullptr)
-            return to_string(root->val) + "(" + dfs(root->left) + ")";
+        if (root->left)
+        {
+            result += "(";
+            dfs(root->left, i + 1);
+        }
 
-        return to_string(root->val) + "(" + dfs(root->left) + ")(" + dfs(root->right) + ")";
+        else if (root->right != nullptr)
+            result += "()";
+
+        if (root->right)
+        {
+            result += "(";
+            dfs(root->right, i + 1);
+        }
+
+        if (i != 0)
+            result += ")";
     }
 };
