@@ -14,22 +14,22 @@
 class Solution
 {
 public:
-    string tree2str(TreeNode *t)
+    string tree2str(TreeNode *root)
     {
-        return preOrder(t);
+        return dfs(root);
     }
 
-    string preOrder(TreeNode *t)
+    string dfs(TreeNode *root)
     {
-        if (t == nullptr)
+        if (root == nullptr)
             return "";
 
-        if (t->left == nullptr && t->right == nullptr)
-            return to_string(t->val);
+        if (root->left == nullptr && root->right == nullptr)
+            return to_string(root->val);
 
-        if (t->right == nullptr)
-            return to_string(t->val) + "(" + preOrder(t->left) + ")";
+        if (root->right == nullptr)
+            return to_string(root->val) + "(" + dfs(root->left) + ")";
 
-        return to_string(t->val) + "(" + preOrder(t->left) + ")(" + preOrder(t->right) + ")";
+        return to_string(root->val) + "(" + dfs(root->left) + ")(" + dfs(root->right) + ")";
     }
 };
