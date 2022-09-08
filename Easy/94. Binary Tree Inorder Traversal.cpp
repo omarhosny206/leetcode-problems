@@ -13,13 +13,20 @@
  */
 class Solution
 {
+    vector<int> result;
+
 public:
     vector<int> inorderTraversal(TreeNode *root)
     {
         if (root == nullptr)
             return {};
 
-        vector<int> result;
+        dfs(root);
+        return result;
+    }
+
+    void dfs(TreeNode *root)
+    {
         stack<TreeNode *> nodes;
 
         while (!nodes.empty() || root != nullptr)
@@ -32,10 +39,9 @@ public:
 
             root = nodes.top();
             nodes.pop();
+
             result.push_back(root->val);
             root = root->right;
         }
-
-        return result;
     }
 };
