@@ -15,6 +15,7 @@ public:
         {
             if (maxDefense > property[1])
                 result++;
+
             else
                 maxDefense = property[1];
         }
