@@ -16,10 +16,10 @@ class Solution
 public:
     int pseudoPalindromicPaths(TreeNode *root)
     {
-        return DFS(root, 0);
+        return dfs(root, 0);
     }
 
-    int DFS(TreeNode *root, int current)
+    int dfs(TreeNode *root, int current)
     {
         if (root == nullptr)
             return 0;
@@ -29,6 +29,6 @@ public:
         if (!root->left && !root->right)
             return ((current & (current - 1)) == 0) ? 1 : 0;
 
-        return DFS(root->left, current) + DFS(root->right, current);
+        return dfs(root->left, current) + dfs(root->right, current);
     }
 };
