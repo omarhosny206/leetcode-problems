@@ -14,39 +14,45 @@
 class Solution
 {
     int result = 0;
+    vector<int> freq;
 
 public:
     int pseudoPalindromicPaths(TreeNode *root)
     {
-        vector<int> freq(10);
-        DFS(root, freq);
+        freq = vector<int>(10);
+        dfs(root);
         return result;
     }
 
-    void DFS(TreeNode *root, vector<int> &freq)
+    void dfs(TreeNode *root)
     {
         if (root == nullptr)
             return;
 
         freq[root->val]++;
 
-        if (root->left == nullptr && root->right == nullptr)
-            if (isPseudoPalindromic(freq))
-                result++;
+        if (root->left == nullptr && root->right == nullptr && isPseudoPalindromic())
+            result++;
 
-        DFS(root->left, freq);
-        DFS(root->right, freq);
+        dfs(root->left);
+        dfs(root->right);
+
         freq[root->val]--;
     }
 
-    bool isPseudoPalindromic(vector<int> &freq)
+    bool isPseudoPalindromic()
     {
-        int oddCounter = 0;
+        int numOdds = 0;
 
-        for (int i = 1; i <= 9; ++i)
-            if (freq[i] % 2 != 0)
-                oddCounter++;
+        for (int &value : freq)
+        {
+            if (value % 2 != 0)
+                numOdds++;
 
-        return oddCounter <= 1;
+            if (numOdds > 1)
+                return false;
+        }
+
+        return true;
     }
 };
