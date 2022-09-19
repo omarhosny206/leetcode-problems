@@ -51,6 +51,7 @@
 |39|[Combination Sum](https://leetcode.com/problems/combination-sum/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/39.%20Combination%20Sum.cpp) |Medium|
 |40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/40.%20Combination%20Sum%20II.cpp) |Medium|
 |41|[First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/41.%20First%20Missing%20Positive.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/41.%20First%20Missing%20Positive%202.cpp) |Hard|
+|42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/42.%20Trapping%20Rain%20Water.cpp) |Hard|
 |43|[Multiply Strings](https://leetcode.com/problems/multiply-strings/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/43.%20Multiply%20Strings.cpp) |Medium|
 |46|[Permutations](https://leetcode.com/problems/permutations/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/46.%20Permutations.cpp) |Medium|
 |47|[Permutations II](https://leetcode.com/problems/permutations-ii/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/47.%20Permutations%20II.cpp) |Medium|
