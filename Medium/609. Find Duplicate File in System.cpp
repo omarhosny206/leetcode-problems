@@ -2,50 +2,55 @@
 
 class Solution
 {
-    unordered_map<string, vector<string>> files;
+    vector<vector<string>> result;
+    unordered_map<string, vector<string>> values;
 
 public:
     vector<vector<string>> findDuplicate(vector<string> &paths)
     {
-        vector<vector<string>> result;
+        for (string &path : paths)
+        {
+            buildContentFilePaths(path);
+        }
 
-        for (auto path : paths)
-            buildContentFiles(path);
-
-        for (auto pair : files)
+        for (auto &pair : values)
+        {
             if (pair.second.size() > 1)
                 result.push_back(pair.second);
+        }
 
         return result;
     }
 
-    void buildContentFiles(string path)
+    void buildContentFilePaths(string &path)
     {
         string directory = "";
+        string file = "";
+        string content = "";
+
         int i = 0;
 
         while (path[i] != ' ')
             directory += path[i++];
 
-        directory += '/';
-        ++i;
+        i++;
 
-        while (i < path.length())
+        while (i < path.size())
         {
-            string file = "";
-            string content = "";
-
             while (path[i] != '(')
                 file += path[i++];
 
-            ++i;
+            i++;
 
             while (path[i] != ')')
                 content += path[i++];
 
             i += 2;
 
-            files[content].push_back(directory + file);
+            string value = directory + "/" + file;
+            values[content].push_back(value);
+            file = "";
+            content = "";
         }
     }
 };
