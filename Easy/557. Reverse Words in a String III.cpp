@@ -5,44 +5,30 @@ class Solution
 public:
     string reverseWords(string s)
     {
+        int i = 0;
+        int j = 0;
 
-        string result = "";
-        vector<string> splitWords;
-
-        Split(s, splitWords);
-
-        for (string word : splitWords)
-            result += Reverse(word);
-
-        return result;
-    }
-
-    string Reverse(string word)
-    {
-        string result = "";
-        int i = word.length() - 1;
-        while (i >= 0)
-            result += word[i--];
-
-        return result;
-    }
-
-    void Split(string statement, vector<string> &splitWords)
-    {
-        string word = "";
-        for (char c : statement)
+        while (j < s.length())
         {
-            if (c == ' ')
-            {
-                splitWords.push_back(word);
-                splitWords.push_back(" ");
-                word = "";
-            }
+            j++;
 
-            else
-                word += c;
+            if (s[j] == ' ' || j == s.length())
+            {
+                reverse(s, i, j - 1);
+                i = j + 1;
+            }
         }
 
-        splitWords.push_back(word);
+        return s;
+    }
+
+    void reverse(string &word, int i, int j)
+    {
+        while (i < j)
+        {
+            char temp = word[i];
+            word[i++] = word[j];
+            word[j--] = temp;
+        }
     }
 };
