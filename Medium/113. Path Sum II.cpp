@@ -13,28 +13,31 @@
  */
 class Solution
 {
+    vector<vector<int>> paths;
+
 public:
-    vector<vector<int>> pathSum(TreeNode *root, int sum)
+    vector<vector<int>> pathSum(TreeNode *root, int targetSum)
     {
-        vector<vector<int>> paths;
         vector<int> currentPath;
-        pathSumRecursive(root, sum, currentPath, paths);
+
+        dfs(root, currentPath, targetSum, 0);
         return paths;
     }
 
-    void pathSumRecursive(TreeNode *root, int sum, vector<int> &currentPath, vector<vector<int>> &paths)
+    void dfs(TreeNode *root, vector<int> &currentPath, int targetSum, int currentSum)
     {
 
         if (root == nullptr)
             return;
 
+        currentSum += root->val;
         currentPath.push_back(root->val);
 
-        if (root->val == sum && root->left == nullptr && root->right == nullptr)
+        if (currentSum == targetSum && root->left == nullptr && root->right == nullptr)
             paths.push_back(currentPath);
 
-        pathSumRecursive(root->left, sum - root->val, currentPath, paths);
-        pathSumRecursive(root->right, sum - root->val, currentPath, paths);
+        dfs(root->left, currentPath, targetSum, currentSum);
+        dfs(root->right, currentPath, targetSum, currentSum);
         currentPath.pop_back();
     }
 };
