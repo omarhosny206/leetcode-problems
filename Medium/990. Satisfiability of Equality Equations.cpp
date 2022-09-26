@@ -10,9 +10,7 @@ public:
         parent = vector<int>(26);
 
         for (int i = 0; i < 26; ++i)
-        {
             parent[i] = i;
-        }
     }
 
     int find(int node)
@@ -61,9 +59,7 @@ public:
             int rightParent = dsu->find(right - 'a');
 
             if (operation == '!' && leftParent == rightParent)
-            {
                 return false;
-            }
         }
 
         return true;
