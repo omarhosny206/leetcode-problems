@@ -15,22 +15,22 @@ class Solution
 public:
     ListNode *removeNthFromEnd(ListNode *head, int n)
     {
+        ListNode *fast = head;
+        ListNode *slow = head;
 
-        ListNode *dummy = new ListNode();
-        dummy->next = head;
-        ListNode *fast = dummy;
-        ListNode *slow = dummy;
-
-        for (int i = 0; i <= n; ++i)
+        for (int i = 0; i < n; ++i)
             fast = fast->next;
 
-        while (fast != nullptr)
+        if (fast == nullptr)
+            return head->next;
+
+        while (fast->next != nullptr)
         {
-            fast = fast->next;
             slow = slow->next;
+            fast = fast->next;
         }
 
         slow->next = slow->next->next;
-        return dummy->next;
+        return head;
     }
 };
