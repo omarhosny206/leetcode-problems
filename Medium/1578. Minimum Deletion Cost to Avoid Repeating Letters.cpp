@@ -1,25 +1,36 @@
-// https://leetcode.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/
+// https://leetcode.com/problems/minimum-time-to-make-rope-colorful/
 
 class Solution
 {
 public:
-    int minCost(string s, vector<int> &cost)
+    int minCost(string colors, vector<int> &neededTime)
     {
-        int min_cost = 0;
+        int result = 0;
         int i = 0;
-        while (i < s.length() - 1)
-        {
-            if (s[i] == s[i + 1])
-            {
-                min_cost += min(cost[i + 1], cost[i]);
 
-                if (cost[i + 1] < cost[i])
-                    cost[i + 1] = cost[i];
+        while (i < colors.size())
+        {
+            if (i < colors.size() - 1 && colors[i] == colors[i + 1])
+            {
+                int sum = 0;
+                int maxValue = INT_MIN;
+
+                while (i < colors.size() - 1 && colors[i] == colors[i + 1])
+                {
+                    sum += neededTime[i];
+                    maxValue = max(maxValue, neededTime[i]);
+                    i++;
+                }
+
+                sum += neededTime[i];
+                maxValue = max(maxValue, neededTime[i]);
+
+                result += (sum - maxValue);
             }
 
             i++;
         }
 
-        return min_cost;
+        return result;
     }
 };
