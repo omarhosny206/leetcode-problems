@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/add-one-row-to-tree/
 
 /**
  * Definition for a binary tree node.
@@ -22,17 +21,18 @@ public:
             newNode->left = root;
             return newNode;
         }
-        addOneRowRecursive(root, v, d, 1);
+
+        dfs(root, v, d, 1);
         return root;
     }
 
-    void addOneRowRecursive(TreeNode *root, int v, int d, int Depth)
+    void dfs(TreeNode *root, int v, int d, int currentDepth)
     {
 
         if (root == nullptr)
             return;
 
-        if (Depth == d - 1)
+        if (currentDepth == d - 1)
         {
             TreeNode *leftNodes = root->left;
             TreeNode *rightNodes = root->right;
@@ -42,7 +42,7 @@ public:
             root->right->right = rightNodes;
         }
 
-        addOneRowRecursive(root->left, v, d, Depth + 1);
-        addOneRowRecursive(root->right, v, d, Depth + 1);
+        dfs(root->left, v, d, currentDepth + 1);
+        dfs(root->right, v, d, currentDepth + 1);
     }
 };
