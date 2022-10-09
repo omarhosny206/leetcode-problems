@@ -5,48 +5,33 @@ class Solution
 public:
     bool equalFrequency(string word)
     {
-        unordered_map<char, int> freq;
+        unordered_map<char, int> lettersFreq;
+        map<int, int> frequenciesCounter;
 
-        for (char &c : word)
-            freq[c]++;
+        for (auto &c : word)
+            lettersFreq[c]++;
 
-        int maxValue = INT_MIN;
-        int minValue = INT_MAX;
+        for (auto &pair : lettersFreq)
+            frequenciesCounter[pair.second]++;
 
-        for (auto &pair : freq)
-        {
-            if (pair.second > maxValue)
-                maxValue = pair.second;
-
-            if (pair.second < minValue)
-                minValue = pair.second;
-        }
-
-        if (maxValue > minValue + 1)
+        if (frequenciesCounter.size() > 2)
             return false;
 
-        for (auto &pair : freq)
-            if (pair.second != maxValue && pair.second != minValue)
-                return false;
+        auto it1 = frequenciesCounter.begin();
+        auto it2 = frequenciesCounter.begin();
+        it2++;
 
-        if (maxValue == minValue && minValue == 1)
-            return true;
-
-        int maxValueCounter = 0;
-        int minValueCounter = 0;
-
-        for (auto &pair : freq)
+        if (frequenciesCounter.size() == 1)
         {
-            if (pair.second == maxValue)
-                maxValueCounter++;
-
-            if (pair.second == minValue)
-                minValueCounter++;
+            return (lettersFreq.size() == 1 || it1->first == 1);
         }
 
-        if (minValueCounter > maxValueCounter)
-            return maxValueCounter == 1;
+        if (it1->first == 1 && it1->second == 1)
+            return true;
 
-        return minValueCounter == 1;
+        if (it1->first == it2->first - 1 && it2->second == 1)
+            return true;
+
+        return false;
     }
 };
