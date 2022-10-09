@@ -17,19 +17,18 @@ public:
         if (frequenciesCounter.size() > 2)
             return false;
 
-        auto it1 = frequenciesCounter.begin();
-        auto it2 = frequenciesCounter.begin();
-        it2++;
+        auto first = frequenciesCounter.begin();
+        auto second = first;
+
+        second++;
 
         if (frequenciesCounter.size() == 1)
-        {
-            return (lettersFreq.size() == 1 || it1->first == 1);
-        }
+            return (lettersFreq.size() == 1 || first->first == 1);
 
-        if (it1->first == 1 && it1->second == 1)
+        if (first->first == 1 && first->second == 1)
             return true;
 
-        if (it1->first == it2->first - 1 && it2->second == 1)
+        if (first->first == second->first - 1 && second->second == 1)
             return true;
 
         return false;
