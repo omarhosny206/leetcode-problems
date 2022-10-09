@@ -13,23 +13,24 @@
  */
 class Solution
 {
+    unordered_set<int> complements;
+
 public:
     bool findTarget(TreeNode *root, int k)
     {
-        unordered_set<int> complement;
-        return DFS(root, complement, k);
+        return dfs(root, k);
     }
 
-    bool DFS(TreeNode *root, unordered_set<int> &complement, int k)
+    bool dfs(TreeNode *root, int k)
     {
         if (root == nullptr)
             return false;
 
-        if (complement.find(root->val) != complement.end())
+        if (complements.find(root->val) != complements.end())
             return true;
 
-        complement.insert(k - root->val);
+        complements.insert(k - root->val);
 
-        return DFS(root->left, complement, k) || DFS(root->right, complement, k);
+        return dfs(root->left, k) || dfs(root->right, k);
     }
 };
