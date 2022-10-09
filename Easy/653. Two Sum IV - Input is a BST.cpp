@@ -13,14 +13,15 @@
  */
 class Solution
 {
+    unordered_set<int> complements;
+
 public:
     bool findTarget(TreeNode *root, int k)
     {
-        unordered_set<int> complement;
-        return BFS(root, complement, k);
+        return bfs(root, k);
     }
 
-    bool BFS(TreeNode *root, unordered_set<int> &complement, int k)
+    bool bfs(TreeNode *root, int k)
     {
         if (root == nullptr)
             return false;
@@ -31,15 +32,16 @@ public:
         while (!nodes.empty())
         {
             int size = nodes.size();
+
             for (int i = 0; i < size; ++i)
             {
                 TreeNode *current = nodes.front();
                 nodes.pop();
 
-                if (complement.find(current->val) != complement.end())
+                if (complements.find(current->val) != complements.end())
                     return true;
 
-                complement.insert(k - current->val);
+                complements.insert(k - current->val);
 
                 if (current->left != nullptr)
                     nodes.push(current->left);
