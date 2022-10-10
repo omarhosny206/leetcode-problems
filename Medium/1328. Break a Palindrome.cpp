@@ -9,39 +9,21 @@ public:
             return "";
 
         int i = 0;
-
-        while (i < palindrome.length())
-        {
-            if (palindrome[i] != 'a')
-            {
-                string temp = palindrome;
-                temp[i] = 'a';
-
-                if (!isPalindrome(temp))
-                    return temp;
-            }
-
-            i++;
-        }
-
-        palindrome[palindrome.length() - 1] = 'b';
-        return palindrome;
-    }
-
-    bool isPalindrome(string &word)
-    {
-        int i = 0;
-        int j = word.length() - 1;
+        int j = palindrome.length() - 1;
 
         while (i < j)
         {
-            if (word[i] != word[j])
-                return false;
+            if (palindrome[i] != 'a')
+            {
+                palindrome[i] = 'a';
+                return palindrome;
+            }
 
             i++;
             j--;
         }
 
-        return true;
+        palindrome[palindrome.length() - 1] = 'b';
+        return palindrome;
     }
 };
