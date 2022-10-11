@@ -5,19 +5,19 @@ class Solution
 public:
     bool increasingTriplet(vector<int> &nums)
     {
-        int first_min = INT_MAX;
-        int second_min = INT_MAX;
+        int firstMin = INT_MAX;
+        int secondMin = INT_MAX;
 
         for (int i = 0; i < nums.size(); ++i)
         {
-            if (nums[i] <= first_min)
-                first_min = nums[i];
-
-            else if (nums[i] <= second_min)
-                second_min = nums[i];
-
-            else
+            if (nums[i] > firstMin && nums[i] > secondMin)
                 return true;
+
+            if (nums[i] <= firstMin)
+                firstMin = nums[i];
+
+            else if (nums[i] <= secondMin)
+                secondMin = nums[i];
         }
 
         return false;
