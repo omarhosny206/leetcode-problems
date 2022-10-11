@@ -10,8 +10,8 @@ public:
         int maxValue = INT_MIN;
         int minValue = INT_MAX;
 
-        int right = nums.size() - 1;
         int left = 0;
+        int right = nums.size() - 1;
 
         for (int i = 0; i < nums.size(); ++i)
         {
