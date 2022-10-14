@@ -15,19 +15,29 @@ class Solution
 public:
     ListNode *deleteMiddle(ListNode *head)
     {
-        if (head->next == nullptr)
-            return nullptr;
+        int size = 0;
+        ListNode *current = head;
 
-        ListNode *slow = head;
-        ListNode *fast = head->next->next;
-
-        while (fast != nullptr && fast->next != nullptr)
+        while (current != nullptr)
         {
-            fast = fast->next->next;
-            slow = slow->next;
+            size++;
+            current = current->next;
         }
 
-        slow->next = slow->next->next;
+        if (size == 1)
+            return nullptr;
+
+        size /= 2;
+        size--;
+
+        current = head;
+
+        while (size--)
+        {
+            current = current->next;
+        }
+
+        current->next = current->next->next;
         return head;
     }
 };
