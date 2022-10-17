@@ -5,20 +5,18 @@ class Solution
 public:
     bool checkIfPangram(string sentence)
     {
-        int counter = 0;
-        int englishLetters = 26;
         vector<int> freq(26);
 
-        if (sentence.length() < englishLetters)
+        if (sentence.length() < 26)
             return false;
 
         for (char &c : sentence)
-        {
             freq[c - 'a']++;
 
-            counter += (freq[c - 'a'] == 1) ? 1 : 0;
-        }
+        for (int i = 0; i < freq.size(); ++i)
+            if (freq[i] == 0)
+                return false;
 
-        return counter == englishLetters;
+        return true;
     }
 };
