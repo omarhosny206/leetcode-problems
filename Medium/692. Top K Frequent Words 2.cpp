@@ -6,32 +6,29 @@ public:
     vector<string> topKFrequent(vector<string> &words, int k)
     {
         vector<string> result;
-        map<string, int> freq;
-        vector<pair<int, string>> maxHeap;
+        unordered_map<string, int> freq;
 
-        for (string word : words)
+        auto comparator = [&](pair<int, string> &a, pair<int, string> &b)
+        {
+            return (a.first < b.first) || ((a.first == b.first) && (a.second > b.second));
+        };
+
+        priority_queue<pair<int, string>, vector<pair<int, string>>, decltype(comparator)> vals(comparator);
+
+        for (string &word : words)
             freq[word]++;
 
-        for (auto pair : freq)
-            maxHeap.push_back({pair.second, pair.first});
+        for (auto &pair : freq)
+            vals.push({pair.second, pair.first});
 
-        sort(maxHeap.begin(), maxHeap.end(), comp);
-        int i = 0;
-        while (i < k)
+        while (k--)
         {
-            result.push_back(maxHeap[i].second);
-            i++;
+            string value = vals.top().second;
+            vals.pop();
+
+            result.push_back(value);
         }
 
         return result;
     }
-
-    static bool comp(pair<int, string> &a, pair<int, string> &b)
-    {
-        if (a.first != b.first)
-        {
-            return a.first > b.first;
-        }
-        return a.second < b.second;
-    };
 };
