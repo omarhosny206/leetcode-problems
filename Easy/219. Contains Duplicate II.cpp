@@ -5,14 +5,14 @@ class Solution
 public:
     bool containsNearbyDuplicate(vector<int> &nums, int k)
     {
-        unordered_map<int, int> numbers;
+        unordered_map<int, int> freq;
 
         for (int i = 0; i < nums.size(); ++i)
         {
-            if (numbers.find(nums[i]) != numbers.end() && i - numbers[nums[i]] <= k)
+            if (freq.find(nums[i]) != freq.end() && (i - freq[nums[i]] <= k))
                 return true;
 
-            numbers[nums[i]] = i;
+            freq[nums[i]] = i;
         }
 
         return false;
