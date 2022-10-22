@@ -5,35 +5,48 @@ class Solution
 public:
     string minWindow(string s, string t)
     {
+        if (t.length() > s.length())
+            return "";
+
+        string result = "";
+        unordered_map<char, int> freq;
+
         int start = -1;
-        int minSize = INT_MAX;
-        int freq[128] = {0};
+        int minWindowSize = INT_MAX;
         int i = 0;
+        int j = 0;
         int counter = 0;
 
-        for (char c : t)
+        for (char &c : t)
             freq[c]++;
 
-        for (int j = 0; j < s.length(); ++j)
+        while (j < s.length())
         {
             if (--freq[s[j]] >= 0)
                 counter++;
 
             while (counter == t.length())
             {
-                if (minSize > j - i + 1)
+                int currentWindowSize = j - i + 1;
+                if (currentWindowSize < minWindowSize)
                 {
-                    minSize = j - i + 1;
+                    minWindowSize = currentWindowSize;
                     start = i;
                 }
 
                 if (++freq[s[i]] > 0)
                     counter--;
 
-                ++i;
+                i++;
             }
+
+            j++;
         }
 
-        return start == -1 ? "" : s.substr(start, minSize);
+        if (start == -1)
+            return "";
+
+        result = s.substr(start, minWindowSize);
+        return result;
     }
 };
