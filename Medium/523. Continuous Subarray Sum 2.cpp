@@ -13,12 +13,13 @@ public:
         for (int i = 0; i < nums.size(); ++i)
         {
             currentSum += nums[i];
+            currentSum %= k;
 
-            if (seen.find(currentSum % k) != seen.end() && seen[currentSum % k] < i - 1)
+            if (seen.find(currentSum) != seen.end() && seen[currentSum] < i - 1)
                 return true;
 
-            else if (seen.find(currentSum % k) == seen.end())
-                seen[currentSum % k] = i;
+            else if (seen.find(currentSum) == seen.end())
+                seen[currentSum] = i;
         }
 
         return false;
