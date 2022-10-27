@@ -7,6 +7,7 @@ public:
     {
         unordered_map<int, int> seen;
         int currentSum = 0;
+        const int MIN_SIZE = 2;
 
         seen[0] = -1;
 
@@ -14,10 +15,10 @@ public:
         {
             currentSum += nums[i];
 
-            if (seen.find(currentSum % k) != seen.end() && seen[currentSum % k] < i - 1)
+            if (seen.find(currentSum % k) != seen.end() && i - seen[currentSum % k] >= MIN_SIZE)
                 return true;
 
-            else if (seen.find(currentSum % k) == seen.end())
+            if (seen.find(currentSum % k) == seen.end())
                 seen[currentSum % k] = i;
         }
 
