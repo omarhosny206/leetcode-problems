@@ -5,17 +5,20 @@ class Solution
 public:
     vector<vector<string>> groupAnagrams(vector<string> &strs)
     {
-        unordered_map<string, vector<string>> mapping;
-        for (auto s : strs)
-        {
-            string key = s;
-            sort(key.begin(), key.end());
-            mapping[key].push_back(s);
-        }
-        vector<vector<string>> anagrams;
-        for (auto p : mapping)
-            anagrams.push_back(p.second);
+        vector<vector<string>> result;
+        unordered_map<string, vector<string>> anagrams;
 
-        return anagrams;
+        for (string &word : strs)
+        {
+            string anagram = word;
+            sort(word.begin(), word.end());
+
+            anagrams[word].push_back(anagram);
+        }
+
+        for (auto &pair : anagrams)
+            result.push_back(pair.second);
+
+        return result;
     }
 };
