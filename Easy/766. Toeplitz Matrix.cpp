@@ -5,22 +5,36 @@ class Solution
 public:
     bool isToeplitzMatrix(vector<vector<int>> &matrix)
     {
-        unordered_map<int, int> map;
-        int rows = matrix.size(), columns = matrix[0].size();
+        for (int i = 0; i < matrix.size(); ++i)
+            if (!check(matrix, matrix[i][0], i, 0))
+                return false;
 
-        for (int r = 0; r < rows; r++)
+        for (int j = 0; j < matrix[0].size(); ++j)
+            if (!check(matrix, matrix[0][j], 0, j))
+                return false;
+
+        return true;
+    }
+
+    bool check(vector<vector<int>> &matrix, int value, int i, int j)
+    {
+        while (isValidPosition(matrix, i, j))
         {
+            if (value != matrix[i][j])
+                return false;
 
-            for (int c = 0; c < columns; c++)
-            {
-
-                if (map.find(r - c) == map.end())
-                    map.insert({r - c, matrix[r][c]});
-
-                else if (map[r - c] != matrix[r][c])
-                    return false;
-            }
+            i++;
+            j++;
         }
+
+        return true;
+    }
+
+    bool isValidPosition(vector<vector<int>> &matrix, int i, int j)
+    {
+        if (i < 0 || i >= matrix.size() || j < 0 || j >= matrix[0].size())
+            return false;
+
         return true;
     }
 };
