@@ -23,27 +23,26 @@ public:
 
         while (!nodes.empty())
         {
-            numMutations++;
             int size = nodes.size();
 
             for (int i = 0; i < size; ++i)
             {
-                string current = nodes.front();
+                string currentGene = nodes.front();
                 nodes.pop();
 
-                for (int j = 0; j < current.length(); ++j)
+                if (currentGene == end)
+                    return numMutations;
+
+                for (int j = 0; j < currentGene.length(); ++j)
                 {
-                    string temp = current;
+                    string temp = currentGene;
 
                     for (int k = 0; k < dnaCode.size(); ++k)
                     {
                         temp[j] = dnaCode[k];
 
-                        if (temp == current || visited.find(temp) != visited.end())
+                        if (temp == currentGene || visited.find(temp) != visited.end())
                             continue;
-
-                        if (temp == end)
-                            return numMutations;
 
                         if (genes.find(temp) != genes.end())
                         {
@@ -53,6 +52,8 @@ public:
                     }
                 }
             }
+
+            numMutations++;
         }
 
         return -1;
