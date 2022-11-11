@@ -4,20 +4,21 @@ class TrieNode
 {
 public:
     char val;
-    unordered_map<char, TrieNode *> children;
+    vector<TrieNode *> children;
     bool isWord;
     string word;
 
     TrieNode()
     {
         this->isWord = false;
-        this->word = "";
+        this->children = vector<TrieNode *>(26);
     }
 
     TrieNode(char val)
     {
         this->val = val;
         this->isWord = false;
+        this->children = vector<TrieNode *>(26);
     }
 };
 
@@ -35,40 +36,39 @@ public:
     {
         TrieNode *current = root;
 
-        for (char c : word)
+        for (char &c : word)
         {
-            if (current->children.find(c) == current->children.end())
-                current->children[c] = new TrieNode(c);
+            if (current->children[c - 'a'] == nullptr)
+                current->children[c - 'a'] = new TrieNode(c);
 
-            current = current->children[c];
+            current = current->children[c - 'a'];
         }
 
         current->isWord = true;
         current->word = word;
     }
 
-    void DFS(vector<string> &result, vector<vector<char>> &board, int i, int j, TrieNode *root)
+    void dfs(vector<string> &result, vector<vector<char>> &board, int i, int j, TrieNode *current)
     {
-        if (root->isWord)
+        if (current->isWord)
         {
-            result.push_back(root->word);
-            root->isWord = false;
+            result.push_back(current->word);
+            current->isWord = false;
+            current->word = "";
         }
 
-        if (i < 0 || j < 0 || i >= board.size() || j >= board[i].size() || board[i][j] == '.')
-        {
+        if (i < 0 || i >= board.size() || j < 0 || j >= board[i].size() || board[i][j] == '.')
             return;
-        }
 
-        if (root->children.find(board[i][j]) != root->children.end())
+        if (current->children[board[i][j] - 'a'] != nullptr)
         {
             char temp = board[i][j];
             board[i][j] = '.';
 
-            DFS(result, board, i - 1, j, root->children[temp]);
-            DFS(result, board, i + 1, j, root->children[temp]);
-            DFS(result, board, i, j - 1, root->children[temp]);
-            DFS(result, board, i, j + 1, root->children[temp]);
+            dfs(result, board, i + 1, j, current->children[temp - 'a']);
+            dfs(result, board, i - 1, j, current->children[temp - 'a']);
+            dfs(result, board, i, j + 1, current->children[temp - 'a']);
+            dfs(result, board, i, j - 1, current->children[temp - 'a']);
 
             board[i][j] = temp;
         }
@@ -78,19 +78,23 @@ public:
 class Solution
 {
     vector<string> result;
-    Trie *trie;
 
 public:
     vector<string> findWords(vector<vector<char>> &board, vector<string> &words)
     {
-        trie = new Trie();
+        Trie *trie = new Trie();
 
-        for (string word : words)
+        for (string &word : words)
             trie->insert(word);
 
         for (int i = 0; i < board.size(); ++i)
+        {
             for (int j = 0; j < board[i].size(); j++)
-                trie->DFS(result, board, i, j, trie->root);
+            {
+                TrieNode *current = trie->root;
+                trie->dfs(result, board, i, j, current);
+            }
+        }
 
         return result;
     }
