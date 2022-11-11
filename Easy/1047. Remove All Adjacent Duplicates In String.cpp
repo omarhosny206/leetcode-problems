@@ -3,12 +3,12 @@
 class Solution
 {
 public:
-    string removeDuplicates(string S)
+    string removeDuplicates(string s)
     {
         string result = "";
         stack<char> letters;
 
-        for (char c : S)
+        for (char &c : s)
         {
             if (letters.empty() || c != letters.top())
                 letters.push(c);
@@ -23,21 +23,20 @@ public:
             letters.pop();
         }
 
-        Reverse(result);
-
+        reverse(result);
         return result;
     }
 
-    void Reverse(string &result)
+    void reverse(string &word)
     {
         int i = 0;
-        int j = result.length() - 1;
+        int j = word.length() - 1;
 
         while (i < j)
         {
-            char temp = result[i];
-            result[i++] = result[j];
-            result[j--] = temp;
+            char temp = word[i];
+            word[i++] = word[j];
+            word[j--] = temp;
         }
     }
 };
