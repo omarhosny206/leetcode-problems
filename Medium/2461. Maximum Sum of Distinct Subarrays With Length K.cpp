@@ -31,7 +31,7 @@ public:
 
             int windowSize = j - i + 1;
 
-            if (windowSize == k && counter == 0)
+            if (windowSize == k)
             {
                 result = max(result, sum);
                 sum -= nums[i];
