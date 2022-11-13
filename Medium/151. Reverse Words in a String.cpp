@@ -8,11 +8,10 @@ public:
         string result = "";
         string temp = "";
         int i = 0;
-        int j;
+        int j = 0;
 
         while (true)
         {
-
             while (i < s.size() && s[i] == ' ')
                 i++;
 
@@ -26,6 +25,7 @@ public:
 
             temp = s.substr(i, j - i);
             result = temp + (result.size() > 0 ? " " : "") + result;
+
             i = j + 1;
         }
 
