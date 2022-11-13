@@ -13,7 +13,7 @@ public:
 
             for (int j = i; j < nums.size(); ++j)
             {
-                currentLcm = lcm(currentLcm, nums[j]);
+                currentLcm = getLcm(currentLcm, nums[j]);
 
                 if (currentLcm == k)
                     result++;
@@ -23,12 +23,12 @@ public:
         return result;
     }
 
-    long long lcm(int a, int b)
+    long long getLcm(int a, int b)
     {
-        return (a / gcd(a, b)) * b;
+        return (a / getGcd(a, b)) * b;
     }
 
-    long long gcd(long long int a, long long int b)
+    long long getGcd(long long int a, long long int b)
     {
         if (b == 0)
             return a;
