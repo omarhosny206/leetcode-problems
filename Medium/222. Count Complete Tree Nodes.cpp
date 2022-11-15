@@ -16,31 +16,8 @@ class Solution
 public:
     int countNodes(TreeNode *root)
     {
-
         if (root == nullptr)
             return 0;
-
-        int left_height = 0, right_height = 0;
-
-        TreeNode *left_parent = root;
-        TreeNode *right_parent = root;
-
-        while (left_parent != nullptr)
-        {
-
-            left_height++;
-            left_parent = left_parent->left;
-        }
-
-        while (right_parent != nullptr)
-        {
-
-            right_height++;
-            right_parent = right_parent->right;
-        }
-
-        if (left_height == right_height)
-            return pow(2, left_height) - 1;
 
         return countNodes(root->left) + countNodes(root->right) + 1;
     }
