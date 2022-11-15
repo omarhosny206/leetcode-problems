@@ -19,25 +19,28 @@ public:
         if (root == nullptr)
             return 0;
 
-        int left_height = 0, right_height = 0;
+        int leftHeight = 0;
+        int rightHeight = 0;
 
-        TreeNode *left_parent = root;
-        TreeNode *right_parent = root;
+        TreeNode *leftParent = root;
+        TreeNode *rightParent = root;
 
-        while (left_parent != nullptr)
+        while (leftParent != nullptr)
+
         {
-            left_height++;
-            left_parent = left_parent->left;
+            leftHeight++;
+            leftParent = leftParent->left;
         }
 
-        while (right_parent != nullptr)
+        while (rightParent != nullptr)
+
         {
-            right_height++;
-            right_parent = right_parent->right;
+            rightHeight++;
+            rightParent = rightParent->right;
         }
 
-        if (left_height == right_height)
-            return pow(2, left_height) - 1;
+        if (leftHeight == rightHeight)
+            return pow(2, leftHeight) - 1;
 
         return countNodes(root->left) + countNodes(root->right) + 1;
     }
