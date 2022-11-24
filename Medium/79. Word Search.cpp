@@ -5,31 +5,32 @@ class Solution
 public:
     bool exist(vector<vector<char>> &board, string word)
     {
-
         for (int i = 0; i < board.size(); ++i)
             for (int j = 0; j < board[i].size(); ++j)
-                if (board[i][j] == word[0] && DFS(board, word, 0, i, j))
+                if (board[i][j] == word[0] && dfs(board, word, i, j, 0))
                     return true;
 
         return false;
     }
 
-    bool DFS(vector<vector<char>> &board, string word, int index, int i, int j)
+    bool dfs(vector<vector<char>> &board, string word, int i, int j, int position)
     {
-
-        if (index == word.length())
+        if (position == word.size())
             return true;
 
-        if (i < 0 || i >= board.size() || j < 0 || j >= board[i].size() || board[i][j] != word[index])
+        if (i < 0 || i >= board.size() || j < 0 || j >= board[i].size() || board[i][j] == '.' || board[i][j] != word[position])
             return false;
 
-        char letter = board[i][j];
-        board[i][j] = ' ';
+        char temp = board[i][j];
+        board[i][j] = '.';
 
-        bool isFound = DFS(board, word, index + 1, i, j - 1) || DFS(board, word, index + 1, i, j + 1) || DFS(board, word, index + 1, i - 1, j) || DFS(board, word, index + 1, i + 1, j);
+        bool check = dfs(board, word, i + 1, j, position + 1) ||
+                     dfs(board, word, i - 1, j, position + 1) ||
+                     dfs(board, word, i, j + 1, position + 1) ||
+                     dfs(board, word, i, j - 1, position + 1);
 
-        board[i][j] = letter;
+        board[i][j] = temp;
 
-        return isFound;
+        return check;
     }
 };
