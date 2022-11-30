@@ -6,14 +6,14 @@ public:
     bool uniqueOccurrences(vector<int> &arr)
     {
         unordered_set<int> occurrences;
-        map<int, int> numFreq;
+        unordered_map<int, int> freq;
 
-        for (int n : arr)
-            numFreq[n]++;
+        for (int &num : arr)
+            freq[num]++;
 
-        for (pair<int, int> p : numFreq)
-            occurrences.insert(p.second);
+        for (auto &pair : freq)
+            occurrences.insert(pair.second);
 
-        return occurrences.size() == numFreq.size();
+        return occurrences.size() == freq.size();
     }
 };
