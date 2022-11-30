@@ -6,7 +6,7 @@ public:
     bool uniqueOccurrences(vector<int> &arr)
     {
         unordered_set<int> occurrences;
-        map<int, int> freq;
+        unordered_map<int, int> freq;
 
         for (int &num : arr)
             freq[num]++;
