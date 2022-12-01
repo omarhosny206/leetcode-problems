@@ -5,25 +5,26 @@ class Solution
 public:
     bool halvesAreAlike(string s)
     {
-        int firstHalf = countVowels(s, 0, (s.length() / 2) - 1);
-        int secondtHalf = countVowels(s, s.length() / 2, s.length() - 1);
-        return firstHalf == secondtHalf;
-    }
+        int firstCounter = 0;
+        int secondCounter = 0;
 
-    int countVowels(string &s, int i, int j)
-    {
-        int counter = 0;
+        int i = 0;
+        int j = s.length() / 2;
 
-        while (i <= j)
+        while (j < s.length())
         {
-            char letter = tolower(s[i]);
-
-            if (letter == 'o' || letter == 'i' || letter == 'a' || letter == 'e' || letter == 'u')
-                counter++;
+            firstCounter += isVowel(s[i]);
+            secondCounter += isVowel(s[j]);
 
             i++;
+            j++;
         }
 
-        return counter;
+        return firstCounter == secondCounter;
+    }
+
+    bool isVowel(char &letter)
+    {
+        return letter == 'a' || letter == 'A' || letter == 'e' || letter == 'E' || letter == 'i' || letter == 'I' || letter == 'o' || letter == 'O' || letter == 'u' || letter == 'U';
     }
 };
