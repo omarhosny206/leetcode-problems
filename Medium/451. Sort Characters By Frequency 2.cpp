@@ -7,19 +7,24 @@ public:
     {
         string result = "";
         unordered_map<char, int> freq;
-        vector<pair<int, char>> heap;
+        vector<pair<int, char>> values;
 
-        for (auto c : s)
+        for (auto &c : s)
             freq[c]++;
 
-        for (auto pair : freq)
-            heap.push_back({pair.second, pair.first});
+        for (auto &pair : freq)
+            values.push_back({pair.second, pair.first});
 
-        sort(heap.begin(), heap.end(), greater<pair<int, char>>());
+        sort(values.begin(), values.end(), comparator);
 
-        for (auto pair : heap)
+        for (auto &pair : values)
             result += string(pair.first, pair.second);
 
         return result;
+    }
+
+    static bool comparator(pair<int, char> &a, pair<int, char> &b)
+    {
+        return a.first > b.first;
     }
 };
