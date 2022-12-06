@@ -15,23 +15,34 @@ class Solution
 public:
     ListNode *oddEvenList(ListNode *head)
     {
-
         if (head == nullptr)
             return head;
 
         ListNode *odd = head;
-        ListNode *even = head->next;
-        ListNode *evenHead = even;
+        ListNode *previous = nullptr;
 
-        while (even != nullptr && even->next != nullptr)
+        ListNode *evenHead = new ListNode();
+        ListNode *even = evenHead;
+
+        while (odd != nullptr && odd->next != nullptr)
         {
-            odd->next = even->next;
-            odd = odd->next;
+            previous = odd;
+
             even->next = odd->next;
             even = even->next;
+
+            odd->next = even->next;
+            odd = odd->next;
         }
 
-        odd->next = evenHead;
+        even->next = nullptr;
+
+        if (odd != nullptr)
+            odd->next = evenHead->next;
+
+        else
+            previous->next = evenHead->next;
+
         return head;
     }
 };
