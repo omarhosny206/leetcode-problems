@@ -14,20 +14,21 @@
 class Solution
 {
 public:
-    int rangeSumBST(TreeNode *root, int L, int R)
+    int rangeSumBST(TreeNode *root, int low, int high)
     {
-        return rangeSumBST_Recursive(root, L, R);
+        return dfs(root, low, high);
     }
 
-    int rangeSumBST_Recursive(TreeNode *root, int L, int R)
+    int dfs(TreeNode *root, int low, int high)
     {
+        int result = 0;
+
         if (root == nullptr)
             return 0;
 
-        int sum = 0;
-        if (root->val >= L && root->val <= R)
-            sum += root->val;
+        if (root->val >= low && root->val <= high)
+            result += root->val;
 
-        return sum + rangeSumBST_Recursive(root->left, L, R) + rangeSumBST_Recursive(root->right, L, R);
+        return result + dfs(root->left, low, high) + dfs(root->right, low, high);
     }
 };
