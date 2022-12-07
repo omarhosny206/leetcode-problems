@@ -18,11 +18,11 @@ class Solution
 public:
     int rangeSumBST(TreeNode *root, int low, int high)
     {
-        rangeSumBST_Recursive(root, low, R);
+        dfs(root, low, R);
         return result;
     }
 
-    void rangeSumBST_Recursive(TreeNode *root, int low, int high)
+    void dfs(TreeNode *root, int low, int high)
     {
         if (root == nullptr)
             return;
@@ -31,9 +31,9 @@ public:
             sum += root->val;
 
         if (root->val >= low)
-            rangeSumBST_Recursive(root->left, low, high);
+            dfs(root->left, low, high);
 
         if (root->val <= high)
-            rangeSumBST_Recursive(root->right, low, high);
+            dfs(root->right, low, high);
     }
 };
