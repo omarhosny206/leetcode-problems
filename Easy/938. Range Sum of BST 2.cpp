@@ -13,24 +13,39 @@
  */
 class Solution
 {
-    int result = 0;
-
 public:
     int rangeSumBST(TreeNode *root, int low, int high)
     {
-        dfs(root, low, high);
-        return result;
+        return bfs(root, low, high);
     }
 
-    void dfs(TreeNode *root, int low, int high)
+    int bfs(TreeNode *root, int low, int high)
     {
-        if (root == nullptr)
-            return;
+        int result = 0;
+        queue<TreeNode *> nodes;
 
-        if (root->val >= low && root->val <= high)
-            result += root->val;
+        nodes.push(root);
 
-        dfs(root->left, low, high);
-        dfs(root->right, low, high);
+        while (!nodes.empty())
+        {
+            int size = nodes.size();
+
+            for (int i = 0; i < size; ++i)
+            {
+                TreeNode *current = nodes.front();
+                nodes.pop();
+
+                if (current->val >= low && current->val <= high)
+                    result += current->val;
+
+                if (current->left != nullptr && current->val >= low)
+                    nodes.push(current->left);
+
+                if (current->right != nullptr && current->val <= high)
+                    nodes.push(current->right);
+            }
+        }
+
+        return result;
     }
 };
