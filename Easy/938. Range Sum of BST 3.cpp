@@ -13,22 +13,24 @@
  */
 class Solution
 {
+    int result = 0;
+
 public:
     int rangeSumBST(TreeNode *root, int low, int high)
     {
-        return dfs(root, low, high);
+        dfs(root, low, high);
+        return result;
     }
 
-    int dfs(TreeNode *root, int low, int high)
+    void dfs(TreeNode *root, int low, int high)
     {
-        int result = 0;
-
         if (root == nullptr)
-            return 0;
+            return;
 
         if (root->val >= low && root->val <= high)
             result += root->val;
 
-        return result + dfs(root->left, low, high) + dfs(root->right, low, high);
+        dfs(root->left, low, high);
+        dfs(root->right, low, high);
     }
 };
