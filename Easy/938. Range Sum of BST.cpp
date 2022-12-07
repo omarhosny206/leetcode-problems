@@ -18,7 +18,7 @@ class Solution
 public:
     int rangeSumBST(TreeNode *root, int low, int high)
     {
-        dfs(root, low, R);
+        dfs(root, low, high);
         return result;
     }
 
@@ -28,7 +28,7 @@ public:
             return;
 
         if (root->val >= low && root->val <= high)
-            sum += root->val;
+            result += root->val;
 
         if (root->val >= low)
             dfs(root->left, low, high);
