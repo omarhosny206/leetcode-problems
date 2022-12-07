@@ -13,26 +13,24 @@
  */
 class Solution
 {
-    int sum = 0;
+    int result = 0;
 
 public:
-    int rangeSumBST(TreeNode *root, int L, int R)
+    int rangeSumBST(TreeNode *root, int low, int high)
     {
-        return rangeSumBST_Recursive(root, L, R);
+        dfs(root, low, high);
+        return result;
     }
 
-    int rangeSumBST_Recursive(TreeNode *root, int L, int R)
+    void dfs(TreeNode *root, int low, int high)
     {
-
         if (root == nullptr)
-            return 0;
+            return;
 
-        if (root->val >= L && root->val <= R)
-            sum += root->val;
+        if (root->val >= low && root->val <= high)
+            result += root->val;
 
-        rangeSumBST_Recursive(root->left, L, R);
-        rangeSumBST_Recursive(root->right, L, R);
-
-        return sum;
+        dfs(root->left, low, high);
+        dfs(root->right, low, high);
     }
 };
