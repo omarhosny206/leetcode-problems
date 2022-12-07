@@ -38,10 +38,10 @@ public:
                 if (current->val >= low && current->val <= high)
                     result += current->val;
 
-                if (current->left != nullptr && current->val >= low)
+                if (current->left != nullptr && current->val > low)
                     nodes.push(current->left);
 
-                if (current->right != nullptr && current->val <= high)
+                if (current->right != nullptr && current->val < high)
                     nodes.push(current->right);
             }
         }
