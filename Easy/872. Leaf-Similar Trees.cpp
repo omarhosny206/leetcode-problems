@@ -16,26 +16,24 @@ class Solution
 public:
     bool leafSimilar(TreeNode *root1, TreeNode *root2)
     {
-        vector<int> firstNodes;
-        vector<int> secondNodes;
-        DFS(root1, firstNodes);
-        DFS(root2, secondNodes);
-        return firstNodes == secondNodes;
+        vector<int> firstLeaves;
+        vector<int> secondLeaves;
+
+        dfs(root1, firstLeaves);
+        dfs(root2, secondLeaves);
+
+        return firstLeaves == secondLeaves;
     }
 
-    void DFS(TreeNode *root, vector<int> &nodes)
+    void dfs(TreeNode *root, vector<int> &leaves)
     {
-
         if (root == nullptr)
             return;
 
         if (root->left == nullptr && root->right == nullptr)
-        {
-            nodes.push_back(root->val);
-            return;
-        }
+            leaves.push_back(root->val);
 
-        DFS(root->left, nodes);
-        DFS(root->right, nodes);
+        dfs(root->left, leaves);
+        dfs(root->right, leaves);
     }
 };
