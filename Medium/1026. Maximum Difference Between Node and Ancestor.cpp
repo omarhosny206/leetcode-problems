@@ -13,26 +13,26 @@
  */
 class Solution
 {
+    int result = INT_MIN;
+
 public:
     int maxAncestorDiff(TreeNode *root)
     {
-        if (root == nullptr)
-            return 0;
-
-        return DFS(root, root->val, root->val);
+        dfs(root, root->val, root->val);
+        return result;
     }
 
-    int DFS(TreeNode *root, int currentMax, int currentMin)
+    void dfs(TreeNode *root, int subtreeMaxValue, int subtreeMinValue)
     {
         if (root == nullptr)
-            return currentMax - currentMin;
+            return;
 
-        currentMax = max(currentMax, root->val);
-        currentMin = min(currentMin, root->val);
+        subtreeMinValue = min(subtreeMinValue, root->val);
+        subtreeMaxValue = max(subtreeMaxValue, root->val);
 
-        int left = DFS(root->left, currentMax, currentMin);
-        int right = DFS(root->right, currentMax, currentMin);
+        result = max(result, abs(subtreeMaxValue - subtreeMinValue));
 
-        return max(left, right);
+        dfs(root->left, subtreeMaxValue, subtreeMinValue);
+        dfs(root->right, subtreeMaxValue, subtreeMinValue);
     }
 };
