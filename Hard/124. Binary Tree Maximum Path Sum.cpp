@@ -13,23 +13,45 @@
  */
 class Solution
 {
+    int result = INT_MIN;
+    unordered_map<TreeNode *, int> nodeMaxPathSum;
+
 public:
     int maxPathSum(TreeNode *root)
     {
-        int max_val = INT_MIN;
-        maxPathSum_Helper(root, max_val);
-        return max_val;
+        getNodesMaxPathSum(root);
+
+        dfs(root);
+
+        return result;
     }
 
-    int maxPathSum_Helper(TreeNode *root, int &max_val)
+    void dfs(TreeNode *root)
+    {
+        if (root == nullptr)
+            return;
+
+        if (root->left != nullptr && root->right != nullptr)
+            result = max({result, nodeMaxPathSum[root], root->val + nodeMaxPathSum[root->left] + nodeMaxPathSum[root->right]});
+
+        else
+            result = max(result, nodeMaxPathSum[root]);
+
+        dfs(root->left);
+        dfs(root->right);
+    }
+
+    int getNodesMaxPathSum(TreeNode *root)
     {
         if (root == nullptr)
             return 0;
-        int left = maxPathSum_Helper(root->left, max_val);
-        int right = maxPathSum_Helper(root->right, max_val);
-        int whole_path = root->val + left + right;
-        int result = max(max(left, right) + root->val, root->val);
-        max_val = max(max_val, max(whole_path, result));
-        return result;
+
+        int left = getNodesMaxPathSum(root->left);
+        int right = getNodesMaxPathSum(root->right);
+
+        int maxPathValue = max(left, right);
+
+        nodeMaxPathSum[root] = max(root->val, root->val + maxPathValue);
+        return nodeMaxPathSum[root];
     }
 };
