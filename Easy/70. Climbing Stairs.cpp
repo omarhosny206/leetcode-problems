@@ -8,16 +8,17 @@ public:
         if (n == 0 || n == 1)
             return 1;
 
+        int result;
         int first = 1;
         int second = 1;
-        int num_ways = 2;
+
         for (int i = 2; i <= n; i++)
         {
-            num_ways = first + second;
+            result = first + second;
             first = second;
-            second = num_ways;
+            second = result;
         }
 
-        return num_ways;
+        return result;
     }
 };
