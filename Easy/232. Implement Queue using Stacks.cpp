@@ -2,67 +2,55 @@
 
 class MyQueue
 {
-    stack<int> frontStack;
-    stack<int> backStack;
+    stack<int> first;
 
 public:
-    /** Initialize your data structure here. */
     MyQueue()
     {
     }
 
-    /** Push element x to the back of queue. */
     void push(int x)
     {
-        if (frontStack.size() == 0)
-            frontStack.push(x);
+        stack<int> second;
 
-        else if (frontStack.size() == 1 && backStack.size() == 0)
-            backStack.push(x);
-
-        else if (frontStack.size() == 1 && backStack.size() > 0)
+        while (!first.empty())
         {
-            vector<int> temp;
-            while (backStack.size() != 0)
-            {
-                temp.push_back(backStack.top());
-                backStack.pop();
-            }
-            backStack.push(x);
-            int i = temp.size() - 1;
-            while (i >= 0)
-                backStack.push(temp[i--]);
+            second.push(first.top());
+            first.pop();
+        }
+
+        first.push(x);
+
+        while (!second.empty())
+        {
+            first.push(second.top());
+            second.pop();
         }
     }
 
-    /** Removes the element from in front of queue and returns that element. */
     int pop()
     {
-        int get = frontStack.top();
-        frontStack.pop();
-        if (!(backStack.empty()))
-        {
-            frontStack.push(backStack.top());
-            backStack.pop();
-        }
-        return get;
+        int value = first.top();
+        first.pop();
+
+        return value;
     }
 
-    /** Get the front element. */
     int peek()
     {
-        return frontStack.top();
+        return first.top();
     }
 
-    /** Returns whether the queue is empty. */
     bool empty()
     {
-        return frontStack.size() == 0 && backStack.size() == 0;
+        return first.empty();
     }
 };
 
 /**
- * Your MyQueue object will be instantiated and called as such:
+ * @brief 
+ * 
+ */
  * MyQueue* obj = new MyQueue();
  * obj->push(x);
  * int param_2 = obj->pop();
