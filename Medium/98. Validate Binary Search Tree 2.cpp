@@ -16,17 +16,20 @@ class Solution
 public:
     bool isValidBST(TreeNode *root)
     {
-        return dfs(root, LLONG_MAX, LLONG_MIN);
+        return dfs(root, LLONG_MIN, LLONG_MAX);
     }
 
-    bool dfs(TreeNode *root, long long max, long long min)
+    bool dfs(TreeNode *root, long long minValue, long long maxValue)
     {
-        if (root == NULL)
+        if (root == nullptr)
             return true;
 
-        if (root->val >= max || root->val <= min)
+        if (root->val <= minValue || root->val >= maxValue)
             return false;
 
-        return dfs(root->left, (long long)root->val, min) && dfs(root->right, max, (long long)root->val);
+        bool left = dfs(root->left, minValue, root->val);
+        bool right = dfs(root->right, root->val, maxValue);
+
+        return left && right;
     }
 };
