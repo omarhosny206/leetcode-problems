@@ -27,9 +27,6 @@ public:
         if (source == destination)
             return true;
 
-        if (visited[source])
-            return false;
-
         visited[source] = true;
 
         for (int &vertex : graph[source])
