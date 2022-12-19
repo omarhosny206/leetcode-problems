@@ -24,14 +24,14 @@ public:
 
     void dfs(int &source, int &destination)
     {
+        if (isConnected)
+            return;
+
         if (source == destination)
         {
             isConnected = true;
             return;
         }
-
-        if (visited[source])
-            return;
 
         visited[source] = true;
 
