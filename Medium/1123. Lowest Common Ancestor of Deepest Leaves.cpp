@@ -33,6 +33,9 @@ public:
         if (root == nullptr)
             return 0;
 
-        return 1 + max(getHeight(root->left), getHeight(root->right));
+        int left = getHeight(root->left);
+        int right = getHeight(root->right);
+
+        return 1 + max(left, right);
     }
 };
