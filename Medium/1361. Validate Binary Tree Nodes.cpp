@@ -6,41 +6,37 @@ private:
     vector<int> parent;
 
 public:
-    DSU(int N)
+    DSU(int size)
     {
-        for (int i = 0; i < N; ++i)
-            parent.push_back(i);
+        parent = vector<int>(size);
+
+        for (int i = 0; i < size; ++i)
+            parent[i] = i;
     }
 
-    int Find(int x)
+    void Union(int source, int destination)
     {
-        if (parent[x] != x)
-            parent[x] = Find(parent[x]);
-
-        return parent[x];
+        parent[destination] = source;
     }
 
-    bool Union(int x, int y)
+    int find(int node)
     {
-        int r1 = Find(x), r2 = Find(y);
+        if (parent[node] == node)
+            return node;
 
-        if (r1 == r2)
-            return false;
-
-        parent[r1] = r2;
-
-        return true;
+        parent[node] = find(parent[node]);
+        return parent[node];
     }
 
-    bool checkRoot()
+    bool hasOnlyOneRoot()
     {
-        int root = 0;
+        int rootsCounter = 0;
 
-        for (int i = 0; i < parent.size(); i++)
+        for (int i = 0; i < parent.size(); ++i)
             if (parent[i] == i)
-                root++;
+                rootsCounter++;
 
-        return root == 1;
+        return rootsCounter == 1;
     }
 };
 
@@ -49,22 +45,33 @@ class Solution
 public:
     bool validateBinaryTreeNodes(int n, vector<int> &leftChild, vector<int> &rightChild)
     {
-        DSU dsu = DSU(n);
+        DSU *dsu = new DSU(n);
 
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < leftChild.size(); ++i)
         {
-            int left = leftChild[i];
-            int right = rightChild[i];
+            int rootNodeParent = dsu->find(i);
 
-            if (left != -1)
-                if (!dsu.Union(i, left))
+            if (leftChild[i] != -1)
+            {
+                int leftNodeParent = dsu->find(leftChild[i]);
+
+                if (rootNodeParent == leftNodeParent || leftNodeParent != leftChild[i])
                     return false;
 
-            if (right != -1)
-                if (!dsu.Union(i, right))
+                dsu->Union(rootNodeParent, leftNodeParent);
+            }
+
+            if (rightChild[i] != -1)
+            {
+                int rightNodeParent = dsu->find(rightChild[i]);
+
+                if (rootNodeParent == rightNodeParent || rightNodeParent != rightChild[i])
                     return false;
+
+                dsu->Union(rootNodeParent, rightNodeParent);
+            }
         }
 
-        return dsu.checkRoot();
+        return dsu->hasOnlyOneRoot();
     }
 };
