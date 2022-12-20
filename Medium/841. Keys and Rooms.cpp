@@ -5,22 +5,24 @@ class Solution
 public:
     bool canVisitAllRooms(vector<vector<int>> &rooms)
     {
-        vector<bool> seen(rooms.size(), false);
+        vector<vector<int>> graph = rooms;
+        vector<bool> visited(rooms.size());
 
-        DFS(0, rooms, seen);
+        dfs(graph, visited, 0);
 
-        for (bool visited : seen)
-            if (!visited)
+        for (const bool &value : visited)
+            if (value == false)
                 return false;
 
         return true;
     }
 
-    void DFS(int room, vector<vector<int>> &rooms, vector<bool> &seen)
+    void dfs(vector<vector<int>> &graph, vector<bool> &visited, int source)
     {
-        seen[room] = true;
-        for (int i = 0; i < rooms[room].size(); ++i)
-            if (!seen[rooms[room][i]])
-                DFS(rooms[room][i], rooms, seen);
+        visited[source] = true;
+
+        for (int destination : graph[source])
+            if (!visited[destination])
+                dfs(graph, visited, destination);
     }
 };
