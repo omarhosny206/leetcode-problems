@@ -5,20 +5,27 @@ class Solution
 public:
     bool canVisitAllRooms(vector<vector<int>> &rooms)
     {
-        vector<vector<int>> graph = rooms;
-        vector<bool> visited(rooms.size());
-        stack<int> nodes;
+        return bfs(rooms);
+    }
+
+    bool bfs(vector<vector<int>> &graph)
+    {
+        queue<int> nodes;
+        vector<bool> visited(graph.size());
 
         nodes.push(0);
         visited[0] = true;
 
         while (!nodes.empty())
         {
-            int source = nodes.top();
+            int size = nodes.size();
+            int source = nodes.front();
             nodes.pop();
 
-            for (int &destination : graph[source])
+            for (int i = 0; i < graph[source].size(); ++i)
             {
+                int destination = graph[source][i];
+
                 if (!visited[destination])
                 {
                     visited[destination] = true;
