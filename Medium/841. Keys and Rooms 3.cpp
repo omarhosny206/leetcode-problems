@@ -5,9 +5,13 @@ class Solution
 public:
     bool canVisitAllRooms(vector<vector<int>> &rooms)
     {
-        vector<vector<int>> graph = rooms;
-        vector<bool> visited(rooms.size());
+        return dfs(rooms);
+    }
+
+    bool dfs(vector<vector<int>> &graph)
+    {
         stack<int> nodes;
+        vector<bool> visited(graph.size());
 
         nodes.push(0);
         visited[0] = true;
