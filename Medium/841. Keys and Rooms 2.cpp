@@ -5,28 +5,30 @@ class Solution
 public:
     bool canVisitAllRooms(vector<vector<int>> &rooms)
     {
-        vector<bool> seen(rooms.size(), false);
-        seen[0] = true;
+        vector<vector<int>> graph = rooms;
+        vector<bool> visited(rooms.size());
+        stack<int> nodes;
 
-        stack<int> keys;
-        keys.push(0);
+        nodes.push(0);
+        visited[0] = true;
 
-        while (!keys.empty())
+        while (!nodes.empty())
         {
-            int currentKey = keys.top();
-            keys.pop();
-            for (int key : rooms[currentKey])
+            int source = nodes.top();
+            nodes.pop();
+
+            for (int &destination : graph[source])
             {
-                if (!seen[key])
+                if (!visited[destination])
                 {
-                    seen[key] = true;
-                    keys.push(key);
+                    visited[destination] = true;
+                    nodes.push(destination);
                 }
             }
         }
 
-        for (bool visited : seen)
-            if (!visited)
+        for (const bool &value : visited)
+            if (value == false)
                 return false;
 
         return true;
