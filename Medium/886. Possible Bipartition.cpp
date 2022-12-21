@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/possible-bipartition/
 
 class Solution
 {
