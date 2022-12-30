@@ -51,6 +51,7 @@ public:
 
         for (int i = 0; i < report.size(); ++i)
         {
+            score[student_id[i]] = 0;
             word = "";
 
             for (char &c : report[i])
