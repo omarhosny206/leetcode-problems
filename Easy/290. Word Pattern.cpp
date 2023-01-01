@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/word-pattern/
 
 class Solution
 {
