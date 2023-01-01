@@ -5,50 +5,51 @@ class Solution
 public:
     bool wordPattern(string pattern, string s)
     {
-        unordered_map<char, string> word;
-        unordered_map<string, char> letter;
+        vector<int> first;
+        vector<int> second;
+        unordered_map<char, int> letterValue;
+        unordered_map<string, int> wordValue;
 
         vector<string> words = getWords(s);
+        int j = 0;
 
         if (words.size() != pattern.length())
             return false;
 
         for (int i = 0; i < pattern.length(); ++i)
         {
-            if (word.find(pattern[i]) != word.end() && word[pattern[i]] != words[i])
-                return false;
+            if (letterValue.find(pattern[i]) == letterValue.end())
+                letterValue[pattern[i]] = j;
 
-            if (letter.find(words[i]) != letter.end() && letter[words[i]] != pattern[i])
-                return false;
+            if (wordValue.find(words[i]) == wordValue.end())
+                wordValue[words[i]] = j;
 
-            word[pattern[i]] = words[i];
-            letter[words[i]] = pattern[i];
+            first.push_back(letterValue[pattern[i]]);
+            second.push_back(wordValue[words[i]]);
+            j++;
         }
 
-        return true;
+        return first == second;
     }
 
     vector<string> getWords(string &sentence)
     {
         vector<string> words;
-        string currentWord = "";
+        string word = "";
 
-        for (int i = 0; i < sentence.length(); i++)
+        for (char &c : sentence)
         {
-            if (sentence[i] == ' ')
+            if (c == ' ')
             {
-                words.push_back(currentWord);
-                currentWord = "";
+                words.push_back(word);
+                word = "";
             }
 
             else
-            {
-                currentWord += s[i];
-            }
+                word += c;
         }
 
-        words.push_back(currentWord);
-
+        words.push_back(word);
         return words;
     }
 };
