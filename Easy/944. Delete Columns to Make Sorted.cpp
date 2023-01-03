@@ -6,19 +6,27 @@ public:
     int minDeletionSize(vector<string> &strs)
     {
         int result = 0;
+
         for (int j = 0; j < strs[0].size(); ++j)
         {
-            int min = INT_MIN;
+            bool isSorted = true;
+            char previous = strs[0][j];
+
             for (int i = 0; i < strs.size(); ++i)
             {
-                if (min > strs[i][j] - '0')
+                char current = strs[i][j];
+
+                if (current < previous)
                 {
-                    result++;
+                    isSorted = false;
                     break;
                 }
 
-                min = strs[i][j] - '0';
+                previous = current;
             }
+
+            if (!isSorted)
+                result++;
         }
 
         return result;
