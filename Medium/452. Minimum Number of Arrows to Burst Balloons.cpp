@@ -7,23 +7,19 @@ public:
     {
         int result = 1;
 
-        int i = 0;
-        int j = i + 1;
-
         sort(points.begin(), points.end(), compare);
+        int firstEnd = points[0][1];
 
-        while (j < points.size())
+        for (vector<int> &point : points)
         {
-            int firstEnd = points[i][1];
-            int secondStart = points[j][0];
+            int secondStart = point[0];
+            firstEnd = min(firstEnd, point[1]);
 
-            if (firstEnd < secondStart)
+            if (secondStart > firstEnd)
             {
                 result++;
-                i = j;
+                firstEnd = point[1];
             }
-
-            j++;
         }
 
         return result;
@@ -31,6 +27,6 @@ public:
 
     static bool compare(vector<int> &first, vector<int> &second)
     {
-        return first[1] < second[1];
+        return (first[0] < second[0]) || (first[0] == second[0] && first[1] < second[1]);
     }
 };
