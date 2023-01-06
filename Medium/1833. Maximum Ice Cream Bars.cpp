@@ -6,14 +6,21 @@ public:
     int maxIceCream(vector<int> &costs, int coins)
     {
         int result = 0;
-        int i = 0;
-        sort(costs.begin(), costs.end());
+        priority_queue<int, vector<int>, greater<int>> values;
 
-        while (i < costs.size() && coins >= costs[i])
+        for (int &cost : costs)
+            values.push(cost);
+
+        while (!values.empty())
         {
+            int value = values.top();
+            values.pop();
+
+            if (coins < value)
+                break;
+
+            coins -= value;
             result++;
-            coins -= costs[i];
-            i++;
         }
 
         return result;
