@@ -1,4 +1,3 @@
-
 class DataStream
 {
     vector<int> values;
