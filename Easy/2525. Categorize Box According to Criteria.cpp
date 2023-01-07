@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/categorize-box-according-to-criteria/
 
 class Solution
 {
