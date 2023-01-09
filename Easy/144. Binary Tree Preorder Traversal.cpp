@@ -1,8 +1,7 @@
+// https://leetcode.com/problems/binary-tree-preorder-traversal/
 
-/**/**
- * @brief 
- * 
- */
+/**
+ * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
  *     TreeNode *left;
