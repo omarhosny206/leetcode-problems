@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/binary-tree-preorder-traversal/
 
 /**
  * Definition for a binary tree node.
