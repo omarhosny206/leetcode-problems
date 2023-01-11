@@ -16,7 +16,7 @@ public:
         }
 
         result = dfs(graph, hasApple, visited, 0);
-        return result * 2;
+        return result;
     }
 
     int dfs(vector<vector<int>> &graph, vector<bool> &hasApple, vector<bool> &visited, int source)
@@ -32,8 +32,8 @@ public:
             return result;
 
         if (result == 0)
-            return hasApple[source];
+            return hasApple[source] ? 2 : 0;
 
-        return result + 1;
+        return result + 2;
     }
 };
