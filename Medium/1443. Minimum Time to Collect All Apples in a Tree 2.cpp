@@ -15,23 +15,25 @@ public:
             graph[edge[1]].push_back(edge[0]);
         }
 
-        result += DFS(graph, visited, hasApple, 0);
-
-        return result > 0 ? result - 2 : result;
+        result = dfs(graph, hasApple, visited, 0);
+        return result * 2;
     }
 
-    int DFS(vector<vector<int>> &graph, vector<bool> &visited, vector<bool> &hasApple, int source)
+    int dfs(vector<vector<int>> &graph, vector<bool> &hasApple, vector<bool> &visited, int source)
     {
         int result = 0;
         visited[source] = true;
 
         for (int &destination : graph[source])
             if (!visited[destination])
-                result += DFS(graph, visited, hasApple, destination);
+                result += dfs(graph, hasApple, visited, destination);
 
-        if (result > 0 || hasApple[source])
-            return result + 2;
+        if (source == 0)
+            return result;
 
-        return result;
+        if (result == 0)
+            return hasApple[source];
+
+        return result + 1;
     }
 };
