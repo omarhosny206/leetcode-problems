@@ -1,3 +1,4 @@
+
 class Solution
 {
     int result = 1;
