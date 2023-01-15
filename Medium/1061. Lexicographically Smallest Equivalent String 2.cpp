@@ -34,14 +34,15 @@ class Solution
 public:
     string smallestEquivalentString(string s1, string s2, string baseStr)
     {
+        string result = "";
         DSU *dsu = new DSU();
 
         for (int i = 0; i < s1.size(); ++i)
             dsu->Union(s1[i] - 'a', s2[i] - 'a');
 
         for (int i = 0; i < baseStr.size(); ++i)
-            baseStr[i] = (dsu->find(baseStr[i] - 'a')) + 'a';
+            result += (dsu->find(baseStr[i] - 'a')) + 'a';
 
-        return baseStr;
+        return result;
     }
 };
