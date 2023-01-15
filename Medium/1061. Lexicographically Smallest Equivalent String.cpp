@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/lexicographically-smallest-equivalent-string/
 
 class DSU
 {
