@@ -6,23 +6,30 @@ public:
     vector<vector<int>> insert(vector<vector<int>> &intervals, vector<int> &newInterval)
     {
         vector<vector<int>> result;
-        int i = 0;
 
-        while (i < intervals.size() && intervals[i][1] < newInterval[0])
-            result.push_back(intervals[i++]);
-
-        while (i < intervals.size() && intervals[i][0] <= newInterval[1])
+        for (int i = 0; i < intervals.size(); ++i)
         {
-            newInterval[0] = min(newInterval[0], intervals[i][0]);
-            newInterval[1] = max(newInterval[1], intervals[i][1]);
-            i++;
+            if (newInterval[0] > intervals[i][1])
+                result.push_back(intervals[i]);
+
+            else if (newInterval[1] < intervals[i][0])
+            {
+                result.push_back(newInterval);
+
+                for (int j = i; j < intervals.size(); ++j)
+                    result.push_back(intervals[j]);
+
+                return result;
+            }
+
+            else
+            {
+                newInterval[0] = min(newInterval[0], intervals[i][0]);
+                newInterval[1] = max(newInterval[1], intervals[i][1]);
+            }
         }
 
         result.push_back(newInterval);
-
-        while (i < intervals.size())
-            result.push_back(intervals[i++]);
-
         return result;
     }
 };
