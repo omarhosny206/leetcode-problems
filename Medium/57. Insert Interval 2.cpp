@@ -9,10 +9,10 @@ public:
 
         for (int i = 0; i < intervals.size(); ++i)
         {
-            if (intervals[i][1] < newInterval[0])
+            if (newInterval[0] > intervals[i][1])
                 result.push_back(intervals[i]);
 
-            else if (intervals[i][0] > newInterval[1])
+            else if (newInterval[1] < intervals[i][0])
             {
                 result.push_back(newInterval);
 
