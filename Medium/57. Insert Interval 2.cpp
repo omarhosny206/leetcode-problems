@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/insert-interval/
 
 class Solution
 {
