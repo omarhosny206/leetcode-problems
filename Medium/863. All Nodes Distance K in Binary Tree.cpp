@@ -15,53 +15,66 @@ class Solution
     unordered_map<TreeNode *, TreeNode *> parent;
 
 public:
-    vector<int> distanceK(TreeNode *root, TreeNode *target, int K)
+    vector<int> distanceK(TreeNode *root, TreeNode *target, int k)
     {
-        if (K == 0)
+        if (k == 0)
             return {target->val};
 
         getParent(root, nullptr);
-        getBelowDistanceK(target, K);
+        getBelowNodesWithDistanceK(target, k);
 
         if (root != target)
-            getAboveDistanceK(target, K);
+            getAboveNodesWithDistanceK(target, k);
 
         return result;
     }
 
-    void getParent(TreeNode *root, TreeNode *nodeParent)
+    void getAboveNodesWithDistanceK(TreeNode *root, int k)
+    {
+        if (root == nullptr || k < 0)
+            return;
+
+        if (k == 0)
+        {
+            result.push_back(root->val);
+            return;
+        }
+
+        if (parent[root] != nullptr)
+        {
+            if (parent[root]->left == root)
+                getBelowNodesWithDistanceK(parent[root]->right, k - 2);
+
+            else
+                getBelowNodesWithDistanceK(parent[root]->left, k - 2);
+        }
+
+        getAboveNodesWithDistanceK(parent[root], k - 1);
+    }
+
+    void getBelowNodesWithDistanceK(TreeNode *root, int k)
+    {
+        if (root == nullptr || k < 0)
+            return;
+
+        if (k == 0)
+        {
+            result.push_back(root->val);
+            return;
+        }
+
+        getBelowNodesWithDistanceK(root->left, k - 1);
+        getBelowNodesWithDistanceK(root->right, k - 1);
+    }
+
+    void getParent(TreeNode *root, TreeNode *node)
     {
         if (root == nullptr)
             return;
 
-        parent[root] = nodeParent;
+        parent[root] = node;
+
         getParent(root->left, root);
         getParent(root->right, root);
-    }
-
-    void getBelowDistanceK(TreeNode *root, int K)
-    {
-        if (root == nullptr || K < 0)
-            return;
-
-        if (K == 0)
-            result.push_back(root->val);
-
-        getBelowDistanceK(root->left, K - 1);
-        getBelowDistanceK(root->right, K - 1);
-    }
-
-    void getAboveDistanceK(TreeNode *root, int K)
-    {
-        if (root == nullptr || K < 0)
-            return;
-
-        if (K == 0)
-            result.push_back(root->val);
-
-        if (parent[root] != nullptr)
-            parent[root]->left == root ? getBelowDistanceK(parent[root]->right, K - 2) : getBelowDistanceK(parent[root]->left, K - 2);
-
-        getAboveDistanceK(parent[root], K - 1);
     }
 };
