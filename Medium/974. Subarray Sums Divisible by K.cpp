@@ -8,6 +8,7 @@ public:
         int result = 0;
         unordered_map<int, int> prefixSum;
         int sum = 0;
+        
         prefixSum[0] = 1;
 
         for (int num : A)
@@ -19,7 +20,6 @@ public:
                 remaining += K;
 
             result += prefixSum[remaining];
-
             prefixSum[remaining]++;
         }
 
