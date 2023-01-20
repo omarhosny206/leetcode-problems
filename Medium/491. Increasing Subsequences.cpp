@@ -1,37 +1,39 @@
-// https://leetcode.com/problems/increasing-subsequences/
+// https://leetcode.com/problems/increasing-uniqueSubsequences/
 
 class Solution
 {
-    vector<vector<int>> increasingSubsequences;
+    vector<vector<int>> result;
     set<vector<int>> uniqueSubsequences;
 
 public:
     vector<vector<int>> findSubsequences(vector<int> &nums)
     {
-        vector<int> subsequence;
-        DFS(nums, subsequence, INT_MIN, 0);
-        return increasingSubsequences;
+        vector<int> current;
+
+        dfs(nums, current, 0);
+
+        for (const vector<int> &uniqueSubsequence : uniqueSubsequences)
+            result.push_back(uniqueSubsequence);
+
+        return result;
     }
 
-    void DFS(vector<int> &nums, vector<int> &subsequence, int lastValue, int position)
+    void dfs(vector<int> &nums, vector<int> &current, int start)
     {
+        if (current.size() >= 2)
+            uniqueSubsequences.insert(current);
 
-        if (subsequence.size() > 1 && uniqueSubsequences.find(subsequence) == uniqueSubsequences.end())
-        {
-            increasingSubsequences.push_back(subsequence);
-            uniqueSubsequences.insert(subsequence);
-        }
-
-        if (position >= nums.size())
+        if (start >= nums.size())
             return;
 
-        if (nums[position] >= lastValue)
+        for (int i = start; i < nums.size(); ++i)
         {
-            subsequence.push_back(nums[position]);
-            DFS(nums, subsequence, nums[position], position + 1);
-            subsequence.pop_back();
+            if (current.empty() || (!current.empty() && nums[i] >= current.back()))
+            {
+                current.push_back(nums[i]);
+                dfs(nums, current, i + 1);
+                current.pop_back();
+            }
         }
-
-        DFS(nums, subsequence, lastValue, position + 1);
     }
 };
