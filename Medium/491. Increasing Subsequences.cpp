@@ -1,4 +1,3 @@
-
 class Solution
 {
     vector<vector<int>> result;
