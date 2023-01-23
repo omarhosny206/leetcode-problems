@@ -9,8 +9,8 @@ public:
 
         for (vector<int> &pair : trust)
         {
-            freq[group[0]]--;
-            freq[group[1]]++;
+            freq[pair[0]]--;
+            freq[pair[1]]++;
         }
 
         for (int i = 1; i <= n; ++i)
