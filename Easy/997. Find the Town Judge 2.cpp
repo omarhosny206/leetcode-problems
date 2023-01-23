@@ -6,7 +6,7 @@ public:
     {
         unordered_map<int, int> freq;
 
-        for (vector<int> group : trust)
+        for (vector<int> &pair : trust)
         {
             freq[group[0]]--;
             freq[group[1]]++;
