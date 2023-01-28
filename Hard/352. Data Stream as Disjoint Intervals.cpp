@@ -1,3 +1,4 @@
+
 class SummaryRanges
 {
 private:
