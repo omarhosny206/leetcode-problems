@@ -141,6 +141,7 @@
 |143|[Reorder List](https://leetcode.com/problems/reorder-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/143.%20Reorder%20List.cpp) |Medium|
 |144|[Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/144.%20Binary%20Tree%20Preorder%20Traversal.cpp) |Easy|
 |145|[Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/145.%20Binary%20Tree%20Postorder%20Traversal.cpp) |Easy|
+|146|[LRU Cache](https://leetcode.com/problems/lru-cache/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/146.%20LRU%20Cache.cpp) |Medium|
 |147|[Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/147.%20Insertion%20Sort%20List.cpp) |Medium|
 |148|[Sort List](https://leetcode.com/problems/sort-list/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/148.%20Sort%20List.cpp) [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/148.%20Sort%20List%202.cpp) |Medium|
 |149|[Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Hard/149.%20Max%20Points%20on%20a%20Line.cpp) |Hard|
