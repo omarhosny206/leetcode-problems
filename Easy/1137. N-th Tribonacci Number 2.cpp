@@ -7,18 +7,23 @@ public:
     {
         if (n == 0)
             return 0;
+
         if (n == 1 || n == 2)
             return 1;
 
-        int x = 0, xx = 1, xxx = 1;
         int result = 0;
+        int first = 0;
+        int second = 1;
+        int third = 1;
+
         for (int i = 3; i <= n; ++i)
         {
-            result = x + xx + xxx;
-            x = xx;
-            xx = xxx;
-            xxx = result;
+            result = first + second + third;
+            first = second;
+            second = third;
+            third = result;
         }
+
         return result;
     }
 };
