@@ -5,31 +5,35 @@ class Solution
 public:
     bool isAlienSorted(vector<string> &words, string order)
     {
-        if (words.size() == 1)
-            return true;
+        vector<int> rank(26);
 
-        int rank[26];
         for (int i = 0; i < order.size(); ++i)
             rank[order[i] - 'a'] = i;
 
-        for (int i = 1; i < words.size(); ++i)
+        for (int i = 0; i < words.size(); ++i)
+            for (int j = i + 1; j < words.size(); ++j)
+                if (!check(rank, words[i], words[j]))
+                    return false;
+
+        return true;
+    }
+
+    bool check(vector<int> &rank, string &first, string &second)
+    {
+        int i = 0;
+        int j = 0;
+
+        while (i < first.length() && j < second.length() && first[i] == second[j])
         {
-            string current = words[i];
-            string previous = words[i - 1];
-            int currentLength = current.length();
-            int previousLength = previous.length();
-            int size = min(previousLength, currentLength);
-            int j = 0;
-
-            while (j < size && current[j] == previous[j])
-                j++;
-
-            if (j == size && previousLength > currentLength)
-                return false;
-
-            if (j < size && rank[previous[j] - 'a'] > rank[current[j] - 'a'])
-                return false;
+            i++;
+            j++;
         }
+
+        if (i < first.length() && j == second.length())
+            return false;
+
+        if (i < first.length() && j < second.length() && rank[first[i] - 'a'] > rank[second[j] - 'a'])
+            return false;
 
         return true;
     }
