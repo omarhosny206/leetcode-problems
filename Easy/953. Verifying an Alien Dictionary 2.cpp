@@ -6,14 +6,20 @@ public:
     bool isAlienSorted(vector<string> &words, string order)
     {
         unordered_map<char, int> rank;
+        string first = words[0];
 
-        for (int i = 0; i < order.size(); ++i)
+        for (int i = 1; i < order.size(); ++i)
             rank[order[i]] = i;
 
         for (int i = 0; i < words.size(); ++i)
-            for (int j = i + 1; j < words.size(); ++j)
-                if (!check(rank, words[i], words[j]))
-                    return false;
+        {
+            string second = words[i];
+
+            if (!check(rank, first, second))
+                return false;
+
+            first = second;
+        }
 
         return true;
     }
