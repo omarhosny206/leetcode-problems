@@ -10,7 +10,7 @@ public:
 
         string result = "";
         vector<string> words(numRows);
-        
+
         int row = 0;
         bool moveToDown = true;
 
