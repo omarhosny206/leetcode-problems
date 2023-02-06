@@ -5,15 +5,22 @@ class Solution
 public:
     vector<int> shuffle(vector<int> &nums, int n)
     {
-        int i = 0, j = n;
-        vector<int> result;
+        vector<int> result(2 * n);
+
+        int i = 0;
+        int j = n;
+        int index = 0;
+
         while (i < n)
         {
-            result.push_back(nums[i]);
-            result.push_back(nums[j]);
+            result[index] = nums[i];
+            result[index + 1] = nums[j];
+
             i++;
             j++;
+            index += 2;
         }
+
         return result;
     }
 };
