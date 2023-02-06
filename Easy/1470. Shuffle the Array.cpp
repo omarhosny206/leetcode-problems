@@ -24,3 +24,4 @@ public:
         return result;
     }
 };
+
