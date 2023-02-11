@@ -18,14 +18,14 @@ public:
 
     vector<int> bfs(vector<vector<pair<int, int>>> &graph)
     {
-        vector<int> distance(graph.size(), -1);
+        vector<int> distances(graph.size(), -1);
         queue<vector<int>> nodes;
         vector<vector<bool>> visited(graph.size(), vector<bool>(2));
 
         nodes.push({0, 0, -1});
         visited[0][0] = true;
         visited[0][1] = true;
-        distance[0] = 0;
+        distances[0] = 0;
 
         while (!nodes.empty())
         {
@@ -52,8 +52,8 @@ public:
                     {
                         visited[destination][destinationColor] = true;
 
-                        if (distance[destination] == -1)
-                            distance[destination] = sourceDistance + 1;
+                        if (distances[destination] == -1)
+                            distances[destination] = sourceDistance + 1;
 
                         nodes.push({destination, sourceDistance + 1, destinationColor});
                     }
@@ -61,6 +61,6 @@ public:
             }
         }
 
-        return distance;
+        return distances;
     }
 };
