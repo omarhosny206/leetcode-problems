@@ -17,17 +17,14 @@ class Solution
 public:
     int maxDepth(TreeNode *root)
     {
-        return dfs(root);
+        return dfs(root, 0);
     }
 
-    int dfs(TreeNode *root)
+    int dfs(TreeNode *root, int currentDepth)
     {
         if (root == nullptr)
-            return 0;
+            return depth;
 
-        int left = maxDepth(root->left);
-        int right = maxDepth(root->right);
-
-        return max(left, right) + 1;
+        return max(dfs(root->left, currentDepth + 1), dfs(root->right, currentDepth + 1));
     }
 };
