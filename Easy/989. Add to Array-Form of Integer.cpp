@@ -3,22 +3,38 @@
 class Solution
 {
 public:
-    vector<int> addToArrayForm(vector<int> &A, int K)
+    vector<int> addToArrayForm(vector<int> &num, int k)
     {
-        vector<int> answer;
-        int current = K;
+        vector<int> result;
+        int carry = 0;
 
-        int i = A.size();
-        while (--i >= 0 || current > 0)
+        for (int i = num.size() - 1; i >= 0; --i)
         {
-            if (i >= 0)
-                current += A[i];
+            int sum = carry + num[i];
 
-            answer.push_back(current % 10);
-            current /= 10;
+            if (k > 0)
+            {
+                sum += (k % 10);
+                k /= 10;
+            }
+
+            result.push_back(sum % 10);
+            carry = sum / 10;
         }
 
-        reverse(answer.begin(), answer.end());
-        return answer;
+        while (k > 0)
+        {
+            int sum = carry + (k % 10);
+            k /= 10;
+
+            result.push_back(sum % 10);
+            carry = sum / 10;
+        }
+
+        if (carry > 0)
+            result.push_back(carry);
+
+        reverse(result.begin(), result.end());
+        return result;
     }
 };
