@@ -17,14 +17,14 @@ class Solution
 public:
     int maxDepth(TreeNode *root)
     {
-        if (root == nullptr)
-            return 0;
-
         return bfs(root);
     }
 
     int bfs(TreeNode *root)
     {
+        if (root == nullptr)
+            return 0;
+
         int depth = 0;
         queue<TreeNode *> nodes;
 
@@ -32,7 +32,6 @@ public:
 
         while (!nodes.empty())
         {
-            depth++;
             int size = nodes.size();
 
             for (int i = 0; i < size; ++i)
@@ -46,6 +45,8 @@ public:
                 if (current->right != nullptr)
                     nodes.push(current->right);
             }
+
+            depth++;
         }
 
         return depth;
