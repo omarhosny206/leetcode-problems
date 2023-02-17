@@ -13,25 +13,28 @@
  */
 class Solution
 {
-    int min_difference = INT_MAX;
-    int prev_node = -1;
+    int result = INT_MAX;
+    int previous = -1;
 
 public:
     int minDiffInBST(TreeNode *root)
     {
-        inOrder(root);
-        return min_difference;
+        dfs(root);
+        return result;
     }
 
-    void inOrder(TreeNode *root)
+    void dfs(TreeNode *root)
     {
         if (root == nullptr)
             return;
 
-        inOrder(root->left);
-        if (prev_node != -1)
-            min_difference = min(min_difference, abs(root->val - prev_node));
-        prev_node = root->val;
-        inOrder(root->right);
+        dfs(root->left);
+
+        if (previous != -1)
+            result = min(result, abs(root->val - previous));
+
+        previous = root->val;
+
+        dfs(root->right);
     }
 };
