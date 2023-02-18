@@ -16,18 +16,20 @@ class Solution
 public:
     TreeNode *invertTree(TreeNode *root)
     {
-        return dfs(root);
+        dfs(root);
+        return root;
     }
 
-    TreeNode *dfs(TreeNode *root)
+    void dfs(TreeNode *root)
     {
         if (root == nullptr)
-            return root;
+            return;
 
-        TreeNode *node = new TreeNode(root->val);
-        node->left = dfs(root->right);
-        node->right = dfs(root->left);
+        dfs(root->left);
+        dfs(root->right);
 
-        return node;
+        TreeNode *temp = root->left;
+        root->left = root->right;
+        root->right = temp;
     }
 };
