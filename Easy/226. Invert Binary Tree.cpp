@@ -16,22 +16,19 @@ class Solution
 public:
     TreeNode *invertTree(TreeNode *root)
     {
-        if (root == nullptr)
-            return nullptr;
-
-        invertTreeRecursive(root);
-        return root;
+        return dfs(root);
     }
 
-    void invertTreeRecursive(TreeNode *root)
+    TreeNode *dfs(TreeNode *root)
     {
         if (root == nullptr)
-            return;
+            return root;
 
-        invertTreeRecursive(root->left);
-        invertTreeRecursive(root->right);
-        TreeNode *temp = root->left;
-        root->left = root->right;
-        root->right = temp;
+        TreeNode *left = dfs(root->left);
+        TreeNode *right = dfs(root->right);
+
+        root->left = right;
+        root->right = left;
+        return root;
     }
 };
