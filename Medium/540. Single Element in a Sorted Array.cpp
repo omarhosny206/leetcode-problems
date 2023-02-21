@@ -19,21 +19,21 @@ public:
 
     int binarySearch(vector<int> &nums)
     {
-        int low = 0;
-        int high = nums.size() - 1;
+        int i = 0;
+        int j = nums.size() - 1;
 
-        while (low <= high)
+        while (i <= j)
         {
-            int middle = low + (high - low) / 2;
+            int middle = i + (j - i) / 2;
 
             if (nums[middle] != nums[middle - 1] && nums[middle] != nums[middle + 1])
                 return nums[middle];
 
             else if (middle % 2 == 0 && nums[middle] == nums[middle + 1] || middle % 2 == 1 && nums[middle] == nums[middle - 1])
-                low = middle + 1;
+                i = middle + 1;
 
             else
-                high = middle - 1;
+                j = middle - 1;
         }
 
         return -1;
