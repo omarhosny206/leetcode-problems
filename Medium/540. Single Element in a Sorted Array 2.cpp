@@ -5,10 +5,11 @@ class Solution
 public:
     int singleNonDuplicate(vector<int> &nums)
     {
-        int unique = 0;
-        for (int num : nums)
-            unique ^= num;
+        int result = 0;
 
-        return unique;
+        for (int &num : nums)
+            result ^= num;
+
+        return result;
     }
 };
