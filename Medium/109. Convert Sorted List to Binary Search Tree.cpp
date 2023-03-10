@@ -26,10 +26,10 @@ class Solution
 public:
     TreeNode *sortedListToBST(ListNode *head)
     {
-        return sortedListToBSTRecursive(head);
+        return dfs(head);
     }
 
-    TreeNode *sortedListToBSTRecursive(ListNode *head)
+    TreeNode *dfs(ListNode *head)
     {
         if (head == nullptr)
             return nullptr;
@@ -40,9 +40,8 @@ public:
         if (head == middle)
             return root;
 
-        root->left = sortedListToBSTRecursive(head);
-        root->right = sortedListToBSTRecursive(middle->next);
-
+        root->left = dfs(head);
+        root->right = dfs(middle->next);
         return root;
     }
 
@@ -51,6 +50,7 @@ public:
         ListNode *slow = head;
         ListNode *fast = head;
         ListNode *prev = nullptr;
+
         while (fast != nullptr && fast->next != nullptr)
         {
             prev = slow;
