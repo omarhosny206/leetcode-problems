@@ -30,36 +30,37 @@ public:
     {
         this->head = head;
         int size = getSize(head);
-        return sortedListToBSTRecursive(0, size - 1);
+        return dfs(0, size - 1);
     }
 
-    TreeNode *sortedListToBSTRecursive(int l, int r)
+    TreeNode *dfs(int i, int j)
     {
-        if (l > r)
+        if (i > j)
             return nullptr;
 
-        int middle = (l + r) / 2;
+        int middle = i + (j - i) / 2;
+        TreeNode *left = dfs(i, middle - 1);
 
-        TreeNode *left = sortedListToBSTRecursive(l, middle - 1);
-
-        TreeNode *node = new TreeNode(head->val);
-        node->left = left;
+        TreeNode *root = new TreeNode(head->val);
+        root->left = left;
 
         head = head->next;
-        node->right = sortedListToBSTRecursive(middle + 1, r);
+        root->right = dfs(middle + 1, j);
 
-        return node;
+        return root;
     }
 
     int getSize(ListNode *head)
     {
+        int result = 0;
         ListNode *current = head;
-        int count = 0;
+
         while (current != nullptr)
         {
+            result++;
             current = current->next;
-            count++;
         }
-        return count;
+
+        return result;
     }
 };
