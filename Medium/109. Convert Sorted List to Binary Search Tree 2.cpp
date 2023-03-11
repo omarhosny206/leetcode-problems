@@ -23,39 +23,37 @@
  */
 class Solution
 {
-    vector<int> vals;
 
 public:
     TreeNode *sortedListToBST(ListNode *head)
     {
-        insertNodes(head);
-        return sortedListToBSTRecursive(0, vals.size() - 1);
+        vector<int> values = getValues(head);
+        return dfs(values, 0, values.size() - 1);
     }
 
-    TreeNode *sortedListToBSTRecursive(int left, int right)
+    TreeNode *dfs(vector<int> &values, int left, int right)
     {
         if (left > right)
             return nullptr;
 
-        int middle = (left + right) / 2;
+        int middle = left + (right - left) / 2;
+        TreeNode *root = new TreeNode(values[middle]);
 
-        TreeNode *root = new TreeNode(vals[middle]);
-
-        if (left == right)
-            return root;
-
-        root->left = sortedListToBSTRecursive(left, middle - 1);
-        root->right = sortedListToBSTRecursive(middle + 1, right);
-
+        root->left = dfs(values, left, middle - 1);
+        root->right = dfs(values, middle + 1, right);
         return root;
     }
 
-    void insertNodes(ListNode *head)
+    vector<int> getValues(ListNode *head)
     {
+        vector<int> result;
+
         while (head != nullptr)
         {
-            vals.push_back(head->val);
+            result.push_back(head->val);
             head = head->next;
         }
+
+        return result;
     }
 };
