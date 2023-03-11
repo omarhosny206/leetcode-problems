@@ -23,37 +23,44 @@
  */
 class Solution
 {
-
 public:
     TreeNode *sortedListToBST(ListNode *head)
     {
-        vector<int> values = getValues(head);
-        return dfs(values, 0, values.size() - 1);
+        return dfs(head);
     }
 
-    TreeNode *dfs(vector<int> &values, int left, int right)
+    TreeNode *dfs(ListNode *head)
     {
-        if (left > right)
+        if (head == nullptr)
             return nullptr;
 
-        int middle = left + (right - left) / 2;
-        TreeNode *root = new TreeNode(values[middle]);
+        ListNode *middle = getMiddle(head);
+        TreeNode *root = new TreeNode(middle->val);
 
-        root->left = dfs(values, left, middle - 1);
-        root->right = dfs(values, middle + 1, right);
+        if (head == middle)
+            return root;
+
+        root->left = dfs(head);
+        root->right = dfs(middle->next);
         return root;
     }
 
-    vector<int> getValues(ListNode *head)
+    ListNode *getMiddle(ListNode *head)
     {
-        vector<int> result;
+        ListNode *slow = head;
+        ListNode *fast = head;
+        ListNode *prev = nullptr;
 
-        while (head != nullptr)
+        while (fast != nullptr && fast->next != nullptr)
         {
-            result.push_back(head->val);
-            head = head->next;
+            prev = slow;
+            slow = slow->next;
+            fast = fast->next->next;
         }
 
-        return result;
+        if (prev != nullptr)
+            prev->next = nullptr;
+
+        return slow;
     }
 };
