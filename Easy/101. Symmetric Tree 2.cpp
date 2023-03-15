@@ -16,31 +16,34 @@ class Solution
 public:
     bool isSymmetric(TreeNode *root)
     {
-        if (!root)
-            return true;
-        queue<TreeNode *> check;
+        queue<TreeNode *> nodes;
 
-        check.push(root->left);
-        check.push(root->right);
+        nodes.push(root->left);
+        nodes.push(root->right);
 
-        while (!check.empty())
+        while (!nodes.empty())
         {
-            TreeNode *node1 = check.front();
-            check.pop();
-            TreeNode *node2 = check.front();
-            check.pop();
-            if (!node1 && node2)
+            TreeNode *firstNode = nodes.front();
+            nodes.pop();
+
+            TreeNode *secondNode = nodes.front();
+            nodes.pop();
+
+            if (firstNode == nullptr && secondNode != nullptr)
                 return false;
-            if (!node2 && node1)
+
+            if (firstNode != nullptr && secondNode == nullptr)
                 return false;
-            if (node1 && node2)
+
+            if (firstNode != nullptr && secondNode != nullptr)
             {
-                if (node1->val != node2->val)
+                if (firstNode->val != secondNode->val)
                     return false;
-                check.push(node1->left);
-                check.push(node2->right);
-                check.push(node1->right);
-                check.push(node2->left);
+
+                nodes.push(firstNode->left);
+                nodes.push(secondNode->right);
+                nodes.push(firstNode->right);
+                nodes.push(secondNode->left);
             }
         }
 
