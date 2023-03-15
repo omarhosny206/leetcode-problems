@@ -13,30 +13,29 @@
  */
 class Solution
 {
-    int sum = 0;
+    int result = 0;
 
 public:
     int sumNumbers(TreeNode *root)
     {
-        sumNumbersRecursive(root, 0);
-        return sum;
+        dfs(root, 0);
+        return result;
     }
 
-    void sumNumbersRecursive(TreeNode *root, int current_sum)
+    void dfs(TreeNode *root, int currentSum)
     {
-
         if (root == nullptr)
             return;
 
-        current_sum = (current_sum * 10) + root->val;
+        currentSum = (currentSum * 10) + root->val;
 
         if (root->left == nullptr && root->right == nullptr)
         {
-            sum += current_sum;
+            result += currentSum;
             return;
         }
 
-        sumNumbersRecursive(root->left, current_sum);
-        sumNumbersRecursive(root->right, current_sum);
+        dfs(root->left, currentSum);
+        dfs(root->right, currentSum);
     }
 };
