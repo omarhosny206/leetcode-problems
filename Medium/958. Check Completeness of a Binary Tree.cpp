@@ -16,11 +16,8 @@ class Solution
 public:
     bool isCompleteTree(TreeNode *root)
     {
-        if (root == nullptr)
-            return true;
-
         queue<TreeNode *> nodes;
-        bool end = false;
+        bool foundLastNode = false;
 
         nodes.push(root);
 
@@ -30,13 +27,13 @@ public:
             nodes.pop();
 
             if (current == nullptr)
-                end = true;
+                foundLastNode = true;
+
+            else if (foundLastNode)
+                return false;
 
             else
             {
-                if (end == true)
-                    return false;
-
                 nodes.push(current->left);
                 nodes.push(current->right);
             }
