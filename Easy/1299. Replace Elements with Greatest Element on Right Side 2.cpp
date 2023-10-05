@@ -5,21 +5,17 @@ class Solution
 public:
     vector<int> replaceElements(vector<int> &arr)
     {
-        vector<int> result;
+        vector<int> result(arr.size());
+        int maxFromRight = -1;
+        int temp;
 
-        if (arr.size() == 1)
-            return {-1};
-
-        for (int i = 0; i < arr.size(); ++i)
+        for (int i = arr.size() - 1; i >= 0; --i)
         {
-            int max = -1;
-            for (int j = i + 1; j < arr.size(); ++j)
-                if (max < arr[j])
-                    max = arr[j];
-
-            result.push_back(max);
+            temp = arr[i];
+            arr[i] = maxFromRight;
+            maxFromRight = max(maxFromRight, temp);
         }
 
-        return result;
+        return arr;
     }
 };
