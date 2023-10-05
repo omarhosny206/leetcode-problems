@@ -5,8 +5,8 @@ class Solution
 public:
     bool searchMatrix(vector<vector<int>> &matrix, int target)
     {
-        int row = getRow(matrix, target);
-        return binarySearch(matrix, row, target);
+        int row = getRowByBinarySearch(matrix, target);
+        return (row == -1) ? false : binarySearch(matrix, row, target);
     }
 
     bool binarySearch(vector<vector<int>> &matrix, int row, int target)
@@ -31,7 +31,7 @@ public:
         return false;
     }
 
-    int getRow(vector<vector<int>> &matrix, int target)
+    int getRowByBinarySearch(vector<vector<int>> &matrix, int target)
     {
         int top = 0;
         int bottom = matrix.size() - 1;
@@ -50,6 +50,6 @@ public:
                 top = middle + 1;
         }
 
-        return 0;
+        return -1;
     }
 };
