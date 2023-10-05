@@ -5,21 +5,28 @@ class Solution
 public:
     bool isSubsequence(string s, string t)
     {
+        if (s.empty())
+            return true;
+
+        if (s.size() > t.size())
+            return false;
+
         int i = 0;
         int j = 0;
-        int counter = 0;
 
-        while (i < s.length() && j < t.length())
+        while (j < t.size())
         {
             if (s[i] == t[j])
             {
                 i++;
-                counter++;
+
+                if (i == s.size())
+                    return true;
             }
 
             j++;
         }
 
-        return counter == s.size();
+        return false;
     }
 };
