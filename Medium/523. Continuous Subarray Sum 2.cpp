@@ -6,21 +6,22 @@ public:
     bool checkSubarraySum(vector<int> &nums, int k)
     {
         unordered_map<int, int> seen;
-        int currentSum = 0;
-        const int MIN_SIZE = 2;
+        int sum = 0;
 
         seen[0] = -1;
 
         for (int i = 0; i < nums.size(); ++i)
         {
-            currentSum += nums[i];
-            currentSum %= k;
+            sum += nums[i];
 
-            if (seen.find(currentSum) != seen.end() && i - seen[currentSum] >= MIN_SIZE)
-                return true;
+            if (seen.find(sum % k) != seen.end())
+            {
+                if (i - seen[sum % k] >= 2)
+                    return true;
+            }
 
-            if (seen.find(currentSum) == seen.end())
-                seen[currentSum] = i;
+            else
+                seen[sum % k] = i;
         }
 
         return false;
