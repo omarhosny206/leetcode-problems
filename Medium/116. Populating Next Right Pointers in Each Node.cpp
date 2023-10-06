@@ -24,12 +24,12 @@ public:
     Node *connect(Node *root)
     {
         if (root == nullptr)
-            return root;
+            return nullptr;
 
-        return BFS(root);
+        return bfs(root);
     }
 
-    Node *BFS(Node *root)
+    Node *bfs(Node *root)
     {
         queue<Node *> nodes;
         nodes.push(root);
@@ -37,19 +37,21 @@ public:
         while (!nodes.empty())
         {
             int size = nodes.size();
+            Node *right = nullptr;
+
             for (int i = 0; i < size; ++i)
             {
                 Node *current = nodes.front();
                 nodes.pop();
 
-                if (i < size - 1)
-                    current->next = nodes.front();
+                current->next = right;
+                right = current;
 
-                if (current->left != nullptr)
-                    nodes.push(current->left);
-
-                if (current->right != nullptr)
+                if (current->right)
                     nodes.push(current->right);
+
+                if (current->left)
+                    nodes.push(current->left);
             }
         }
 

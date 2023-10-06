@@ -20,27 +20,39 @@ public:
 
 class Solution
 {
-    unordered_map<int, vector<Node *>> nodes;
-
 public:
     Node *connect(Node *root)
     {
-        DFS(root, 0);
+        if (root == nullptr)
+            return root;
 
-        for (auto level : nodes)
-            for (int i = 0; i < level.second.size() - 1; ++i)
-                level.second[i]->next = level.second[i + 1];
-
-        return root;
+        return bfs(root);
     }
 
-    void DFS(Node *root, int level)
+    Node *bfs(Node *root)
     {
-        if (root == nullptr)
-            return;
+        queue<Node *> nodes;
+        nodes.push(root);
 
-        nodes[level].push_back(root);
-        DFS(root->left, level + 1);
-        DFS(root->right, level + 1);
+        while (!nodes.empty())
+        {
+            int size = nodes.size();
+            for (int i = 0; i < size; ++i)
+            {
+                Node *current = nodes.front();
+                nodes.pop();
+
+                if (i < size - 1)
+                    current->next = nodes.front();
+
+                if (current->left != nullptr)
+                    nodes.push(current->left);
+
+                if (current->right != nullptr)
+                    nodes.push(current->right);
+            }
+        }
+
+        return root;
     }
 };
