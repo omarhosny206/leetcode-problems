@@ -61,7 +61,7 @@ public:
         return words;
     }
 
-    void dfs(TrieNode *root, vector<string> &words, string &currentWord)
+    void dfs(TrieNode *root, vector<string> &words, string currentWord)
     {
         if (words.size() == 3)
             return;
@@ -70,11 +70,7 @@ public:
             words.push_back(currentWord);
 
         for (auto pair : root->children)
-        {
-            currentWord += pair.first;
-            dfs(root->children[pair.first], words, currentWord);
-            currentWord.pop_back();
-        }
+            dfs(root->children[pair.first], words, currentWord + pair.first);
     }
 };
 
