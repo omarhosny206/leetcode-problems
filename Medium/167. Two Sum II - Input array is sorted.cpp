@@ -16,22 +16,12 @@ public:
                 return {i + 1, j + 1};
 
             else if (sum > target)
-            {
-                int num = numbers[j];
-                
-                while (num == numbers[j])
-                    j--;
-            }
+                j--;
 
             else if (sum < target)
-            {
-                int num = numbers[i];
-
-                while (num == numbers[i])
-                    i++;
-            }
+                i++;
         }
-        
+
         return {};
     }
 };
