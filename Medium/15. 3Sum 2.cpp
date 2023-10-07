@@ -1,5 +1,3 @@
-// https://leetcode.com/problems/3sum/
-
 class Solution
 {
 public:
@@ -31,15 +29,25 @@ public:
                 }
 
                 else if (nums[j] + nums[k] < target)
-                    j++;
+                {
+                    int value = nums[j];
+                    while (j < k && nums[j] == value)
+                        j++;
+                }
 
                 else
-                    k--;
+                {
+                    int value = nums[k];
+                    while (k > j && nums[k] == value)
+                        k--;
+                }
             }
 
             int value = nums[i];
             while (i < nums.size() && nums[i] == value)
+            {
                 i++;
+            }
         }
 
         return result;
