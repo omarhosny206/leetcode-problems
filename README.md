@@ -934,3 +934,10 @@
 |2530|[Maximal Score After Applying K Operations](https://leetcode.com/problems/maximal-score-after-applying-k-operations/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/2530.%20Maximal%20Score%20After%20Applying%20K%20Operations.cpp) |Medium|
 |2531|[Make Number of Distinct Characters Equal](https://leetcode.com/problems/make-number-of-distinct-characters-equal/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Medium/2531.%20Make%20Number%20of%20Distinct%20Characters%20Equal.cpp) |Medium|
 |2535|[Difference Between Element Sum and Digit Sum of an Array](https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/) | [C++](https://github.com/omarhosny206/LeetCode-Problems/blob/master/Easy/2535.%20Difference%20Between%20Element%20Sum%20and%20Digit%20Sum%20of%20an%20Array.cpp) |Easy|
+
+
+## Contribution 🤝
+#### If you're interested in contributing to this repository, please follow these guidelines:
+1. Fork the repository
+2. Make your changes
+3. Submit a Pull Request
