@@ -9,10 +9,10 @@ public:
 
         for (int i = 0; i < nums.size(); ++i)
         {
-            if (index.find(target - nums[i]) != index.end())
-                return {index[target - nums[i]], i};
+            if (index.find(nums[i]) != index.end())
+                return {index[nums[i]], i};
 
-            index[nums[i]] = i;
+            index[target - nums[i]] = i;
         }
 
         return {};
