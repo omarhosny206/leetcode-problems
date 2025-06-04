@@ -5,26 +5,29 @@ class Solution
 public:
     vector<int> topKFrequent(vector<int> &nums, int k)
     {
-        vector<int> result(k);
+        vector<int> result;
         unordered_map<int, int> freq;
-        vector<pair<int, int>> values;
+        map<int, stack<int>, greater<int>> values;
 
         for (int &num : nums)
             freq[num]++;
 
         for (auto &pair : freq)
-            values.push_back(pair);
+            values[pair.second].push(pair.first);
 
-        sort(values.begin(), values.end(), compare);
+        for (auto &pair : values)
+        {
+            stack<int> vals = values[pair.first];
+            while (!vals.empty() && k-- > 0)
+            {
+                result.push_back(vals.top());
+                vals.pop();
+            }
 
-        for (int i = 0; i < k; ++i)
-            result[i] = values[i].first;
+            if (k <= 0)
+                break;
+        }
 
         return result;
-    }
-
-    static bool compare(pair<int, int> &firstPair, pair<int, int> &secondPair)
-    {
-        return firstPair.second > secondPair.second;
     }
 };
